@@ -3,22 +3,19 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 6fr;
+  grid-template-columns: 1fr 8fr;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 aside {
-  background-color: yellow;
   width: 100%;
   height: 100vh;
 }
 
 main {
-  background-color: blue;
   width: 100%;
   height: 100vh;
 }
