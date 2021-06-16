@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Flag from "react-world-flags"
+/* eslint-disable react-hooks/exhaustive-deps */
 
-function TableSet({matches}){
-  const { A: groupA, B: groupB, C: groupC, D: groupD, E: groupE, F: groupF } = matches 
+function TableSet({matches, groupA, groupB, groupC, groupD, groupE, groupF, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF}){
+  const { A, B, C, D, E, F } = matches 
   return (
   <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)"}}>
-    <Table matches={groupA} />
-    <Table matches={groupB} />
-    <Table matches={groupC} />
-    <Table matches={groupD} />
-    <Table matches={groupE} />
-    <Table matches={groupF} />
+    <Table matches={A} group={groupA} setGroup={setGroupA} />
+    <Table matches={B} group={groupB} setGroup={setGroupB} />
+    <Table matches={C} group={groupC} setGroup={setGroupC} />
+    <Table matches={D} group={groupD} setGroup={setGroupD} />
+    <Table matches={E} group={groupE} setGroup={setGroupE} />
+    <Table matches={F} group={groupF} setGroup={setGroupF} />
   </div>
   )
 }
 
-function Table({matches}) {
+function Table({matches, group, setGroup }) {
+  useEffect(() => {
   const teams = [ ...matches[0].teams, ...matches[1].teams ]
   const teamData = teams.map(team => {
     const points = matches.reduce((acc, curr) => {
@@ -76,6 +78,8 @@ function Table({matches}) {
     }
     return 0
   })
+  setGroup(sortedTeamData)
+}, [])
   return (
     <table style={{ fontSize: "14px"}}>
       <thead>
@@ -87,7 +91,7 @@ function Table({matches}) {
         </tr>
       </thead>
       <tbody>
-      {sortedTeamData.map(dataset => {
+      {group.map(dataset => {
         const { team, points, goalDifference, fairPlay } = dataset 
         return (
           <tr style={{margin: "0px"}}>
