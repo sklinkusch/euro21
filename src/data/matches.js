@@ -17,8 +17,8 @@ const matches = {
     },
     {
       teams: ["IT", "CH"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [3, 0],
+      fairPlay: [0, 2],
     },
     {
       teams: ["IT", "GB-WLS"],
@@ -49,8 +49,8 @@ const matches = {
     },
     {
       teams: ["DK", "BE"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [1, 2],
+      fairPlay: [3, 1],
     },
     {
       teams: ["FI", "BE"],
@@ -76,13 +76,13 @@ const matches = {
     },
     {
       teams: ["UA", "MK"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [2, 1],
+      fairPlay: [1, 2],
     },
     {
       teams: ["NL", "AT"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [2, 0],
+      fairPlay: [1, 2],
     },
     {
       teams: ["MK", "NL"],

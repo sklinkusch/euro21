@@ -6,17 +6,18 @@ function TableSet({matches, groupA, groupB, groupC, groupD, groupE, groupF, setG
   const { A, B, C, D, E, F } = matches 
   return (
   <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)"}}>
-    <Table matches={A} group={groupA} setGroup={setGroupA} />
-    <Table matches={B} group={groupB} setGroup={setGroupB} />
-    <Table matches={C} group={groupC} setGroup={setGroupC} />
-    <Table matches={D} group={groupD} setGroup={setGroupD} />
-    <Table matches={E} group={groupE} setGroup={setGroupE} />
-    <Table matches={F} group={groupF} setGroup={setGroupF} />
+    <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" />
+    <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" />
+    <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" />
+    <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" />
+    <Table matches={E} group={groupE} setGroup={setGroupE} notifier="E" />
+    <Table matches={F} group={groupF} setGroup={setGroupF} notifier="F" />
   </div>
   )
 }
 
-function Table({matches, group, setGroup }) {
+function Table({matches, group, setGroup, notifier }) {
+  const uefaCoefficient = ["ES", "NL", "DE", "IT", "GB-ENG", "RU", "HR", "PT", "SE", "DK", "FR", "CZ", "UA", "CH", "TR", "SK", "HU", "FI", "GB-SCT", "PL", "AT", "BE", "GB-WLS", "MK"]
   useEffect(() => {
   const teams = [ ...matches[0].teams, ...matches[1].teams ]
   const teamData = teams.map(team => {
@@ -32,6 +33,17 @@ function Table({matches, group, setGroup }) {
       }
       return acc
     },0)
+    const victories = matches.reduce((acc, curr) => {
+      const index = curr.teams.indexOf(team)
+      const indexOp = index === 0 ? 1 : index === 1 ? 0 : -1 
+      if(index !== -1 && curr.goals[index] != null) {
+        if(curr.goals[index]> curr.goals[indexOp]) {
+          return acc + 1
+        }
+        return acc
+      }
+      return acc
+    }, 0)
     const goals = matches.reduce((acc, curr) => {
       const index = curr.teams.indexOf(team)
       if(index !== -1 && curr.goals[index] != null) {
@@ -55,31 +67,136 @@ function Table({matches, group, setGroup }) {
       }
       return acc
     }, 0)
-    const ownMatches = matches.filter(match => match.teams.includes(team))
-    return { team, points, goals, countergoals, goalDifference, fairPlay, ownMatches, matches }
+    const ownMatches = matches.filter(match => match.teams.includes(team) && match.goals[0] != null)
+    return { team, points, goals, countergoals, goalDifference, fairPlay, ownMatches, matches, victories, group: notifier }
   })
-  const sortedTeamData = teamData.sort((a, b) => {
-    if (a.points > b.points) {
-      return -1
-    } else if (b.points > a.points) {
-      return +1
-    } else if (a.goalDifference > b.goalDifference) {
-      return -1
-    } else if (b.goalDifference > a.goalDifference) {
-      return +1
-    } else if (a.goals > b.goals) {
-      return -1
-    } else if (b.goals > a.goals) {
-      return +1
-    } else if (a.fairPlay < b.fairPlay) {
-      return -1
-    } else if (b.fairPlay < a.fairPlay) {
-      return +1
+  // sort first by overall points
+  const groupFirstSortPoints = teamData.sort((a,b) => b.points - a.points)
+  const pointsRaw = groupFirstSortPoints.map(team => team.points)
+  const mySet = new Set(pointsRaw)
+  const values = mySet.values()
+  const points = Array.from(values)
+  const groupEqualPoints = points.reduce((acc, curr) => {
+      const arr = [...acc]
+      const subarray = groupFirstSortPoints.filter(team => team.points === curr)
+      arr.push(subarray)
+      return arr
+    }, [])
+  const sortedEqualPoints = groupEqualPoints.map(set => {
+    const length = set.length 
+    if (length === 1) {
+      return set
     }
-    return 0
-  })
-  setGroup(sortedTeamData)
-}, [])
+    const teams = set.map(item => item.team)
+    const sortedSet = set.sort((a, b) => {
+      const { ownMatches: aMatches, team: aTeam } = a 
+      const { ownMatches: bMatches, team: bTeam } = b
+      const aUefa = uefaCoefficient.indexOf(aTeam)
+      const bUefa = uefaCoefficient.indexOf(bTeam)
+      const aPoints = aMatches.reduce((acc, curr) => {
+        if(teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
+          const index = curr.teams.indexOf(aTeam)
+          const indexOp = index === 0 ? 0 : 1
+          return curr.goals[index] > curr.goals[indexOp] ? acc + 3 : curr.goals[index] === curr.goals[indexOp] ? acc + 1 : acc
+        }
+        return acc
+      }, 0)
+      const aGoalDifference = aMatches.reduce((acc, curr) => {
+        if(teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
+          const index = curr.teams.indexOf(aTeam)
+          const indexOp = index === 0 ? 0 : 1
+          return (acc + (curr.goals[index] - curr.goals[indexOp]))
+        }
+        return acc
+      }, 0)
+      const aGoals = aMatches.reduce((acc, curr) => {
+        if(teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
+          const index = curr.teams.indexOf(aTeam)
+          return acc + curr.goals[index]
+        }
+        return acc
+      }, 0)
+      const bPoints = bMatches.reduce((acc, curr) => {
+        if(teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
+          const index = curr.teams.indexOf(bTeam)
+          const indexOp = index === 0 ? 0 : 1
+          return curr.goals[index] > curr.goals[indexOp] ? acc + 3 : curr.goals[index] === curr.goals[indexOp] ? acc + 1 : acc
+        }
+        return acc
+      }, 0)
+      const bGoalDifference = bMatches.reduce((acc, curr) => {
+        if(teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
+          const index = curr.teams.indexOf(bTeam)
+          const indexOp = index === 0 ? 0 : 1
+          return (acc + (curr.goals[index] - curr.goals[indexOp]))
+        }
+        return acc
+      }, 0)
+      const bGoals = bMatches.reduce((acc, curr) => {
+        if(teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
+          const index = curr.teams.indexOf(bTeam)
+          return acc + curr.goals[index]
+        }
+        return acc
+      }, 0)
+      if (teams.includes("AT") || teams.includes("NL") || teams.includes("UA")) {
+      }
+      if(aPoints > bPoints) {
+        return -1
+      } else if (bPoints > aPoints) {
+        return +1
+      } else if (aGoalDifference > bGoalDifference) {
+        return -1
+      } else if (bGoalDifference > aGoalDifference) {
+        return +1
+      } else if (aGoals > bGoals) {
+        return -1
+      } else if (bGoals > aGoals) {
+        return +1
+      } else if (a.goalDifference > b.goalDifference) {
+        return -1
+      } else if (b.goalDifference > a.goalDifference) {
+        return +1
+      } else if (a.goals > b.goals) {
+        return -1
+      } else if (b.goals > a.goals) {
+        return +1
+      } else if (a.victories > b.victories) {
+        return -1
+      } else if (b.victories > a.victories) {
+        return +1
+      } else if (a.fairPlay < b.fairPlay) {
+        return -1
+      } else if (b.fairPlay < a.fairPlay) {
+        return +1
+      } else {
+        return (aUefa - bUefa)
+      }
+    })
+    return sortedSet
+  }).reduce((acc, curr) => acc.concat(curr),[])
+  // const sortedTeamData = teamData.sort((a, b) => {
+  //   if (a.points > b.points) {
+  //     return -1
+  //   } else if (b.points > a.points) {
+  //     return +1
+  //   } else if (a.goalDifference > b.goalDifference) {
+  //     return -1
+  //   } else if (b.goalDifference > a.goalDifference) {
+  //     return +1
+  //   } else if (a.goals > b.goals) {
+  //     return -1
+  //   } else if (b.goals > a.goals) {
+  //     return +1
+  //   } else if (a.fairPlay < b.fairPlay) {
+  //     return -1
+  //   } else if (b.fairPlay < a.fairPlay) {
+  //     return +1
+  //   }
+  //   return 0
+  // })
+  setGroup(sortedEqualPoints)
+}, [matches])
   return (
     <table style={{ fontSize: "14px"}}>
       <thead>
@@ -107,4 +224,31 @@ function Table({matches, group, setGroup }) {
   )
 }
 
-export { TableSet }
+function TableThird ({third}) {
+  return (
+    <table style={{ fontSize: "14px" }}>
+      <thead>
+        <td>Gr.</td>
+        <td>Land</td>
+        <td>Pkt.</td>
+        <td>Diff.</td>
+        <td>FP</td>
+      </thead>
+      <tbody>
+        {third && third.length > 0 && third.map((team, index) => {
+          if(team) {
+          return (
+          <tr key={index}>
+            <td>{team.group}</td>
+            <td><Flag code={team.team} style={{ height: "14px"}}/></td>
+            <td>{team.points}</td>
+            <td>{team.goalDifference}</td>
+            <td>{team.fairPlay}</td>
+          </tr>
+        )} else {return null}})}
+      </tbody>
+    </table>
+  )
+}
+
+export { TableSet, TableThird }
