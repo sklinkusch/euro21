@@ -231,19 +231,22 @@ function TableThird ({third}) {
         <td>Gr.</td>
         <td>Land</td>
         <td>Pkt.</td>
+        <td>Siege</td>
         <td>Diff.</td>
         <td>FP</td>
       </thead>
       <tbody>
         {third && third.length > 0 && third.map((team, index) => {
+          const line = index === 3 ? "1px dashed black" : "none"
           if(team) {
           return (
           <tr key={index}>
-            <td>{team.group}</td>
-            <td><Flag code={team.team} style={{ height: "14px"}}/></td>
-            <td>{team.points}</td>
-            <td>{team.goalDifference}</td>
-            <td>{team.fairPlay}</td>
+            <td style={{ borderBottom: line }}>{team.group}</td>
+            <td style={{ borderBottom: line }}><Flag code={team.team} style={{ height: "14px"}}/></td>
+            <td style={{ borderBottom: line }}>{team.points}</td>
+            <td style={{ borderBottom: line }}>{team.victories}</td>
+            <td style={{ borderBottom: line }}>{team.goalDifference}</td>
+            <td style={{ borderBottom: line }}>{team.fairPlay}</td>
           </tr>
         )} else {return null}})}
       </tbody>

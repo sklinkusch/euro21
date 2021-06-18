@@ -1,7 +1,7 @@
 import React from 'react'
 import Flag from 'react-world-flags'
 
-function Achtelfinale({first, second, third, assoc}) {
+function Achtelfinale({first, second, third, assoc, matchaf = []}) {
   const firstTeams = first.length === 6 ? first.map((team, index) => {
     return typeof team === "object" && team.hasOwnProperty("team") && team.team ? team.team : null
   }) : [null, null, null, null, null, null]
@@ -24,32 +24,43 @@ function Achtelfinale({first, second, third, assoc}) {
   const bTeamAF6 = secondTeams[5]
   const aTeamAF7 = firstTeams[4]
   const bTeamAF7 = third[assoc.indexOf(7)]
+  const [AF0 = {}, AF1 = {}, AF2 = {}, AF3 = {}, AF4 = {}, AF5 = {}, AF6 = {}, AF7 = {}] = matchaf
   return (
     <div>
+      <div style={{ textAlign: "left", fontSize: "14px" }}>Achtelfinale</div>
       <table>
         <tbody>
-        <AchtelfinaleSingle teamA={aTeamAF0} teamB={bTeamAF0} />
-        <AchtelfinaleSingle teamA={aTeamAF1} teamB={bTeamAF1} />
-        <AchtelfinaleSingle teamA={aTeamAF2} teamB={bTeamAF2} />
-        <AchtelfinaleSingle teamA={aTeamAF3} teamB={bTeamAF3} />
-        <AchtelfinaleSingle teamA={aTeamAF4} teamB={bTeamAF4} />
-        <AchtelfinaleSingle teamA={aTeamAF5} teamB={bTeamAF5} />
-        <AchtelfinaleSingle teamA={aTeamAF6} teamB={bTeamAF6} />
-        <AchtelfinaleSingle teamA={aTeamAF7} teamB={bTeamAF7} />
+          <tr>
+            <AchtelfinaleSingle teamA={aTeamAF0} teamB={bTeamAF0} match={AF0} />
+            <AchtelfinaleSingle teamA={aTeamAF4} teamB={bTeamAF4} match={AF4} />
+          </tr>
+          <tr>
+            <AchtelfinaleSingle teamA={aTeamAF1} teamB={bTeamAF1} match={AF1} />
+            <AchtelfinaleSingle teamA={aTeamAF5} teamB={bTeamAF5} match={AF5} />
+          </tr>
+          <tr>
+            <AchtelfinaleSingle teamA={aTeamAF2} teamB={bTeamAF2} match={AF2} />
+            <AchtelfinaleSingle teamA={aTeamAF6} teamB={bTeamAF6} match={AF6} />
+          </tr>
+          <tr>
+            <AchtelfinaleSingle teamA={aTeamAF3} teamB={bTeamAF3} match={AF3} />
+            <AchtelfinaleSingle teamA={aTeamAF7} teamB={bTeamAF7} match={AF7} />
+          </tr>
         </tbody>
       </table>
     </div>
   )
 }
 
-function AchtelfinaleSingle({teamA, teamB}) {
+function AchtelfinaleSingle({teamA, teamB, match}) {
+  const {goals = [], add = ""} = match
+  const [ goalsA = "-", goalsB = "-" ] = goals
   return (
-    <tr>
-      {/* <td>{teamA ? teamA : null}</td> */}
+    <React.Fragment>
       {teamA ? (<td><Flag code={teamA} style={{ height: "14px" }} /></td>) : (<td>?</td>)}
       {teamB ? (<td><Flag code={teamB} style={{ height: "14px" }}/></td>) : (<td>?</td>)}
-      {/* <td>{teamB ? teamB : null}</td> */}
-    </tr>
+      {teamA && teamB ? <td>{`${goalsA}:${goalsB} ${add}`}</td> : <td>"-:-"</td>}
+    </React.Fragment>
   )
 }
 

@@ -83,8 +83,10 @@ function App() {
             setGroupE={setGroupE}
             setGroupF={setGroupF}
           />
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)"}}>
           <TableThird third={third} />
           <Achtelfinale first={first} second={second} third={winningTeams} assoc={association} />
+          </div>
         </main>
       </header>
     </div>
