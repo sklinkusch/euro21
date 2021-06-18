@@ -26,9 +26,9 @@ function Achtelfinale({first, second, third, assoc, matchaf = []}) {
   const bTeamAF7 = third[assoc.indexOf(7)]
   const [AF0 = {}, AF1 = {}, AF2 = {}, AF3 = {}, AF4 = {}, AF5 = {}, AF6 = {}, AF7 = {}] = matchaf
   return (
-    <div>
-      <div style={{ textAlign: "left", fontSize: "14px" }}>Achtelfinale</div>
-      <table>
+    <div style={{ width: "100%", borderLeft: "1px solid black" }}>
+      <div style={{ textAlign: "center", fontSize: "14px" }}>Achtelfinale</div>
+      <table style={{ width: "100%" }}>
         <tbody>
           <tr>
             <AchtelfinaleSingle teamA={aTeamAF0} teamB={bTeamAF0} match={AF0} />
@@ -59,7 +59,7 @@ function AchtelfinaleSingle({teamA, teamB, match}) {
     <React.Fragment>
       {teamA ? (<td><Flag code={teamA} style={{ height: "14px" }} /></td>) : (<td>?</td>)}
       {teamB ? (<td><Flag code={teamB} style={{ height: "14px" }}/></td>) : (<td>?</td>)}
-      {teamA && teamB ? <td>{`${goalsA}:${goalsB} ${add}`}</td> : <td>"-:-"</td>}
+      {teamA && teamB ? <td>{`${goalsA ? goalsA : "-"}:${goalsB ? goalsB : "-"} ${add ? add : ""}`}</td> : <td>"-:-"</td>}
     </React.Fragment>
   )
 }

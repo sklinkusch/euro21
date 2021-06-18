@@ -5,7 +5,7 @@ import Flag from "react-world-flags"
 function TableSet({matches, groupA, groupB, groupC, groupD, groupE, groupF, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF}){
   const { A, B, C, D, E, F } = matches 
   return (
-  <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)"}}>
+  <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", borderBottom: "1px solid black" }}>
     <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" />
     <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" />
     <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" />
@@ -197,8 +197,10 @@ function Table({matches, group, setGroup, notifier }) {
   // })
   setGroup(sortedEqualPoints)
 }, [matches])
+  const borderRight = ["A", "B", "D", "E"].includes(notifier) ? "1px solid black" : "none" 
+  const borderBottom = ["A", "B", "C"].includes(notifier) ? "1px solid black" : "none"
   return (
-    <table style={{ fontSize: "14px"}}>
+    <table style={{ fontSize: "14px", borderBottom, borderRight }}>
       <thead>
         <tr style={{ margin: "0"}}>
           <td>Land</td>

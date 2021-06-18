@@ -108,13 +108,13 @@ const matches = {
     },
     {
       teams: ["HR", "CZ"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [1, 1],
+      fairPlay: [1, 3],
     },
     {
       teams: ["GB-ENG", "GB-SCT"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [0, 0],
+      fairPlay: [0, 2],
     },
     {
       teams: ["CZ", "GB-ENG"],
@@ -192,5 +192,59 @@ const matches = {
     }
   ], 
 }
+
+export const matchaf = [
+  {
+    goals: [null, null],
+    add: null,
+  },
+  {
+    goals: [null, null],
+    add: null,
+  },
+  {
+    goals: [null, null],
+    add: null,
+  },
+  {
+    goals: [null, null],
+    add: null,
+  },
+  {
+    goals: [null, null],
+    add: null,
+  },
+  {
+    goals: [null, null],
+    add: null,
+  },
+  {
+    goals: [null, null],
+    add: null,
+  },
+  {
+    goals: [null, null],
+    add: null,
+  }
+]
+
+export const matchvf = [
+  {
+    goals: [null, null],
+    add: null,
+  },
+  {
+    goals: [null, null],
+    add: null,
+  },
+  {
+    goals: [null, null],
+    add: null,
+  },
+  {
+    goals: [null, null],
+    add: null,
+  }
+]
 
 export default matches
