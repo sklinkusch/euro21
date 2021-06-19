@@ -177,8 +177,8 @@ const matches = {
     },
     {
       teams: ["PT", "DE"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [2, 4],
+      fairPlay: [0, 2],
     },
     {
       teams: ["DE", "HU"],
