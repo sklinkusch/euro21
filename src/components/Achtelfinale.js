@@ -57,9 +57,9 @@ function AchtelfinaleSingle({teamA, teamB, match}) {
   const [ goalsA = "-", goalsB = "-" ] = goals
   return (
     <React.Fragment>
-      {teamA ? (<td><Flag code={teamA} style={{ height: "14px" }} /></td>) : (<td>?</td>)}
-      {teamB ? (<td><Flag code={teamB} style={{ height: "14px" }}/></td>) : (<td>?</td>)}
-      {teamA && teamB ? <td>{`${goalsA ? goalsA : "-"}:${goalsB ? goalsB : "-"} ${add ? add : ""}`}</td> : <td>"-:-"</td>}
+      {teamA ? (<td><Flag code={teamA} style={{ height: "14px" }} /></td>) : (<td style={{ fontSize: "14px"}}>?</td>)}
+      {teamB ? (<td><Flag code={teamB} style={{ height: "14px" }}/></td>) : (<td style={{ fontSize: "14px"}}>?</td>)}
+      {teamA && teamB ? <td style={{ fontSize: "14px"}}>{`${goalsA ? goalsA : "-"}:${goalsB ? goalsB : "-"} ${add ? add : ""}`}</td> : <td style={{ fontSize: "14px"}}>"-:-"</td>}
     </React.Fragment>
   )
 }

@@ -4,7 +4,7 @@ import Flag from "react-world-flags"
 function MatchList({matches}){
   const { A: groupA, B: groupB, C: groupC, D: groupD, E: groupE, F: groupF } = matches 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridColumnGap: "8px" }}>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "repeat(3,1fr)" }}>
       <GroupMatchList matches={groupA} border={true} number={0} />
       <GroupMatchList matches={groupB} border={true} number={1} />
       <GroupMatchList matches={groupC} border={true} number={2} />
@@ -27,7 +27,7 @@ function GroupMatchList({matches, border, number}) {
         const aGoals = typeof goalsA === "number" ? `${goalsA}` : "-"
         const bGoals = typeof goalsB === "number" ? `${goalsB}` : "-"
           return (
-          <tr key={index} style={{ height: "15px" }}>
+          <tr key={index} style={{ height: "14px" }}>
             <td><Flag code={teamA} style={{ height: "14px", marginRight: "8px"}} /></td>
             <td><Flag code={teamB} style={{ height: "14px", marginRight: "16px"}} /></td>
             <td><span style={{ fontSize: "14px", lineHeight: "16px", color: "black" }}>{`${aGoals}:${bGoals}`}</span></td>
