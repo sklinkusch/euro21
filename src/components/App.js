@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react'
 import '../styles/App.css';
 import { MatchList } from "./MatchList"
 import { TableSet, TableThird } from "./Table"
-import matches, { matchaf, matchvf } from "../data/matches"
+import matches, { matchaf, matchvf, matchhf } from "../data/matches"
 import { Achtelfinale } from "./Achtelfinale"
 import { Viertelfinale } from "./Viertelfinale"
+import { Halbfinale } from './Halbfinale';
 import { getAssociation } from './helpers';
 /* eslint-disable react-hooks/exhaustive-deps */
 
@@ -34,6 +35,13 @@ function App() {
   const bTeamVF4 = matchaf[6].goals[0] ? matchaf[6].goals[0] > matchaf[6].goals[1] ? first[3] : second[5] : null 
   const teamsVF4 = [aTeamVF4, bTeamVF4] 
   const teamsVF = [teamsVF1, teamsVF2, teamsVF3, teamsVF4] 
+  const aTeamHF1 = matchvf[1].goals[0] ? matchvf[1].goals[0] > matchvf[1].goals[1] ? aTeamVF2 : bTeamVF2 : null 
+  const bTeamHF1 = matchvf[0].goals[0] ? matchvf[0].goals[0] > matchvf[0].goals[1] ? aTeamVF1 : bTeamVF1 : null 
+  const teamsHF1 = [aTeamHF1, bTeamHF1]
+  const aTeamHF2 = matchvf[3].goals[0] ? matchvf[3].goals[0] > matchvf[3].goals[1] ? aTeamVF4 : bTeamVF4 : null 
+  const bTeamHF2 = matchvf[2].goals[0] ? matchvf[2].goals[0] > matchvf[2].goals[1] ? aTeamVF3 : bTeamVF3 : null 
+  const teamsHF2 = [aTeamHF2, bTeamHF2] 
+  const teamsHF = [teamsHF1, teamsHF2]
   useEffect(() => {
     const mergedGroups = [groupA, groupB, groupC, groupD, groupE, groupF ]
     const firstPlace = mergedGroups.map(group => group[0])
@@ -98,9 +106,12 @@ function App() {
             setGroupF={setGroupF}
           />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", borderBottom: "1px solid black"}}>
-          <TableThird third={third} />
-          <Achtelfinale first={first} second={second} third={winningTeams} assoc={association} matchaf={matchaf} />
-          <Viertelfinale teams={teamsVF} matchvf={matchvf} />
+            <TableThird third={third} />
+            <Achtelfinale first={first} second={second} third={winningTeams} assoc={association} matchaf={matchaf} />
+            <Viertelfinale teams={teamsVF} matchvf={matchvf} />
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", borderBottom: "1px solid black"}}>
+            <Halbfinale teams={teamsHF} matchhf={matchhf} />
           </div>
         </main>
       </header>
