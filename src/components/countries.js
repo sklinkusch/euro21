@@ -1,0 +1,28 @@
+const participants = {
+  AT: "Österreich",
+  BE: "Belgien",
+  CH: "Schweiz",
+  CZ: "Tschechien",
+  DE: "Deutschland",
+  DK: "Dänemark",
+  ES: "Spanien",
+  FI: "Finnland",
+  FR: "Frankreich",
+  "GB-ENG": "England",
+  "GB-SCT": "Schottland",
+  "GB-WLS": "Wales",
+  HR: "Kroatien",
+  HU: "Ungarn",
+  IT: "Italien",
+  MK: "Nordmazedonien",
+  NL: "Niederlande",
+  PL: "Polen",
+  PT: "Portugal",
+  RU: "Russland",
+  SE: "Schweden",
+  SK: "Slowakei",
+  TR: "Türkei",
+  UA: "Ukraine",
+}
+
+export default participants

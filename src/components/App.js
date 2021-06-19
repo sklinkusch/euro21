@@ -9,6 +9,7 @@ import { Viertelfinale } from "./Viertelfinale"
 import { Halbfinale } from './Halbfinale';
 import { getAssociation } from './helpers';
 import { Finale } from './Finale';
+import participants from './countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function App() {
@@ -137,7 +138,7 @@ function App() {
             <Finale teams={fTeams} matchf={matchf} />
           </div>
           <h2>
-            Europameister: <Flag code={champion} style={{ height: "16px" }} fallback={<span>🏴‍☠️</span>} />
+            Europameister: <Flag code={champion} title={participants[champion]} style={{ height: "16px" }} fallback={<span>🏴‍☠️</span>} />
           </h2>
         </main>
       </header>

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Flag from "react-world-flags"
+import participants from './countries'
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function TableSet({matches, groupA, groupB, groupC, groupD, groupE, groupF, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF}){
@@ -214,7 +215,7 @@ function Table({matches, group, setGroup, notifier }) {
         const { team, points, goalDifference, fairPlay } = dataset 
         return (
           <tr style={{margin: "0px"}}>
-            <td><Flag code={team} style={{ height: "14px"}} /></td>
+            <td><Flag code={team} title={participants[team]} style={{ height: "14px"}} fallback={<span>🏴‍☠️</span>} /></td>
             <td>{points}</td>
             <td>{goalDifference}</td>
             <td>{fairPlay}</td>
@@ -244,7 +245,7 @@ function TableThird ({third}) {
           return (
           <tr key={index}>
             <td style={{ borderBottom: line }}>{team.group}</td>
-            <td style={{ borderBottom: line }}><Flag code={team.team} style={{ height: "14px"}}/></td>
+            <td style={{ borderBottom: line }}><Flag code={team.team} title={participants[team.team]} style={{ height: "14px"}} fallback={<span>🏴‍☠️</span>} /></td>
             <td style={{ borderBottom: line }}>{team.points}</td>
             <td style={{ borderBottom: line }}>{team.victories}</td>
             <td style={{ borderBottom: line }}>{team.goalDifference}</td>

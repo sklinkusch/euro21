@@ -1,5 +1,6 @@
 import React from 'react'
 import Flag from 'react-world-flags'
+import participants from './countries'
 
 function Achtelfinale({first, second, third, assoc, matchaf = []}) {
   const firstTeams = first.length === 6 ? first.map((team, index) => {
@@ -57,8 +58,8 @@ function AchtelfinaleSingle({teamA, teamB, match}) {
   const [ goalsA = "-", goalsB = "-" ] = goals
   return (
     <React.Fragment>
-      <td><Flag code={teamA} style={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
-      <td><Flag code={teamB} style={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
+      <td><Flag code={teamA} title={participants[teamA]} style={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
+      <td><Flag code={teamB} title={participants[teamB]} style={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
       {teamA && teamB ? <td style={{ fontSize: "14px"}}>{`${typeof goalsA === "number" ? goalsA : "-"}:${typeof goalsB === "number" ? goalsB : "-"} ${add ? add : ""}`}</td> : <td style={{ fontSize: "14px"}}>"-:-"</td>}
     </React.Fragment>
   )
