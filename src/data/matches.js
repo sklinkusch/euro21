@@ -258,4 +258,9 @@ export const matchhf = [
   }
 ]
 
+export const matchf = {
+    goals: [null, null],
+    add: null,
+  }
+
 export default matches

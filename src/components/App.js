@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import Flag from "react-world-flags"
 import '../styles/App.css';
 import { MatchList } from "./MatchList"
 import { TableSet, TableThird } from "./Table"
-import matches, { matchaf, matchvf, matchhf } from "../data/matches"
+import matches, { matchaf, matchvf, matchhf, matchf } from "../data/matches"
 import { Achtelfinale } from "./Achtelfinale"
 import { Viertelfinale } from "./Viertelfinale"
 import { Halbfinale } from './Halbfinale';
 import { getAssociation } from './helpers';
+import { Finale } from './Finale';
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function App() {
@@ -42,6 +44,10 @@ function App() {
   const bTeamHF2 = matchvf[2].goals[0] ? matchvf[2].goals[0] > matchvf[2].goals[1] ? aTeamVF3 : bTeamVF3 : null 
   const teamsHF2 = [aTeamHF2, bTeamHF2] 
   const teamsHF = [teamsHF1, teamsHF2]
+  const aTeamF = matchhf[0].goals[0] ? matchhf[0].goals[0] > matchhf[0].goals[1] ? aTeamHF1 : bTeamHF1 : null 
+  const bTeamF = matchhf[1].goals[0] ? matchhf[1].goals[0] > matchhf[1].goals[1] ? aTeamHF2 : bTeamHF2 : null 
+  const teamsF = [aTeamF, bTeamF]
+  const champion = matchf.goals[0] ? matchf.goals[0] > matchf.goals[1] ? aTeamF : bTeamF : null
   useEffect(() => {
     const mergedGroups = [groupA, groupB, groupC, groupD, groupE, groupF ]
     const firstPlace = mergedGroups.map(group => group[0])
@@ -112,7 +118,11 @@ function App() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", borderBottom: "1px solid black"}}>
             <Halbfinale teams={teamsHF} matchhf={matchhf} />
+            <Finale teams={teamsF} matchf={matchf} />
           </div>
+          <h2>
+            Europameister: <Flag code={champion} style={{ height: "16px" }} fallback={<span>🏴‍☠️</span>} />
+          </h2>
         </main>
       </header>
     </div>
