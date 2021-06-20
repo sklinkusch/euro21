@@ -1,6 +1,6 @@
 import React from 'react'
 import Flag from 'react-world-flags'
-import participants from './countries'
+import { participantName as participants} from './countries'
 
 function Achtelfinale({first, second, third, assoc, matchaf = []}) {
   const firstTeams = first.length === 6 ? first.map((team, index) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import Flag from 'react-world-flags'
-import participants from './countries'
+import { participantName as participants} from './countries'
 
 function Halbfinale({teams = [], matchhf = []}) {
   const [tHF0 = [], tHF1 = []] = teams

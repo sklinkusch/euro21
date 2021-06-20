@@ -1,0 +1,194 @@
+{
+  "AT": {
+    "de": "Österreich",
+    "en": "Austria",
+    "es": "Austria",
+    "fr": "Autriche",
+    "it": "Austria",
+    "pl": "Austria"
+  },
+  "BE": {
+    "de": "Belgien",
+    "en": "Belgium",
+    "es": "Bélgica",
+    "fr": "Belgique",
+    "it": "Belgio",
+    "pl": "Belgia"
+  },
+  "CH": {
+    "de": "Schweiz",
+    "en": "Switzerland",
+    "es": "Suiza",
+    "fr": "Suisse",
+    "it": "Svizzera",
+    "pl": "Szwajcaria"
+  },
+  "CZ": {
+    "de": "Tschechien",
+    "en": "Czechia",
+    "es": "Chequia",
+    "fr": "Tchéquie",
+    "it": "Cechia",
+    "pl": "Czechy"
+  },
+  "DE": {
+    "de": "Deutschland",
+    "en": "Germany",
+    "es": "Alemania",
+    "fr": "Allemagne",
+    "it": "Germania",
+    "pl": "Niemcy"
+  },
+  "DK": {
+    "de": "Dänemark",
+    "en": "Denmark",
+    "es": "Dinamarca",
+    "fr": "Danemark",
+    "it": "Danimarca",
+    "pl": "Dania"
+  },
+  "ES": {
+    "de": "Spanien",
+    "en": "Spain",
+    "es": "España",
+    "fr": "Espagne",
+    "it": "Spagna",
+    "pl": "Hiszpania"
+  },
+  "FI": {
+    "de": "Finnland",
+    "en": "Finland",
+    "es": "Finlandia",
+    "fr": "Finlande",
+    "it": "Finlandia",
+    "pl": "Finlandia"
+  },
+  "FR": {
+    "de": "Frankreich",
+    "en": "France",
+    "es": "Francia",
+    "fr": "France",
+    "it": "Francia",
+    "pl": "Francja"
+  },
+  "GB-ENG": {
+    "de": "England",
+    "en": "England",
+    "es": "Inglaterra",
+    "fr": "Angleterre",
+    "it": "Inghilterra",
+    "pl": "Anglia"
+  },
+  "GB-SCT": {
+    "de": "Schottland",
+    "en": "Scotland",
+    "es": "Escocia",
+    "fr": "Écosse",
+    "it": "Scozia",
+    "pl": "Szkocja"
+  },
+  "GB-WLS": {
+    "de": "Wales",
+    "en": "Wales",
+    "es": "Gales",
+    "fr": "Pays de Galles",
+    "it": "Galles",
+    "pl": "Walia"
+  },
+  "HR": {
+    "de": "Kroatien",
+    "en": "Croatia",
+    "es": "Croacia",
+    "fr": "Croatie",
+    "it": "Croazia",
+    "pl": "Chorwacja"
+  },
+  "HU": {
+    "de": "Ungarn",
+    "en": "Hungary",
+    "es": "Hungría",
+    "fr": "Hongrie",
+    "it": "Ungheria",
+    "pl": "Węgry"
+  },
+  "IT": {
+    "de": "Italien",
+    "en": "Italy",
+    "es": "Italia",
+    "fr": "Italie",
+    "it": "Italia",
+    "pl": "Włochy"
+  },
+  "MK": {
+    "de": "Nordmazedonien",
+    "en": "North Macedonia",
+    "es": "Macedonia del Norte",
+    "fr": "Macédoine du Nord",
+    "it": "Macedonia del Nord",
+    "pl": "Macedonia Północna"
+  },
+  "NL": {
+    "de": "Niederlande",
+    "en": "Netherlands",
+    "es": "Países Bajos",
+    "fr": "Pays-Bas",
+    "it": "Paesi Bassi",
+    "pl": "Holandia"
+  },
+  "PL": {
+    "de": "Polen",
+    "en": "Poland",
+    "es": "Polonia",
+    "fr": "Pologne",
+    "it": "Polonia",
+    "pl": "Polska"
+  },
+  "PT": {
+    "de": "Portugal",
+    "en": "Portugal",
+    "es": "Portugal",
+    "fr": "Portugal",
+    "it": "Portogallo",
+    "pl": "Portugalia"
+  },
+  "RU": {
+    "de": "Russland",
+    "en": "Russia",
+    "es": "Rusia",
+    "fr": "Russie",
+    "it": "Russia",
+    "pl": "Rosja"
+  },
+  "SE": {
+    "de": "Schweden",
+    "en": "Sweden",
+    "es": "Suecia",
+    "fr": "Suède",
+    "it": "Svezia",
+    "pl": "Szwecja"
+  },
+  "SK": {
+    "de": "Slowakei",
+    "en": "Slovakia",
+    "es": "Eslovaquia",
+    "fr": "Slovaquie",
+    "it": "Slovacchia",
+    "pl": "Słowacja"
+  },
+  "TR": {
+    "de": "Türkei",
+    "en": "Turkey",
+    "es": "Turquía",
+    "fr": "Turquie",
+    "it": "Turchia",
+    "pl": "Turcja"
+  },
+  "UA": {
+    "de": "Ukraine",
+    "en": "Ukraine",
+    "es": "Ucrania",
+    "fr": "Ukraine",
+    "it": "Ucraina",
+    "pl": "Ukraina"
+  }
+}

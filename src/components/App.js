@@ -9,7 +9,7 @@ import { Viertelfinale } from "./Viertelfinale"
 import { Halbfinale } from './Halbfinale';
 import { getAssociation } from './helpers';
 import { Finale } from './Finale';
-import participants from './countries';
+import { participantName as participants } from './countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function App() {

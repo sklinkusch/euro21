@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Flag from "react-world-flags"
-import participants from './countries'
+import {participantName as participants} from './countries'
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function TableSet({matches, groupA, groupB, groupC, groupD, groupE, groupF, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF}){
