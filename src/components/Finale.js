@@ -1,11 +1,13 @@
 import React from 'react'
 import Flag from 'react-world-flags'
-import { participantName as participants} from './countries'
+import { participantName as participants, localeName as locales } from './countries'
 
 function Finale({teams = [], matchf = []}) {
   return (
     <div style={{ width: "100%", borderRight: "1px solid black" }}>
-      <div style={{ fontSize: "14px", textAlign: "center", textTransform: "uppercase" }}>Finale</div>
+      <div style={{ fontSize: "14px", textAlign: "center", textTransform: "uppercase" }}>
+        {locales("Final")}
+      </div>
       <table style={{ width: "100%" }}>
         <tbody>
           <tr>

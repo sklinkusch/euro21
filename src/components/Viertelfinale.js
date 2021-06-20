@@ -1,13 +1,15 @@
 import React from 'react'
 import Flag from 'react-world-flags'
-import { participantName as participants} from './countries'
+import { participantName as participants, localeName as locales} from './countries'
 
 function Viertelfinale({teams = [], matchvf = []}) {
   const [tVF0 = [], tVF1 = [], tVF2 = [], tVF3 = []] = teams
   const [mVF0 = {}, mVF1 = {}, mVF2 = {}, mVF3 = {}] = matchvf
   return (
     <div style={{ width: "100%", borderLeft: "1px solid black" }}>
-      <div style={{ fontSize: "14px", textAlign: "center" }}>Viertelfinale</div>
+      <div style={{ fontSize: "14px", textAlign: "center" }}>
+        {locales("Quarterfinal")}
+      </div>
       <table style={{ width: "100%" }}>
         <tbody>
           <tr>

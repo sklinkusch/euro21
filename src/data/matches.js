@@ -1,3 +1,5 @@
+// const locales = require("../data/locales.json")
+
 const matches = {
   A: [
     {

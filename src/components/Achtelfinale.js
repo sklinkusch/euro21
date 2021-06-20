@@ -1,6 +1,6 @@
 import React from 'react'
 import Flag from 'react-world-flags'
-import { participantName as participants} from './countries'
+import { participantName as participants, localeName as locales} from './countries'
 
 function Achtelfinale({first, second, third, assoc, matchaf = []}) {
   const firstTeams = first.length === 6 ? first.map((team, index) => {
@@ -28,7 +28,9 @@ function Achtelfinale({first, second, third, assoc, matchaf = []}) {
   const [AF0 = {}, AF1 = {}, AF2 = {}, AF3 = {}, AF4 = {}, AF5 = {}, AF6 = {}, AF7 = {}] = matchaf
   return (
     <div style={{ width: "100%", borderLeft: "1px solid black" }}>
-      <div style={{ textAlign: "center", fontSize: "14px" }}>Achtelfinale</div>
+      <div style={{ textAlign: "center", fontSize: "14px" }}>
+        {locales("Round16")}
+      </div>
       <table style={{ width: "100%" }}>
         <tbody>
           <tr>

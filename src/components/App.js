@@ -9,7 +9,7 @@ import { Viertelfinale } from "./Viertelfinale"
 import { Halbfinale } from './Halbfinale';
 import { getAssociation } from './helpers';
 import { Finale } from './Finale';
-import { participantName as participants } from './countries';
+import { participantName as participants, localeName as locales } from './countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function App() {
@@ -109,7 +109,7 @@ function App() {
   return (
     <div className="App">
       <h1>
-        UEFA Euro 2020 (2021)
+        {locales("Title")}
       </h1>
       <header className="App-header">
         <aside>
@@ -141,7 +141,7 @@ function App() {
             <Finale teams={fTeams} matchf={matchf} />
           </div>
           <h2>
-            Europameister: <Flag code={champion} title={participants(champion)} style={{ height: "16px" }} fallback={<span>🏴‍☠️</span>} />
+            {locales("Champion")}: <Flag code={champion} title={participants(champion)} style={{ height: "16px" }} fallback={<span>🏴‍☠️</span>} />
           </h2>
         </main>
       </header>

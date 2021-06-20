@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Flag from "react-world-flags"
-import {participantName as participants} from './countries'
+import {participantName as participants, localeName as locales} from './countries'
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function TableSet({matches, groupA, groupB, groupC, groupD, groupE, groupF, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF}){
@@ -204,10 +204,10 @@ function Table({matches, group, setGroup, notifier }) {
     <table style={{ fontSize: "14px", borderBottom, borderRight }}>
       <thead>
         <tr style={{ margin: "0"}}>
-          <td>Land</td>
-          <td>Pkt.</td>
-          <td>Diff.</td>
-          <td>FP</td>
+          <td>{locales("Team")}</td>
+          <td>{locales("Pts")}</td>
+          <td>{locales("Difference")}</td>
+          <td>{locales("FairPlay")}</td>
         </tr>
       </thead>
       <tbody>
@@ -231,12 +231,12 @@ function TableThird ({third}) {
   return (
     <table style={{ fontSize: "14px" }}>
       <thead>
-        <td>Gr.</td>
-        <td>Land</td>
-        <td>Pkt.</td>
-        <td>Siege</td>
-        <td>Diff.</td>
-        <td>FP</td>
+        <td>{locales("Group")}</td>
+        <td>{locales("Team")}</td>
+        <td>{locales("Pts")}</td>
+        <td>{locales("Victories")}</td>
+        <td>{locales("Difference")}</td>
+        <td>{locales("FairPlay")}</td>
       </thead>
       <tbody>
         {third && third.length > 0 && third.map((team, index) => {
