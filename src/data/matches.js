@@ -24,13 +24,13 @@ const matches = {
     },
     {
       teams: ["IT", "GB-WLS"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [1, 0],
+      fairPlay: [1, 5],
     }, 
     {
       teams: ["CH", "TR"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [3, 1],
+      fairPlay: [1, 3],
     }
   ],
   B: [
