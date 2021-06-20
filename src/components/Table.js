@@ -215,7 +215,7 @@ function Table({matches, group, setGroup, notifier }) {
         const { team, points, goalDifference, fairPlay } = dataset 
         return (
           <tr style={{margin: "0px"}}>
-            <td><Flag code={team} title={participants[team]} style={{ height: "14px"}} fallback={<span>🏴‍☠️</span>} /></td>
+            <td><Flag code={team} title={participants(team)} style={{ height: "14px"}} fallback={<span>🏴‍☠️</span>} /></td>
             <td>{points}</td>
             <td>{goalDifference}</td>
             <td>{fairPlay}</td>
@@ -245,7 +245,7 @@ function TableThird ({third}) {
           return (
           <tr key={index}>
             <td style={{ borderBottom: line }}>{team.group}</td>
-            <td style={{ borderBottom: line }}><Flag code={team.team} title={participants[team.team]} style={{ height: "14px"}} fallback={<span>🏴‍☠️</span>} /></td>
+            <td style={{ borderBottom: line }}><Flag code={team.team} title={participants(team.team)} style={{ height: "14px"}} fallback={<span>🏴‍☠️</span>} /></td>
             <td style={{ borderBottom: line }}>{team.points}</td>
             <td style={{ borderBottom: line }}>{team.victories}</td>
             <td style={{ borderBottom: line }}>{team.goalDifference}</td>

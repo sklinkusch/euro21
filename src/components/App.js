@@ -109,7 +109,7 @@ function App() {
   return (
     <div className="App">
       <h1>
-        UEFA Europameisterschaft 2020 (2021)
+        UEFA Euro 2020 (2021)
       </h1>
       <header className="App-header">
         <aside>
@@ -141,7 +141,7 @@ function App() {
             <Finale teams={fTeams} matchf={matchf} />
           </div>
           <h2>
-            Europameister: <Flag code={champion} title={participants[champion]} style={{ height: "16px" }} fallback={<span>🏴‍☠️</span>} />
+            Europameister: <Flag code={champion} title={participants(champion)} style={{ height: "16px" }} fallback={<span>🏴‍☠️</span>} />
           </h2>
         </main>
       </header>
