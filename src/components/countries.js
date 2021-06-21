@@ -35,6 +35,8 @@ export const localeName = (code) => {
       return locales.it[code]
     } else if (/^pl/.test(lang)) {
       return locales.pl[code]
+    } else if (/^pt/.test(lang)) {
+      return locales.pt[code]
     } else {
       return locales.en[code]
     }

@@ -94,5 +94,21 @@
     "Team": "Zespół",
     "Title": "UEFA Mistrzostwa Europy 2020 (2021)",
     "Victories": "W"
+  },
+  "pt": {
+    "Champion": "Campeão",
+    "Difference": "SG",
+    "ExtraTime": "pro",
+    "FairPlay": "FP",
+    "Final": "Final",
+    "Group": "Gr.",
+    "Penalties": "pen",
+    "Pts": "Pts",
+    "Quarterfinal": "Quartas de final",
+    "Round16": "Oitavas de final",
+    "Semifinal": "Semifinais",
+    "Team": "Sel.",
+    "Title": "UEFA Campeonato Europeu 2020 (2021)",
+    "Victories": "V"
   }
 }
