@@ -56,13 +56,13 @@ const matches = {
     },
     {
       teams: ["FI", "BE"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [0, 2],
+      fairPlay: [0, 0],
     }, 
     {
       teams: ["RU", "DK"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [1, 4],
+      fairPlay: [2, 1],
     }
   ],
   C: [
