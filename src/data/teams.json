@@ -5,7 +5,8 @@
     "es": "Austria",
     "fr": "Autriche",
     "it": "Austria",
-    "pl": "Austria"
+    "pl": "Austria",
+    "pt": "Áustria"
   },
   "BE": {
     "de": "Belgien",
@@ -13,7 +14,8 @@
     "es": "Bélgica",
     "fr": "Belgique",
     "it": "Belgio",
-    "pl": "Belgia"
+    "pl": "Belgia",
+    "pt": "Bélgica"
   },
   "CH": {
     "de": "Schweiz",
@@ -21,7 +23,8 @@
     "es": "Suiza",
     "fr": "Suisse",
     "it": "Svizzera",
-    "pl": "Szwajcaria"
+    "pl": "Szwajcaria",
+    "pt": "Suíça"
   },
   "CZ": {
     "de": "Tschechien",
@@ -29,7 +32,8 @@
     "es": "Chequia",
     "fr": "Tchéquie",
     "it": "Cechia",
-    "pl": "Czechy"
+    "pl": "Czechy",
+    "pt": "Chéquia"
   },
   "DE": {
     "de": "Deutschland",
@@ -37,7 +41,8 @@
     "es": "Alemania",
     "fr": "Allemagne",
     "it": "Germania",
-    "pl": "Niemcy"
+    "pl": "Niemcy",
+    "pt": "Alemanha"
   },
   "DK": {
     "de": "Dänemark",
@@ -45,7 +50,8 @@
     "es": "Dinamarca",
     "fr": "Danemark",
     "it": "Danimarca",
-    "pl": "Dania"
+    "pl": "Dania",
+    "pt": "Dinamarca"
   },
   "ES": {
     "de": "Spanien",
@@ -53,7 +59,8 @@
     "es": "España",
     "fr": "Espagne",
     "it": "Spagna",
-    "pl": "Hiszpania"
+    "pl": "Hiszpania",
+    "pt": "Espanha"
   },
   "FI": {
     "de": "Finnland",
@@ -61,7 +68,8 @@
     "es": "Finlandia",
     "fr": "Finlande",
     "it": "Finlandia",
-    "pl": "Finlandia"
+    "pl": "Finlandia",
+    "pt": "Finlândia"
   },
   "FR": {
     "de": "Frankreich",
@@ -69,7 +77,8 @@
     "es": "Francia",
     "fr": "France",
     "it": "Francia",
-    "pl": "Francja"
+    "pl": "Francja",
+    "pt": "França"
   },
   "GB-ENG": {
     "de": "England",
@@ -77,7 +86,8 @@
     "es": "Inglaterra",
     "fr": "Angleterre",
     "it": "Inghilterra",
-    "pl": "Anglia"
+    "pl": "Anglia",
+    "pt": "Inglaterra"
   },
   "GB-SCT": {
     "de": "Schottland",
@@ -85,7 +95,8 @@
     "es": "Escocia",
     "fr": "Écosse",
     "it": "Scozia",
-    "pl": "Szkocja"
+    "pl": "Szkocja",
+    "pt": "Escócia"
   },
   "GB-WLS": {
     "de": "Wales",
@@ -93,7 +104,8 @@
     "es": "Gales",
     "fr": "Pays de Galles",
     "it": "Galles",
-    "pl": "Walia"
+    "pl": "Walia",
+    "pt": "País de Gales"
   },
   "HR": {
     "de": "Kroatien",
@@ -101,7 +113,8 @@
     "es": "Croacia",
     "fr": "Croatie",
     "it": "Croazia",
-    "pl": "Chorwacja"
+    "pl": "Chorwacja",
+    "pt": "Croácia"
   },
   "HU": {
     "de": "Ungarn",
@@ -109,7 +122,8 @@
     "es": "Hungría",
     "fr": "Hongrie",
     "it": "Ungheria",
-    "pl": "Węgry"
+    "pl": "Węgry",
+    "pt": "Hungria"
   },
   "IT": {
     "de": "Italien",
@@ -117,7 +131,8 @@
     "es": "Italia",
     "fr": "Italie",
     "it": "Italia",
-    "pl": "Włochy"
+    "pl": "Włochy",
+    "pt": "Itália"
   },
   "MK": {
     "de": "Nordmazedonien",
@@ -125,7 +140,8 @@
     "es": "Macedonia del Norte",
     "fr": "Macédoine du Nord",
     "it": "Macedonia del Nord",
-    "pl": "Macedonia Północna"
+    "pl": "Macedonia Północna",
+    "pt": "Macedónia do Norte"
   },
   "NL": {
     "de": "Niederlande",
@@ -133,7 +149,8 @@
     "es": "Países Bajos",
     "fr": "Pays-Bas",
     "it": "Paesi Bassi",
-    "pl": "Holandia"
+    "pl": "Holandia",
+    "pt": "Países Baixos"
   },
   "PL": {
     "de": "Polen",
@@ -141,7 +158,8 @@
     "es": "Polonia",
     "fr": "Pologne",
     "it": "Polonia",
-    "pl": "Polska"
+    "pl": "Polska",
+    "pt": "Polónia"
   },
   "PT": {
     "de": "Portugal",
@@ -149,7 +167,8 @@
     "es": "Portugal",
     "fr": "Portugal",
     "it": "Portogallo",
-    "pl": "Portugalia"
+    "pl": "Portugalia",
+    "pt": "Portugal"
   },
   "RU": {
     "de": "Russland",
@@ -157,7 +176,8 @@
     "es": "Rusia",
     "fr": "Russie",
     "it": "Russia",
-    "pl": "Rosja"
+    "pl": "Rosja",
+    "pt": "Rússia"
   },
   "SE": {
     "de": "Schweden",
@@ -165,7 +185,8 @@
     "es": "Suecia",
     "fr": "Suède",
     "it": "Svezia",
-    "pl": "Szwecja"
+    "pl": "Szwecja",
+    "pt": "Suécia"
   },
   "SK": {
     "de": "Slowakei",
@@ -173,7 +194,8 @@
     "es": "Eslovaquia",
     "fr": "Slovaquie",
     "it": "Slovacchia",
-    "pl": "Słowacja"
+    "pl": "Słowacja",
+    "pt": "Eslováquia"
   },
   "TR": {
     "de": "Türkei",
@@ -181,7 +203,8 @@
     "es": "Turquía",
     "fr": "Turquie",
     "it": "Turchia",
-    "pl": "Turcja"
+    "pl": "Turcja",
+    "pt": "Turquia"
   },
   "UA": {
     "de": "Ukraine",
@@ -189,6 +212,7 @@
     "es": "Ucrania",
     "fr": "Ukraine",
     "it": "Ucraina",
-    "pl": "Ukraina"
+    "pl": "Ukraina",
+    "pt": "Ucrânia"
   }
 }

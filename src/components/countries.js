@@ -14,6 +14,8 @@ export const participantName = (code) => {
       return participants[code]["it"]
     } else if( /^pl/.test(lang)) {
       return participants[code]["pl"]
+    } else if( /^pt/.test(lang)) {
+      return participants[code]["pt"]
     } else {
       return participants[code]["en"]
     }
