@@ -5,7 +5,7 @@ const matches = {
     {
       teams: ["TR", "IT"],
       goals: [0, 3],
-      fairPlay: [2, 0], 
+      fairPlay: [2, 0],
     },
     {
       teams: ["GB-WLS", "CH"],
@@ -26,7 +26,7 @@ const matches = {
       teams: ["IT", "GB-WLS"],
       goals: [1, 0],
       fairPlay: [1, 5],
-    }, 
+    },
     {
       teams: ["CH", "TR"],
       goals: [3, 1],
@@ -37,7 +37,7 @@ const matches = {
     {
       teams: ["DK", "FI"],
       goals: [0, 1],
-      fairPlay: [0, 2], 
+      fairPlay: [0, 2],
     },
     {
       teams: ["BE", "RU"],
@@ -58,7 +58,7 @@ const matches = {
       teams: ["FI", "BE"],
       goals: [0, 2],
       fairPlay: [0, 0],
-    }, 
+    },
     {
       teams: ["RU", "DK"],
       goals: [1, 4],
@@ -69,7 +69,7 @@ const matches = {
     {
       teams: ["AT", "MK"],
       goals: [3, 1],
-      fairPlay: [1, 2], 
+      fairPlay: [1, 2],
     },
     {
       teams: ["NL", "UA"],
@@ -90,7 +90,7 @@ const matches = {
       teams: ["MK", "NL"],
       goals: [0, 3],
       fairPlay: [3, 0],
-    }, 
+    },
     {
       teams: ["UA", "AT"],
       goals: [0, 1],
@@ -101,7 +101,7 @@ const matches = {
     {
       teams: ["GB-ENG", "HR"],
       goals: [1, 0],
-      fairPlay: [1, 3], 
+      fairPlay: [1, 3],
     },
     {
       teams: ["GB-SCT", "CZ"],
@@ -120,20 +120,20 @@ const matches = {
     },
     {
       teams: ["CZ", "GB-ENG"],
-      goals: [null, null],
-      fairPlay: [null, null],
-    }, 
+      goals: [0, 1],
+      fairPlay: [1, 0],
+    },
     {
       teams: ["HR", "GB-SCT"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [3, 1],
+      fairPlay: [1, 1],
     }
   ],
   E: [
     {
       teams: ["PL", "SK"],
       goals: [1, 2],
-      fairPlay: [3, 1], 
+      fairPlay: [3, 1],
     },
     {
       teams: ["ES", "SE"],
@@ -154,18 +154,18 @@ const matches = {
       teams: ["SK", "ES"],
       goals: [null, null],
       fairPlay: [null, null],
-    }, 
+    },
     {
       teams: ["SE", "PL"],
       goals: [null, null],
       fairPlay: [null, null],
     }
-  ], 
+  ],
   F: [
     {
       teams: ["HU", "PT"],
       goals: [0, 3],
-      fairPlay: [2, 1], 
+      fairPlay: [2, 1],
     },
     {
       teams: ["FR", "DE"],
@@ -186,13 +186,13 @@ const matches = {
       teams: ["DE", "HU"],
       goals: [null, null],
       fairPlay: [null, null],
-    }, 
+    },
     {
       teams: ["PT", "FR"],
       goals: [null, null],
       fairPlay: [null, null],
     }
-  ], 
+  ],
 }
 
 export const matchaf = [
@@ -261,8 +261,8 @@ export const matchhf = [
 ]
 
 export const matchf = {
-    goals: [null, null],
-    add: null,
-  }
+  goals: [null, null],
+  add: null,
+}
 
 export default matches
