@@ -1,6 +1,6 @@
+/** @jsxImportSource theme-ui */
 import React, { useState, useEffect } from 'react'
 import Flag from "react-world-flags"
-import '../styles/App.css';
 import { MatchList } from "./MatchList"
 import { TableSet, TableThird } from "./Table"
 import matches, { matchaf, matchvf, matchhf, matchf } from "../data/matches"
@@ -35,29 +35,29 @@ function App() {
     const teamsVF1 = [aTeamVF1, bTeamVF1]
     const aTeamVF2 = matchaf[3].goals[0] ? matchaf[3].goals[0] > matchaf[3].goals[1] ? first[1].team : winningTeams[association.indexOf(3)] : null
     const bTeamVF2 = matchaf[1].goals[0] ? matchaf[1].goals[0] > matchaf[1].goals[1] ? first[0].team : second[2].team : null
-    const teamsVF2 = [aTeamVF2, bTeamVF2] 
-    const aTeamVF3 = matchaf[2].goals[0] ? matchaf[2].goals[0] > matchaf[2].goals[1] ? first[2].team : winningTeams[association.indexOf(2)] : null 
-    const bTeamVF3 = matchaf[0].goals[0] ? matchaf[0].goals[0] > matchaf[0].goals[1] ? second[0].team : second[1].team : null 
-    const teamsVF3 = [aTeamVF3, bTeamVF3] 
-    const aTeamVF4 = matchaf[7].goals[0] ? matchaf[7].goals[0] > matchaf[7].goals[1] ? first[6].team : winningTeams[association.indexOf(7)] : null 
-    const bTeamVF4 = matchaf[6].goals[0] ? matchaf[6].goals[0] > matchaf[6].goals[1] ? first[3].team : second[5].team : null 
-    const teamsVF4 = [aTeamVF4, bTeamVF4] 
-    const teamsVF = [teamsVF1, teamsVF2, teamsVF3, teamsVF4] 
+    const teamsVF2 = [aTeamVF2, bTeamVF2]
+    const aTeamVF3 = matchaf[2].goals[0] ? matchaf[2].goals[0] > matchaf[2].goals[1] ? first[2].team : winningTeams[association.indexOf(2)] : null
+    const bTeamVF3 = matchaf[0].goals[0] ? matchaf[0].goals[0] > matchaf[0].goals[1] ? second[0].team : second[1].team : null
+    const teamsVF3 = [aTeamVF3, bTeamVF3]
+    const aTeamVF4 = matchaf[7].goals[0] ? matchaf[7].goals[0] > matchaf[7].goals[1] ? first[6].team : winningTeams[association.indexOf(7)] : null
+    const bTeamVF4 = matchaf[6].goals[0] ? matchaf[6].goals[0] > matchaf[6].goals[1] ? first[3].team : second[5].team : null
+    const teamsVF4 = [aTeamVF4, bTeamVF4]
+    const teamsVF = [teamsVF1, teamsVF2, teamsVF3, teamsVF4]
     setVfTeams(teamsVF)
   }, [matchaf, winningTeams, association, first, second])
   useEffect(() => {
-    const aTeamHF1 = matchvf[1].goals[0] ? matchvf[1].goals[0] > matchvf[1].goals[1] ? vfTeams[1][0] : vfTeams[1][1] : null 
-    const bTeamHF1 = matchvf[0].goals[0] ? matchvf[0].goals[0] > matchvf[0].goals[1] ? vfTeams[0][0] : vfTeams[0][1] : null 
+    const aTeamHF1 = matchvf[1].goals[0] ? matchvf[1].goals[0] > matchvf[1].goals[1] ? vfTeams[1][0] : vfTeams[1][1] : null
+    const bTeamHF1 = matchvf[0].goals[0] ? matchvf[0].goals[0] > matchvf[0].goals[1] ? vfTeams[0][0] : vfTeams[0][1] : null
     const teamsHF1 = [aTeamHF1, bTeamHF1]
-    const aTeamHF2 = matchvf[3].goals[0] ? matchvf[3].goals[0] > matchvf[3].goals[1] ? vfTeams[3][0] : vfTeams[3][1] : null 
-    const bTeamHF2 = matchvf[2].goals[0] ? matchvf[2].goals[0] > matchvf[2].goals[1] ? vfTeams[2][0] : vfTeams[2][1] : null 
-    const teamsHF2 = [aTeamHF2, bTeamHF2] 
+    const aTeamHF2 = matchvf[3].goals[0] ? matchvf[3].goals[0] > matchvf[3].goals[1] ? vfTeams[3][0] : vfTeams[3][1] : null
+    const bTeamHF2 = matchvf[2].goals[0] ? matchvf[2].goals[0] > matchvf[2].goals[1] ? vfTeams[2][0] : vfTeams[2][1] : null
+    const teamsHF2 = [aTeamHF2, bTeamHF2]
     const teamsHF = [teamsHF1, teamsHF2]
     setHfTeams(teamsHF)
   }, [matchvf, vfTeams])
   useEffect(() => {
-    const aTeamF = matchhf[0].goals[0] ? matchhf[0].goals[0] > matchhf[0].goals[1] ? hfTeams[0][0] : hfTeams[0][1] : null 
-    const bTeamF = matchhf[1].goals[0] ? matchhf[1].goals[0] > matchhf[1].goals[1] ? hfTeams[1][0] : hfTeams[1][1]: null 
+    const aTeamF = matchhf[0].goals[0] ? matchhf[0].goals[0] > matchhf[0].goals[1] ? hfTeams[0][0] : hfTeams[0][1] : null
+    const bTeamF = matchhf[1].goals[0] ? matchhf[1].goals[0] > matchhf[1].goals[1] ? hfTeams[1][0] : hfTeams[1][1] : null
     const teamsF = [aTeamF, bTeamF]
     setFTeams(teamsF)
   }, [matchhf, hfTeams])
@@ -66,32 +66,32 @@ function App() {
     setChampion(myChampion)
   })
   useEffect(() => {
-    const mergedGroups = [groupA, groupB, groupC, groupD, groupE, groupF ]
+    const mergedGroups = [groupA, groupB, groupC, groupD, groupE, groupF]
     const firstPlace = mergedGroups.map(group => group[0])
     const secondPlace = mergedGroups.map(group => group[1])
     const thirdPlace = mergedGroups.map(group => group[2])
     const sortedThird = thirdPlace.sort((a, b) => {
       const aUefa = uefaCoefficient.indexOf(a.team)
       const bUefa = uefaCoefficient.indexOf(b.team)
-      if(a.points > b.points) {
+      if (a.points > b.points) {
         return -1
-      } else if(b.points > a.points) {
+      } else if (b.points > a.points) {
         return +1
-      } else if(a.goalDifference > b.goalDifference) {
+      } else if (a.goalDifference > b.goalDifference) {
         return -1
-      } else if(b.goalDifference > a.goalDifference) {
+      } else if (b.goalDifference > a.goalDifference) {
         return +1
-      } else if(a.fairPlay < b.fairPlay) {
+      } else if (a.fairPlay < b.fairPlay) {
         return -1
-      } else if(b.fairPlay < a.fairPlay) {
+      } else if (b.fairPlay < a.fairPlay) {
         return +1
       }
       return aUefa - bUefa
     })
-    const bestThirds = sortedThird.slice(0,4).map(item => { 
-      if(item && item.hasOwnProperty("group") && item.hasOwnProperty("team")) {
+    const bestThirds = sortedThird.slice(0, 4).map(item => {
+      if (item && item.hasOwnProperty("group") && item.hasOwnProperty("team")) {
         const { group, team } = item
-        return {group, team}
+        return { group, team }
       }
       return {}
     })
@@ -107,16 +107,16 @@ function App() {
     setAssociation(assoc)
   }, [groupA, groupB, groupC, groupD, groupE, groupF])
   return (
-    <div className="App">
-      <h1>
+    <div className="App" sx={{ textAlign: "center", backgroundColor: "bg", color: "ft" }}>
+      <h1 sx={{ fontSize: 3, fontWeight: "bold", my: "8px" }}>
         {locales("Title")}
       </h1>
-      <header className="App-header">
-        <aside>
+      <header className="App-header" sx={{ minHeight: "100vh", display: "grid", gridTemplateColumns: ["1fr", "1fr", "1fr 2fr"], borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft" }}>
+        <aside sx={{ width: "100%" }}>
           <MatchList matches={matches} />
         </aside>
-        <main style={{ borderLeft: "1px solid black" }}>
-          <TableSet 
+        <main sx={{ borderLeft: "1px solid black", width: "100%" }}>
+          <TableSet
             matches={matches}
             groupA={groupA}
             groupB={groupB}
@@ -131,12 +131,12 @@ function App() {
             setGroupE={setGroupE}
             setGroupF={setGroupF}
           />
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", borderBottom: "1px solid black"}}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", borderBottom: "1px solid black" }}>
             <TableThird third={third} />
             <Achtelfinale first={first} second={second} third={winningTeams} assoc={association} matchaf={matchaf} />
             <Viertelfinale teams={vfTeams} matchvf={matchvf} />
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", borderBottom: "1px solid black"}}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", borderBottom: "1px solid black" }}>
             <Halbfinale teams={hfTeams} matchhf={matchhf} />
             <Finale teams={fTeams} matchf={matchf} />
           </div>
