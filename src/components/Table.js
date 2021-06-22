@@ -230,7 +230,7 @@ function Table({ matches, group, setGroup, notifier, number }) {
 
 function TableThird({ third }) {
   return (
-    <table style={{ fontSize: "14px" }}>
+    <table sx={{ fontSize: 0, backgroundColor: "#78C5FC", padding: "4px", margin: "4px", borderRadius: "20px" }}>
       <thead>
         <td>{locales("Group")}</td>
         <td>{locales("Team")}</td>
