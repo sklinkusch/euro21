@@ -106,16 +106,17 @@ function App() {
     setWinningTeams(wTeams)
     setAssociation(assoc)
   }, [groupA, groupB, groupC, groupD, groupE, groupF])
+  const lang = navigator.language
   return (
-    <div className="App" sx={{ textAlign: "center", backgroundColor: "bg", color: "ft" }}>
-      <h1 sx={{ fontSize: 3, fontWeight: "bold", my: "8px" }}>
+    <div className="App" sx={{ textAlign: "center", py: "16px", backgroundColor: "bg", color: "ft" }}>
+      <h1 sx={{ fontSize: 3, fontWeight: "bold", my: "8px", px: ["4px", "4px", "0px"], hyphens: ["auto", "none"] }} lang={lang}>
         {locales("Title")}
       </h1>
-      <header className="App-header" sx={{ minHeight: "100vh", display: "grid", gridTemplateColumns: ["1fr", "1fr", "1fr 2fr"], borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft" }}>
+      <header className="App-header" sx={{ display: "grid", gridTemplateColumns: ["1fr", "1fr", "1fr 2fr"], borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft" }}>
         <aside sx={{ width: "100%" }}>
           <MatchList matches={matches} />
         </aside>
-        <main sx={{ borderLeft: "1px solid black", width: "100%" }}>
+        <main sx={{ width: "100%" }}>
           <TableSet
             matches={matches}
             groupA={groupA}
@@ -131,20 +132,18 @@ function App() {
             setGroupE={setGroupE}
             setGroupF={setGroupF}
           />
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", borderBottom: "1px solid black" }}>
+          <div style={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(3,1fr)"] }}>
             <TableThird third={third} />
             <Achtelfinale first={first} second={second} third={winningTeams} assoc={association} matchaf={matchaf} />
             <Viertelfinale teams={vfTeams} matchvf={matchvf} />
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", borderBottom: "1px solid black" }}>
             <Halbfinale teams={hfTeams} matchhf={matchhf} />
             <Finale teams={fTeams} matchf={matchf} />
           </div>
-          <h2>
-            {locales("Champion")}: <Flag code={champion} title={participants(champion)} style={{ height: "16px" }} fallback={<span>🏴‍☠️</span>} />
-          </h2>
         </main>
       </header>
+      <h2>
+        {locales("Champion")}: <Flag code={champion} title={participants(champion)} style={{ height: "16px" }} fallback={<span>🏴‍☠️</span>} />
+      </h2>
     </div>
   );
 }

@@ -1,16 +1,17 @@
+/** @jsxImportSource theme-ui */
 import React from 'react'
 import Flag from 'react-world-flags'
-import { participantName as participants, localeName as locales} from './countries'
+import { participantName as participants, localeName as locales } from './countries'
 
-function Viertelfinale({teams = [], matchvf = []}) {
+function Viertelfinale({ teams = [], matchvf = [] }) {
   const [tVF0 = [], tVF1 = [], tVF2 = [], tVF3 = []] = teams
   const [mVF0 = {}, mVF1 = {}, mVF2 = {}, mVF3 = {}] = matchvf
   return (
-    <div style={{ width: "100%", borderLeft: "1px solid black" }}>
-      <div style={{ fontSize: "14px", textAlign: "center" }}>
+    <div sx={{ width: "100%", padding: "4px", margin: "4px", backgroundColor: "greenyellow", borderRadius: "20px" }}>
+      <div sx={{ fontSize: 0, textAlign: "center" }}>
         {locales("Quarterfinal")}
       </div>
-      <table style={{ width: "100%" }}>
+      <table sx={{ width: "100%" }}>
         <tbody>
           <tr>
             <ViertelfinaleSingle teams={tVF0} match={mVF0} />
@@ -30,15 +31,15 @@ function Viertelfinale({teams = [], matchvf = []}) {
   )
 }
 
-function ViertelfinaleSingle({teams, match}) {
-  const {goals = [], add = ""} = match
-  const [ goalsA = "-", goalsB = "-" ] = goals
+function ViertelfinaleSingle({ teams, match }) {
+  const { goals = [], add = "" } = match
+  const [goalsA = "-", goalsB = "-"] = goals
   const [teamA = undefined, teamB = undefined] = teams
   return (
     <React.Fragment>
-      <td><Flag code={teamA} title={participants(teamA)} style={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
-      <td><Flag code={teamB} title={participants(teamB)} style={{ height: "14px" }} fallback={<span>🏴‍☠️</span>}/></td>
-      {teamA && teamB ? <td style={{ fontSize: "14px"}}>{`${typeof goalsA === "number" ? goalsA : "-"}:${typeof goalsB === "number" ? goalsB : "-"} ${add ? add : ""}`}</td> : <td style={{ fontSize: "14px"}}>-:-</td>}
+      <td><Flag code={teamA} title={participants(teamA)} sx={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
+      <td><Flag code={teamB} title={participants(teamB)} sx={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
+      {teamA && teamB ? <td style={{ fontSize: 0 }}>{`${typeof goalsA === "number" ? goalsA : "-"}:${typeof goalsB === "number" ? goalsB : "-"} ${add ? add : ""}`}</td> : <td sx={{ fontSize: 0 }}>-:-</td>}
     </React.Fragment>
   )
 }
