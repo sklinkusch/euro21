@@ -204,7 +204,7 @@ function Table({ matches, group, setGroup, notifier, number }) {
   return (
     <table sx={{ fontSize: 0, backgroundColor: bgcolor, px: "4px", py: "4px", my: "4px", mx: "4px", borderRadius: "20px" }}>
       <thead>
-        <tr style={{ margin: "0" }}>
+        <tr sx={{ margin: "0" }}>
           <td>{locales("Team")}</td>
           <td>{locales("Pts")}</td>
           <td>{locales("Difference")}</td>
@@ -215,8 +215,8 @@ function Table({ matches, group, setGroup, notifier, number }) {
         {group.map(dataset => {
           const { team, points, goalDifference, fairPlay } = dataset
           return (
-            <tr style={{ margin: "0px" }}>
-              <td><Flag code={team} title={participants(team)} style={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
+            <tr sx={{ margin: "0px" }}>
+              <td><Flag code={team} title={participants(team)} sx={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
               <td>{points}</td>
               <td>{goalDifference}</td>
               <td>{fairPlay}</td>
@@ -230,7 +230,7 @@ function Table({ matches, group, setGroup, notifier, number }) {
 
 function TableThird({ third }) {
   return (
-    <table sx={{ fontSize: 0, backgroundColor: "#78C5FC", padding: "4px", margin: "4px", borderRadius: "20px" }}>
+    <table sx={{ fontSize: 0, backgroundColor: "#78C5FC", padding: "4px", margin: "4px", borderRadius: "20px", gridColumn: ["1 / span 2", "1 / span 1", "1 / span 2"] }}>
       <thead>
         <td>{locales("Group")}</td>
         <td>{locales("Team")}</td>
@@ -245,12 +245,12 @@ function TableThird({ third }) {
           if (team) {
             return (
               <tr key={index}>
-                <td style={{ borderBottom: line }}>{team.group}</td>
-                <td style={{ borderBottom: line }}><Flag code={team.team} title={participants(team.team)} style={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
-                <td style={{ borderBottom: line }}>{team.points}</td>
-                <td style={{ borderBottom: line }}>{team.victories}</td>
-                <td style={{ borderBottom: line }}>{team.goalDifference}</td>
-                <td style={{ borderBottom: line }}>{team.fairPlay}</td>
+                <td sx={{ borderBottom: line }}>{team.group}</td>
+                <td sx={{ borderBottom: line }}><Flag code={team.team} title={participants(team.team)} sx={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
+                <td sx={{ borderBottom: line }}>{team.points}</td>
+                <td sx={{ borderBottom: line }}>{team.victories}</td>
+                <td sx={{ borderBottom: line }}>{team.goalDifference}</td>
+                <td sx={{ borderBottom: line }}>{team.fairPlay}</td>
               </tr>
             )
           } else { return null }

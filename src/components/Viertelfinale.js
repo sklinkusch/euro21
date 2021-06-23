@@ -7,7 +7,7 @@ function Viertelfinale({ teams = [], matchvf = [] }) {
   const [tVF0 = [], tVF1 = [], tVF2 = [], tVF3 = []] = teams
   const [mVF0 = {}, mVF1 = {}, mVF2 = {}, mVF3 = {}] = matchvf
   return (
-    <div sx={{ width: "100%", padding: "4px", margin: "4px", backgroundColor: "greenyellow", borderRadius: "20px" }}>
+    <div sx={{ width: "100%", padding: "4px", margin: "4px", backgroundColor: "greenyellow", borderRadius: "20px", gridColumn: ["1 / span 2","1 / span 1","1 / span 3"] }}>
       <div sx={{ fontSize: 0, textAlign: "center" }}>
         {locales("Quarterfinal")}
       </div>
@@ -39,7 +39,7 @@ function ViertelfinaleSingle({ teams, match }) {
     <React.Fragment>
       <td><Flag code={teamA} title={participants(teamA)} sx={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
       <td><Flag code={teamB} title={participants(teamB)} sx={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
-      {teamA && teamB ? <td style={{ fontSize: 0 }}>{`${typeof goalsA === "number" ? goalsA : "-"}:${typeof goalsB === "number" ? goalsB : "-"} ${add ? add : ""}`}</td> : <td sx={{ fontSize: 0 }}>-:-</td>}
+      {teamA && teamB ? <td sx={{ fontSize: 0 }}>{`${typeof goalsA === "number" ? goalsA : "-"}:${typeof goalsB === "number" ? goalsB : "-"} ${add ? add : ""}`}</td> : <td sx={{ fontSize: 0 }}>-:-</td>}
     </React.Fragment>
   )
 }

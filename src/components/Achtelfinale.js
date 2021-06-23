@@ -28,7 +28,7 @@ function Achtelfinale({ first, second, third, assoc, matchaf = [] }) {
   const bTeamAF7 = third[assoc.indexOf(7)]
   const [AF0 = {}, AF1 = {}, AF2 = {}, AF3 = {}, AF4 = {}, AF5 = {}, AF6 = {}, AF7 = {}] = matchaf
   return (
-    <div sx={{ width: "100%" }}>
+    <div sx={{ width: "100%", gridColumn: ["1 / span 2", "2 / span 1", "3 / span 4"] }}>
       <div sx={{ textAlign: "center", fontSize: 0 }}>
         {locales("Round16")}
       </div>
