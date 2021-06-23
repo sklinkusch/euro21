@@ -152,13 +152,13 @@ const matches = {
     },
     {
       teams: ["SK", "ES"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [0, 5],
+      fairPlay: [1, 2],
     },
     {
       teams: ["SE", "PL"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [3, 2],
+      fairPlay: [1, 1],
     }
   ],
   F: [
