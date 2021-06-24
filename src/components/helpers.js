@@ -35,3 +35,19 @@ export const getColor = (number) => {
     default: return "bg"
   }
 }
+
+export const getKoTeams = (matchArray, index, teamA, teamB) => {
+  const teamAGoal = typeof index === "number" ? matchArray[index].goals[0] : matchArray.goals[0]
+  const teamBGoal = typeof index === "number" ? matchArray[index].goals[1] : matchArray.goals[1]
+  if (typeof teamAGoal === "number" && typeof teamBGoal === "number") {
+    if (teamAGoal > teamBGoal) {
+      return typeof teamA === "object" && teamA.hasOwnProperty("team") ? teamA.team : typeof teamA === "string" ? teamA : null
+    } else if (teamBGoal > teamAGoal) {
+      return typeof teamB === "object" && teamB.hasOwnProperty("team") ? teamB.team : typeof teamB === "string" ? teamB : null
+    } else {
+      return null
+    }
+  } else {
+    return null
+  }
+}
