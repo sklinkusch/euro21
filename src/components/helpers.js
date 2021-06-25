@@ -36,6 +36,30 @@ export const getColor = (number) => {
   }
 }
 
+export const getKoTeam = (matchArray, indexMA, teamsA, indexTA, teamsB, indexTB) => {
+  const teamAGoal = typeof indexMA === "number" ? matchArray[indexMA].goals[0] : matchArray.goals[0]
+  const teamBGoal = typeof indexMA === "number" ? matchArray[indexMA].goals[1] : matchArray.goals[1]
+  if (typeof teamAGoal === "number" && typeof teamBGoal === "number") {
+    if (teamAGoal > teamBGoal) {
+      if(typeof teamsA === "object" && Array.isArray(teamsA) && teamsA.length > -1) {
+        const teamA = teamsA[indexTA]
+        return teamA === "object" && teamA.hasOwnProperty("team") ? teamA.team : typeof teamA === "string" ? teamA : null
+      } 
+      return null
+    } else if (teamBGoal > teamAGoal) {
+      if(typeof teamsB === "object" && Array.isArray(teamsB) && teamsB.length > -1) {
+        const teamB = teamsB[indexTB]
+        return teamB === "object" && teamB.hasOwnProperty("team") ? teamB.team : typeof teamB === "string" ? teamB : null
+      } 
+      return null
+    } else {
+      return null
+    }
+  } else {
+    return null
+  }
+}
+
 export const getKoTeams = (matchArray, index, teamA, teamB) => {
   const teamAGoal = typeof index === "number" ? matchArray[index].goals[0] : matchArray.goals[0]
   const teamBGoal = typeof index === "number" ? matchArray[index].goals[1] : matchArray.goals[1]

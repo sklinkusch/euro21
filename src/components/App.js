@@ -8,7 +8,7 @@ import matches, { matchaf, matchvf, matchhf, matchf } from "../data/matches"
 import { Achtelfinale } from "./Achtelfinale"
 import { Viertelfinale } from "./Viertelfinale"
 import { Halbfinale } from './Halbfinale';
-import { getAssociation, getKoTeams } from './helpers';
+import { getAssociation, getKoTeams, getKoTeam } from './helpers';
 import { Finale } from './Finale';
 import { participantName as participants, localeName as locales } from './countries';
 /* eslint-disable react-hooks/exhaustive-deps */
@@ -47,18 +47,18 @@ function App() {
     setVfTeams(teamsVF)
   }, [matchaf, winningTeams, association, first, second])
   useEffect(() => {
-    const aTeamHF1 = getKoTeams(matchvf, 1, vfTeams[1][0], vfTeams[1][1])
-    const bTeamHF1 = getKoTeams(matchvf, 0, vfTeams[0][0], vfTeams[0][1])
+    const aTeamHF1 = getKoTeam(matchvf, 1, vfTeams[1], 0, vfTeams[1], 1)
+    const bTeamHF1 = getKoTeam(matchvf, 0, vfTeams[0], 0, vfTeams[0], 1)
     const teamsHF1 = [aTeamHF1, bTeamHF1]
-    const aTeamHF2 = getKoTeams(matchvf, 3, vfTeams[3][0], vfTeams[3][1])
-    const bTeamHF2 = getKoTeams(matchvf, 2, vfTeams[2][0], vfTeams[2][1])
+    const aTeamHF2 = getKoTeam(matchvf, 3, vfTeams[3], 0, vfTeams[3], 1)
+    const bTeamHF2 = getKoTeam(matchvf, 2, vfTeams[2], 0, vfTeams[2], 1)
     const teamsHF2 = [aTeamHF2, bTeamHF2]
     const teamsHF = [teamsHF1, teamsHF2]
     setHfTeams(teamsHF)
   }, [matchvf, vfTeams])
   useEffect(() => {
-    const aTeamF = getKoTeams(matchhf, 0, hfTeams[0][0], hfTeams[0][1])
-    const bTeamF = getKoTeams(matchhf, 1, hfTeams[1][0], hfTeams[1][1])
+    const aTeamF = getKoTeam(matchhf, 0, hfTeams[0], 0, hfTeams[0], 1)
+    const bTeamF = getKoTeam(matchhf, 1, hfTeams[1], 0, hfTeams[1], 1)
     const teamsF = [aTeamF, bTeamF]
     setFTeams(teamsF)
   }, [matchhf, hfTeams])
