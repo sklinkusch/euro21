@@ -197,7 +197,7 @@ const matches = {
 
 export const matchaf = [
   {
-    goals: [null, null],
+    goals: [0, 4],
     add: null,
   },
   {
