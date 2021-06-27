@@ -1,6 +1,5 @@
 /** @jsxImportSource theme-ui */
 import React, { useEffect } from 'react'
-import Flag from "react-world-flags"
 import { useDebugState } from 'use-named-state'
 import { MatchList } from "./MatchList"
 import { TableSet, TableThird } from "./Table"
@@ -8,9 +7,9 @@ import matches, { matchaf, matchvf, matchhf, matchf } from "../data/matches"
 import { Achtelfinale } from "./Achtelfinale"
 import { Viertelfinale } from "./Viertelfinale"
 import { Halbfinale } from './Halbfinale';
-import { getAssociation, getKoTeams, getKoTeam } from './helpers';
+import { getAssociation, getKoTeams, getKoTeam, FlagSet } from './helpers';
 import { Finale } from './Finale';
-import { participantName as participants, localeName as locales } from './countries';
+import { localeName as locales } from './countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function App() {
@@ -143,7 +142,7 @@ function App() {
         </main>
       </header>
       <h2>
-        {locales("Champion")}: <Flag code={champion} title={participants(champion)} style={{ height: "16px" }} fallback={<span>🏴‍☠️</span>} />
+        {locales("Champion")}: <FlagSet code={champion} large={true} />
       </h2>
     </div>
   );
