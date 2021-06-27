@@ -40,7 +40,7 @@ function App() {
     const aTeamVF3 = getKoTeams(matchaf, 2, first[2], winningTeams[association.indexOf(2)])
     const bTeamVF3 = getKoTeams(matchaf, 0, second[0], second[1])
     const teamsVF3 = [aTeamVF3, bTeamVF3]
-    const aTeamVF4 = getKoTeams(matchaf, 7, first[6], winningTeams[association.indexOf(7)])
+    const aTeamVF4 = getKoTeams(matchaf, 7, first[4], winningTeams[association.indexOf(7)])
     const bTeamVF4 = getKoTeams(matchaf, 6, first[3], second[5])
     const teamsVF4 = [aTeamVF4, bTeamVF4]
     const teamsVF = [teamsVF1, teamsVF2, teamsVF3, teamsVF4]
