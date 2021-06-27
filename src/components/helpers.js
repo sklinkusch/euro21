@@ -1,3 +1,8 @@
+/** @jsxImportSource theme-ui */
+import React from 'react'
+import Flag from 'react-world-flags'
+import { participantName } from './countries'
+
 export function getAssociation(winningCombination) {
   switch (winningCombination) {
     case "ABCD":
@@ -53,10 +58,20 @@ export const getKoTeam = (matchArray, indexMA, teamsA, indexTA, teamsB, indexTB)
       } 
       return null
     } else {
-      return null
+      const teamA = typeof teamsA === "object" && Array.isArray(teamsA) && teamsA.length > -1 ? teamsA[indexTA] : null
+      const teamB = typeof teamsB === "object" && Array.isArray(teamsB) && teamsB.length > -1 ? teamsB[indexTB] : null 
+      const tA = teamA === "object" && teamA.hasOwnProperty("team") ? teamA.team : typeof teamA === "string" ? teamA : null 
+      const tB = teamB === "object" && teamA.hasOwnProperty("team") ? teamB.team : typeof teamA === "string" ? teamB : null
+      const array = tA != null && tB != null ? [tA, tB] : null 
+      return array
     }
   } else {
-    return null
+    const teamA = typeof teamsA === "object" && Array.isArray(teamsA) && teamsA.length > -1 ? teamsA[indexTA] : null
+      const teamB = typeof teamsB === "object" && Array.isArray(teamsB) && teamsB.length > -1 ? teamsB[indexTB] : null 
+      const tA = teamA === "object" && teamA.hasOwnProperty("team") ? teamA.team : typeof teamA === "string" ? teamA : null 
+      const tB = teamB === "object" && teamA.hasOwnProperty("team") ? teamB.team : typeof teamA === "string" ? teamB : null
+      const array = tA != null && tB != null ? [tA, tB] : null 
+      return array
   }
 }
 
@@ -69,9 +84,34 @@ export const getKoTeams = (matchArray, index, teamA, teamB) => {
     } else if (teamBGoal > teamAGoal) {
       return typeof teamB === "object" && teamB.hasOwnProperty("team") ? teamB.team : typeof teamB === "string" ? teamB : null
     } else {
+      if (teamA != null && teamB != null) {
+        const tA = typeof teamA === "object" && teamA.hasOwnProperty("team") ? teamA.team : typeof teamA === "string" ? teamA : null 
+        const tB = typeof teamB === "object" && teamB.hasOwnProperty("team") ? teamB.team : typeof teamB === "string" ? teamB : null 
+        return [tA, tB]
+      }
       return null
     }
   } else {
+    if (teamA != null && teamB != null) {
+      const tA = typeof teamA === "object" && teamA.hasOwnProperty("team") ? teamA.team : typeof teamA === "string" ? teamA : null 
+      const tB = typeof teamB === "object" && teamB.hasOwnProperty("team") ? teamB.team : typeof teamB === "string" ? teamB : null 
+      return [tA, tB]
+    }
     return null
   }
+}
+
+export function FlagSet({code}){
+  if (typeof code === "object" && Array.isArray(code) && code.length > 0) {
+    return (
+      <React.Fragment>
+        {code.map((singleCode, index) => (
+          <Flag key={index} code={singleCode} title={participantName(singleCode)} sx={{ height: "14px", ml: index === 0 ? "0px" : "4px"}} fallback={<span>🏴‍☠️</span>} />
+        ))}
+      </React.Fragment>
+    )
+  }
+  return (
+    <Flag code={code} title={participantName(code)} sx={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} />
+  )
 }
