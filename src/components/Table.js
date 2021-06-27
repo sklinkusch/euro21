@@ -212,10 +212,10 @@ function Table({ matches, group, setGroup, notifier, number }) {
         </tr>
       </thead>
       <tbody>
-        {group.map(dataset => {
+        {group.map((dataset, index) => {
           const { team, points, goalDifference, fairPlay } = dataset
           return (
-            <tr sx={{ margin: "0px" }}>
+            <tr key={index} sx={{ margin: "0px" }}>
               <td><Flag code={team} title={participants(team)} sx={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
               <td>{points}</td>
               <td>{goalDifference}</td>
@@ -232,12 +232,14 @@ function TableThird({ third }) {
   return (
     <table sx={{ fontSize: 0, backgroundColor: "#78C5FC", padding: "4px", margin: "4px", borderRadius: "20px", gridColumn: ["1 / span 2", "1 / span 1", "1 / span 2"] }}>
       <thead>
+        <tr>
         <td>{locales("Group")}</td>
         <td>{locales("Team")}</td>
         <td>{locales("Pts")}</td>
         <td>{locales("Victories")}</td>
         <td>{locales("Difference")}</td>
         <td>{locales("FairPlay")}</td>
+        </tr>
       </thead>
       <tbody>
         {third && third.length > 0 && third.map((team, index) => {
