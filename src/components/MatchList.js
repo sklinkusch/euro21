@@ -22,6 +22,7 @@ function GroupMatchList({ matches, border, number }) {
   const bgcolor = getColor(number)
   return (
     <table sx={{ width: "100%", my: "4px", mx: "4px", py: "2px", px: "2px", backgroundColor: bgcolor, borderRadius: "20px" }}>
+      <tbody>
       {matches.map((match, index) => {
         const { teams, goals } = match
         const [teamA, teamB] = teams
@@ -36,6 +37,7 @@ function GroupMatchList({ matches, border, number }) {
           </tr>
         )
       })}
+      </tbody>
     </table>
   )
 }
