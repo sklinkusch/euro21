@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import React from 'react'
-import Flag from 'react-world-flags'
-import { participantName as participants, localeName as locales } from './countries'
+import { localeName as locales } from './countries'
+import { FlagSet } from './helpers'
 
 function Finale({teams = [], matchf = []}) {
   return (
@@ -26,8 +26,8 @@ function FinaleSingle({teams, match}) {
   const [teamA = undefined, teamB = undefined] = teams
   return (
     <React.Fragment>
-      <td><Flag code={teamA} title={participants(teamA)} sx={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
-      <td><Flag code={teamB} title={participants(teamB)} sx={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
+      <td><FlagSet code={teamA} /></td>
+      <td><FlagSet code={teamB} /></td>
       {teamA && teamB ? <td sx={{ fontSize: "14px"}}>{`${typeof goalsA === "number" ? goalsA : "-"}:${typeof goalsB === "number" ? goalsB : "-"} ${add ? add : ""}`}</td> : <td sx={{ fontSize: "14px"}}>-:-</td>}
     </React.Fragment>
   )
