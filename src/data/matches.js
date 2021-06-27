@@ -211,7 +211,7 @@ export const matchaf = [
     add: null,
   },
   {
-    goals: [null, null],
+    goals: [1, 0],
     add: null,
   },
   {
