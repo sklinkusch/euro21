@@ -215,8 +215,8 @@ export const matchaf = [
     add: null,
   },
   {
-    goals: [null, null],
-    add: null,
+    goals: [3, 5],
+    add: localeName("ExtraTime"),
   },
   {
     goals: [null, null],
