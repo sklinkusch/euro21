@@ -223,7 +223,7 @@ export const matchaf = [
     add: `${localeName("Penalties")}, 3:3 ${localeName("ExtraTime")}`,
   },
   {
-    goals: [null, null],
+    goals: [2, 0],
     add: null,
   },
   {
