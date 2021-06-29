@@ -60,17 +60,37 @@ export const getKoTeam = (matchArray, indexMA, teamsA, indexTA, teamsB, indexTB)
     } else {
       const teamA = typeof teamsA === "object" && Array.isArray(teamsA) && teamsA.length > -1 ? teamsA[indexTA] : null
       const teamB = typeof teamsB === "object" && Array.isArray(teamsB) && teamsB.length > -1 ? teamsB[indexTB] : null 
-      const tA = teamA === "object" && teamA.hasOwnProperty("team") ? teamA.team : typeof teamA === "string" ? teamA : null 
-      const tB = teamB === "object" && teamA.hasOwnProperty("team") ? teamB.team : typeof teamA === "string" ? teamB : null
-      const array = tA != null && tB != null ? [tA, tB] : null 
+      const tA = teamA === "object" && teamA.hasOwnProperty("team") 
+      ? teamA.team 
+      : typeof teamA === "object" && Array.isArray(teamA)
+        ? teamA
+        : typeof teamA === "string" 
+          ? teamA 
+          : null 
+      const tB = teamB === "object" && teamA.hasOwnProperty("team") 
+      ? teamB.team 
+      : typeof teamB === "object" && Array.isArray(teamB) 
+        ? teamB
+        : typeof teamB === "string" ? teamB : null
+      const array = tA != null && tB != null ? [tA, tB].flat() : null 
       return array
     }
   } else {
     const teamA = typeof teamsA === "object" && Array.isArray(teamsA) && teamsA.length > -1 ? teamsA[indexTA] : null
       const teamB = typeof teamsB === "object" && Array.isArray(teamsB) && teamsB.length > -1 ? teamsB[indexTB] : null 
-      const tA = teamA === "object" && teamA.hasOwnProperty("team") ? teamA.team : typeof teamA === "string" ? teamA : null 
-      const tB = teamB === "object" && teamA.hasOwnProperty("team") ? teamB.team : typeof teamA === "string" ? teamB : null
-      const array = tA != null && tB != null ? [tA, tB] : null 
+      const tA = teamA === "object" && teamA.hasOwnProperty("team") 
+      ? teamA.team 
+      : typeof teamA === "object" && Array.isArray(teamA)
+        ? teamA
+        : typeof teamA === "string" 
+          ? teamA 
+          : null 
+      const tB = teamB === "object" && teamA.hasOwnProperty("team") 
+      ? teamB.team 
+      : typeof teamB === "object" && Array.isArray(teamB) 
+        ? teamB
+        : typeof teamB === "string" ? teamB : null
+      const array = tA != null && tB != null ? [tA, tB].flat() : null 
       return array
   }
 }
@@ -85,17 +105,41 @@ export const getKoTeams = (matchArray, index, teamA, teamB) => {
       return typeof teamB === "object" && teamB.hasOwnProperty("team") ? teamB.team : typeof teamB === "string" ? teamB : null
     } else {
       if (teamA != null && teamB != null) {
-        const tA = typeof teamA === "object" && teamA.hasOwnProperty("team") ? teamA.team : typeof teamA === "string" ? teamA : null 
-        const tB = typeof teamB === "object" && teamB.hasOwnProperty("team") ? teamB.team : typeof teamB === "string" ? teamB : null 
-        return [tA, tB]
+        const tA = typeof teamA === "object" && teamA.hasOwnProperty("team") 
+        ? teamA.team 
+        : typeof teamA === "object" && Array.isArray(teamA) 
+          ? teamA 
+          : typeof teamA === "string" 
+            ? teamA 
+            : null 
+        const tB = typeof teamB === "object" && teamB.hasOwnProperty("team") 
+        ? teamB.team 
+        : typeof teamB === "object" && Array.isArray(teamB) 
+          ? teamB
+          : typeof teamB === "string" 
+            ? teamB 
+            : null 
+        return [tA, tB].flat()
       }
       return null
     }
   } else {
     if (teamA != null && teamB != null) {
-      const tA = typeof teamA === "object" && teamA.hasOwnProperty("team") ? teamA.team : typeof teamA === "string" ? teamA : null 
-      const tB = typeof teamB === "object" && teamB.hasOwnProperty("team") ? teamB.team : typeof teamB === "string" ? teamB : null 
-      return [tA, tB]
+      const tA = typeof teamA === "object" && teamA.hasOwnProperty("team") 
+      ? teamA.team 
+      : typeof teamA === "object" && Array.isArray(teamA) 
+        ? teamA 
+        : typeof teamA === "string" 
+          ? teamA 
+          : null 
+      const tB = typeof teamB === "object" && teamB.hasOwnProperty("team") 
+      ? teamB.team 
+      : typeof teamB === "object" && Array.isArray(teamB) 
+        ? teamB
+        : typeof teamB === "string" 
+          ? teamB 
+          : null 
+      return [tA, tB].flat()
     }
     return null
   }
