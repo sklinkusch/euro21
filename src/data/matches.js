@@ -263,8 +263,8 @@ export const matchhf = [
 ]
 
 export const matchf = {
-  goals: [null, null],
-  add: null,
+  goals: [3, 2],
+  add: `${localeName("Penalties")}, 1:1 ${localeName("ExtraTime")}`,
 }
 
 export default matches
