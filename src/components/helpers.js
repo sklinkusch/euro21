@@ -95,6 +95,16 @@ export const getKoTeam = (matchArray, indexMA, teamsA, indexTA, teamsB, indexTB)
   }
 }
 
+export const getChampion = (matchArray, teamA, teamB) => {
+  const teamAGoal = matchArray.goals[0]
+  const teamBGoal = matchArray.goals[1]
+  if(teamAGoal > teamBGoal) {
+    return teamA
+  } else if (teamBGoal > teamAGoal) {
+    return teamB
+  }
+}
+
 export const getKoTeams = (matchArray, index, teamA, teamB) => {
   const teamAGoal = typeof index === "number" ? matchArray[index].goals[0] : matchArray.goals[0]
   const teamBGoal = typeof index === "number" ? matchArray[index].goals[1] : matchArray.goals[1]
