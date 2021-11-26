@@ -7,7 +7,7 @@ import matches, { matchaf, matchvf, matchhf, matchf } from "../data/matches"
 import { Achtelfinale } from "./Achtelfinale"
 import { Viertelfinale } from "./Viertelfinale"
 import { Halbfinale } from './Halbfinale';
-import { getAssociation, getKoTeams, getKoTeam, FlagSet } from './helpers';
+import { getAssociation, getKoTeams, getKoTeam, FlagSet, getChampion } from './helpers';
 import { Finale } from './Finale';
 import { localeName as locales } from './countries';
 /* eslint-disable react-hooks/exhaustive-deps */
@@ -62,7 +62,7 @@ function App() {
     setFTeams(teamsF)
   }, [matchhf, hfTeams])
   useEffect(() => {
-    const myChampion = getKoTeams(matchf, "", fTeams[0], fTeams[1])
+    const myChampion = getChampion(matchf, fTeams[0], fTeams[1])
     setChampion(myChampion)
   })
   useEffect(() => {
@@ -132,13 +132,13 @@ function App() {
             setGroupE={setGroupE}
             setGroupF={setGroupF}
           />
-          <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(6,1fr)"] }}>
+           <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(6,1fr)"] }}>
             <TableThird third={third} />
             <Achtelfinale first={first} second={second} third={winningTeams} assoc={association} matchaf={matchaf} />
             <Viertelfinale teams={vfTeams} matchvf={matchvf} />
             <Halbfinale teams={hfTeams} matchhf={matchhf} />
-            <Finale teams={fTeams} matchf={matchf} />
-          </div>
+           <Finale teams={fTeams} matchf={matchf} />
+          </div> 
         </main>
       </header>
       <h2>
