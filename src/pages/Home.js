@@ -7,6 +7,7 @@ function Home() {
       <h1>Overview</h1>
       <ul>
         <Link to="/euro20">Euro 2020</Link>
+        <Link to="/euro16">Euro 2016</Link>
       </ul>
     </div>
   )
