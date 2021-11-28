@@ -15,6 +15,9 @@ function Home() {
         <li>
           <Link to="/euro12">Euro 2012</Link>
         </li>
+        <li>
+          <Link to="/euro08">Euro 2008</Link>
+        </li>
       </ul>
     </div>
   )
