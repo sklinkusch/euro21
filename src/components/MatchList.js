@@ -18,6 +18,18 @@ function MatchList({ matches }) {
   )
 }
 
+function MatchListFour({ matches }) {
+  const { A: groupA, B: groupB, C: groupC, D: groupD } = matches
+  return (
+    <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"], gridTemplateRows: ["repeat(3,1fr)", "repeat(2,1fr)", "repeat(3,1fr)"]}}>
+      <GroupMatchList matches={groupA} number={0} />
+      <GroupMatchList matches={groupB} number={1} />
+      <GroupMatchList matches={groupC} number={2} />
+      <GroupMatchList matches={groupD} number={3} />
+    </div>
+  )
+}
+
 function GroupMatchList({ matches, border, number }) {
   const bgcolor = getColor(number)
   return (
@@ -42,4 +54,4 @@ function GroupMatchList({ matches, border, number }) {
   )
 }
 
-export { MatchList }
+export { MatchList, MatchListFour }
