@@ -26,6 +26,15 @@
     "pl": "Belgia",
     "pt": "Bélgica"
   },
+  "BG": {
+    "de": "Bulgarien",
+    "en": "Bulgaria",
+    "es": "Bulgaria",
+    "fr": "Bulgarie",
+    "it": "Bulgaria",
+    "pl": "Bułgaria",
+    "pt": "Bulgária"
+  },
   "CH": {
     "de": "Schweiz",
     "en": "Switzerland",
@@ -178,6 +187,15 @@
     "it": "Italia",
     "pl": "Włochy",
     "pt": "Itália"
+  },
+  "LV": {
+    "de": "Lettland",
+    "en": "Latvia",
+    "es": "Letonia",
+    "fr": "Lettonie",
+    "it": "Lettonia",
+    "pl": "Łotwa",
+    "pt": "Letónia"
   },
   "MK": {
     "de": "Nordmazedonien",

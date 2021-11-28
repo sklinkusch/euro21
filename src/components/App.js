@@ -4,6 +4,7 @@ const Euro20 = lazy(() => import("../pages/Euro20"))
 const Euro16 = lazy(() => import("../pages/Euro16"))
 const Euro12 = lazy(() => import("../pages/Euro12"))
 const Euro08 = lazy(() => import("../pages/Euro08"))
+const Euro04 = lazy(() => import("../pages/Euro04"))
 const Home = lazy(() => import("../pages/Home"))
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/euro08">
             <Euro08 />
+          </Route>
+          <Route path="/euro04">
+            <Euro04 />
           </Route>
           <Route path="/" >
             <Home />
