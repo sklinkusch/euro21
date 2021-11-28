@@ -228,6 +228,18 @@ function Table({ matches, group, setGroup, notifier, number }) {
   )
 }
 
+function TableSetFour({ matches, groupA, groupB, groupC, groupD, setGroupA, setGroupB, setGroupC, setGroupD}) {
+  const { A, B, C, D } = matches
+  return (
+    <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"], gridTemplateRows: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"] }}>
+      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} />
+      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} />
+      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} />
+      <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" number={3} />
+    </div>
+  )
+}
+
 function TableThird({ third }) {
   return (
     <table sx={{ fontSize: 0, backgroundColor: "#78C5FC", padding: "4px", margin: "4px", borderRadius: "20px", gridColumn: ["1 / span 2", "1 / span 1", "1 / span 2"] }}>
@@ -262,4 +274,4 @@ function TableThird({ third }) {
   )
 }
 
-export { TableSet, TableThird }
+export { TableSet, TableSetFour, TableThird }

@@ -3,7 +3,7 @@ import React from 'react'
 import Flag from 'react-world-flags'
 import { participantName } from './countries'
 
-export function getAssociation(winningCombination) {
+export function getAssociation20(winningCombination) {
   switch (winningCombination) {
     case "ABCD":
     case "ABCE":
@@ -24,6 +24,32 @@ export function getAssociation(winningCombination) {
       return [5, 7, 2, 3]
     case "BCDE":
       return [7, 5, 2, 3]
+    default:
+      return []
+  }
+}
+
+export function getAssociation16(winningCombination) {
+  switch(winningCombination) {
+    case "ABCD":
+    case "ABCE":
+    case "ABCF":
+      return [3, 7, 5, 1]
+    case "ABDE":
+    case "ABDF":
+      return [7, 5, 3, 1]
+    case "ABEF":
+      return [5, 7, 3, 1]
+    case "ACDE":
+    case "ACDF":
+    case "ADEF":
+    case "BCDF":
+    case "BCEF":
+    case "BDEF":
+    case "CDEF":
+      return [5, 7, 1, 3]
+    case "BCDE":
+      return [7, 5, 1, 3]
     default:
       return []
   }

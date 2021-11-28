@@ -1,4 +1,13 @@
 {
+  "AL": {
+    "de": "Albanien",
+    "en": "Albania",
+    "es": "Albania",
+    "fr": "Albanie",
+    "it": "Albania",
+    "pl": "Albania",
+    "pt": "Albânia"
+  },
   "AT": {
     "de": "Österreich",
     "en": "Austria",
@@ -16,6 +25,15 @@
     "it": "Belgio",
     "pl": "Belgia",
     "pt": "Bélgica"
+  },
+  "BG": {
+    "de": "Bulgarien",
+    "en": "Bulgaria",
+    "es": "Bulgaria",
+    "fr": "Bulgarie",
+    "it": "Bulgaria",
+    "pl": "Bułgaria",
+    "pt": "Bulgária"
   },
   "CH": {
     "de": "Schweiz",
@@ -89,6 +107,15 @@
     "pl": "Anglia",
     "pt": "Inglaterra"
   },
+  "GB-NIR": {
+    "de": "Nordirland",
+    "en": "Northern Ireland",
+    "es": "Irlanda del Norte",
+    "fr": "Irlande du Nord",
+    "it": "Irlanda del Nord",
+    "pl": "Irlandia Północna",
+    "pt": "Irlanda do Norte"
+  },
   "GB-SCT": {
     "de": "Schottland",
     "en": "Scotland",
@@ -106,6 +133,15 @@
     "it": "Galles",
     "pl": "Walia",
     "pt": "País de Gales"
+  },
+  "GR": {
+    "de": "Griechenland",
+    "en": "Greece",
+    "es": "Grecia",
+    "fr": "Grèce",
+    "it": "Grecia",
+    "pl": "Grecja",
+    "pt": "Grécia"
   },
   "HR": {
     "de": "Kroatien",
@@ -125,6 +161,24 @@
     "pl": "Węgry",
     "pt": "Hungria"
   },
+  "IE": {
+    "de": "Irland",
+    "en": "Ireland",
+    "es": "Irlanda",
+    "fr": "Irlande",
+    "it": "Irlanda",
+    "pl": "Irlandia",
+    "pt": "Irlanda"
+  },
+  "IS": {
+    "de": "Island",
+    "en": "Iceland",
+    "es": "Islandia",
+    "fr": "Islande",
+    "it": "Islanda",
+    "pl": "Islandia",
+    "pt": "Islândia"
+  },
   "IT": {
     "de": "Italien",
     "en": "Italy",
@@ -133,6 +187,15 @@
     "it": "Italia",
     "pl": "Włochy",
     "pt": "Itália"
+  },
+  "LV": {
+    "de": "Lettland",
+    "en": "Latvia",
+    "es": "Letonia",
+    "fr": "Lettonie",
+    "it": "Lettonia",
+    "pl": "Łotwa",
+    "pt": "Letónia"
   },
   "MK": {
     "de": "Nordmazedonien",
@@ -169,6 +232,15 @@
     "it": "Portogallo",
     "pl": "Portugalia",
     "pt": "Portugal"
+  },
+  "RO": {
+    "de": "Rumänien",
+    "en": "Romania",
+    "es": "Rumania",
+    "fr": "Roumanie",
+    "it": "Romania",
+    "pl": "Rumunia",
+    "pt": "Romênia"
   },
   "RU": {
     "de": "Russland",
