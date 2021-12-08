@@ -30,20 +30,22 @@ function Euro12() {
     setSecond(secondPlace)
   }, [groupA, groupB, groupC, groupD])
   useEffect(() => {
-    const aTeamVF1 = first[0].team
-    const bTeamVF1 = second[1].team
-    const teamsVF1 = [aTeamVF1, bTeamVF1]
-    const aTeamVF2 = first[2].team
-    const bTeamVF2 = second[3].team
-    const teamsVF2 = [aTeamVF2, bTeamVF2]
-    const aTeamVF3 = first[1].team
-    const bTeamVF3 = second[0].team
-    const teamsVF3 = [aTeamVF3, bTeamVF3]
-    const aTeamVF4 = first[3].team
-    const bTeamVF4 = second[2].team
-    const teamsVF4 = [aTeamVF4, bTeamVF4]
-    const teamsVF = [teamsVF1, teamsVF2, teamsVF3, teamsVF4]
-    setVfTeams(teamsVF)
+    if(first[0]) {
+      const aTeamVF1 = first[0].team || ""
+      const bTeamVF1 = second[1].team || ""
+      const teamsVF1 = [aTeamVF1, bTeamVF1]
+      const aTeamVF2 = first[2].team || ""
+      const bTeamVF2 = second[3].team || ""
+      const teamsVF2 = [aTeamVF2, bTeamVF2]
+      const aTeamVF3 = first[1].team || ""
+      const bTeamVF3 = second[0].team || ""
+      const teamsVF3 = [aTeamVF3, bTeamVF3]
+      const aTeamVF4 = first[3].team || ""
+      const bTeamVF4 = second[2].team || ""
+      const teamsVF4 = [aTeamVF4, bTeamVF4]
+      const teamsVF = [teamsVF1, teamsVF2, teamsVF3, teamsVF4]
+      setVfTeams(teamsVF)
+    }
   }, [first, second])
   useEffect(() => {
     const aTeamHF1 = getKoTeam(matchvf, 0, vfTeams[0], 0, vfTeams[0], 1)
