@@ -63,6 +63,8 @@ export const getColor = (number) => {
     case 3: return "#E6D2B5"
     case 4: return "#EAF044"
     case 5: return "#D79FA6"
+    case 6: return "#FDDEB7"
+    case 7: return "#CACACA"
     default: return "bg"
   }
 }
