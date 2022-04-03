@@ -14,8 +14,9 @@
     "Semifinal": "Halbfinale",
     "SilverGoal": "nach Silver Goal",
     "Team": "Land",
-    "Title": "UEFA Europameisterschaft",
-    "Victories": "Siege"
+    "Euro": "UEFA Europameisterschaft",
+    "Victories": "Siege",
+    "WorldCup": "FIFA Weltmeisterschaft"
   },
   "en": {
     "Champion": "European Champion",
@@ -32,8 +33,9 @@
     "Semifinal": "Semi-final",
     "SilverGoal": "(s.g.)",
     "Team": "Team",
-    "Title": "UEFA Euro",
-    "Victories": "Vict."
+    "Euro": "UEFA Euro",
+    "Victories": "Vict.",
+    "WorldCup": "FIFA World Cup"
   },
   "es": {
     "Champion": "Campéon",
@@ -50,8 +52,9 @@
     "Semifinal": "Semifinales",
     "SilverGoal": "(gol de plata)",
     "Team": "Eq.",
-    "Title": "UEFA Eurocopa",
-    "Victories": "PG"
+    "Euro": "UEFA Eurocopa",
+    "Victories": "PG",
+    "WorldCup": "FIFA Copa Mundial"
   },
   "fr": {
     "Champion": "Vainqueur",
@@ -68,8 +71,9 @@
     "Semifinal": "Demi-finales",
     "SilverGoal": "(but en argent)",
     "Team": "Eq.",
-    "Title": "UEFA Euro",
-    "Victories": "G"
+    "Euro": "UEFA Euro",
+    "Victories": "G",
+    "WorldCup": "FIFA Coupe du Monde"
   },
   "it": {
     "Champion": "Vincitore",
@@ -86,8 +90,9 @@
     "Semifinal": "Semifinali",
     "SilverGoal": "(s.g.)",
     "Team": "Sq.",
-    "Title": "UEFA Campionata europeo",
-    "Victories": "V"
+    "Euro": "UEFA Campionato europeo",
+    "Victories": "V",
+    "WorldCup": "FIFA Campionato mondiale"
   },
   "pl": {
     "Champion": "Mistrza Europy",
@@ -104,8 +109,9 @@
     "Semifinal": "Półfinały",
     "SilverGoal": "(po)",
     "Team": "Zespół",
-    "Title": "UEFA Mistrzostwa Europy",
-    "Victories": "W"
+    "Euro": "UEFA Mistrzostwa Europy",
+    "Victories": "W",
+    "WorldCup": "FIFA Mistrzostwa świata"
   },
   "pt": {
     "Champion": "Campeão",
@@ -122,7 +128,8 @@
     "Semifinal": "Semifinais",
     "SilverGoal": "(gol de prata)",
     "Team": "Sel.",
-    "Title": "UEFA Campeonato Europeu",
-    "Victories": "V"
+    "Euro": "UEFA Campeonato Europeu",
+    "Victories": "V",
+    "WorldCup": "FIFA Copa do Mundo"
   }
 }
