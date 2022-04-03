@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 import React from 'react'
-import Flag from "react-world-flags"
+import FlagWrapper from './FlagWrapper'
 import { participantName as participants } from "./countries"
 import { getColor } from "./helpers"
 
@@ -61,8 +61,8 @@ function GroupMatchList({ matches, border, number }) {
         const bParticipants = participants(teamB) ? participants(teamB) : teamB
         return (
           <tr key={index} sx={{ height: "14px" }}>
-            <td><Flag code={teamA} title={aParticipants} sx={{ height: "14px", maxWidth: "22px", marginRight: "8px" }} fallback={<span>🏴‍☠️</span>} /></td>
-            <td><Flag code={teamB} title={bParticipants} sx={{ height: "14px", maxWidth: "22px", marginRight: "16px" }} fallback={<span>🏴‍☠️</span>} /></td>
+            <td><FlagWrapper team={teamA} participant={aParticipants} /></td>
+            <td><FlagWrapper team={teamB} participant={bParticipants} /></td>
             <td><span sx={{ fontSize: 0, lineHeight: "16px", color: "ft" }}>{`${aGoals}:${bGoals}`}</span></td>
           </tr>
         )

@@ -40,12 +40,12 @@ const matches = {
       fairPlay: [null, null]
     },
     {
-      teams: ["US", "??"],
+      teams: ["US", "Q3"],
       goals: [null, null],
       fairPlay: [null, null]
     },
     {
-      teams: ["??", "IR"],
+      teams: ["Q3", "IR"],
       goals: [null, null],
       fairPlay: [null, null]
     },
@@ -55,7 +55,7 @@ const matches = {
       fairPlay: [null, null]
     },
     {
-      teams: ["??", "GB-ENG"],
+      teams: ["Q3", "GB-ENG"],
       goals: [null, null],
       fairPlay: [null, null]
     },
@@ -104,12 +104,12 @@ const matches = {
       fairPlay: [null, null]
     },
     {
-      teams: ["FR", "??"],
+      teams: ["FR", "Q1"],
       goals: [null, null],
       fairPlay: [null, null]
     },
     {
-      teams: ["TN", "??"],
+      teams: ["TN", "Q1"],
       goals: [null, null],
       fairPlay: [null, null]
     },
@@ -124,7 +124,7 @@ const matches = {
       fairPlay: [null, null]
     },
     {
-      teams: ["??", "DK"],
+      teams: ["Q1", "DK"],
       goals: [null, null],
       fairPlay: [null, null]
     },
@@ -136,12 +136,12 @@ const matches = {
       fairPlay: [null, null]
     },
     {
-      teams: ["ES", "??"],
+      teams: ["ES", "Q2"],
       goals: [null, null],
       fairPlay: [null, null]
     },
     {
-      teams: ["JP", "??"],
+      teams: ["JP", "Q2"],
       goals: [null, null],
       fairPlay: [null, null]
     },
@@ -156,7 +156,7 @@ const matches = {
       fairPlay: [null, null]
     },
     {
-      teams: ["??", "DE"],
+      teams: ["Q2", "DE"],
       goals: [null, null],
       fairPlay: [null, null]
     },
