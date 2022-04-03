@@ -2,12 +2,12 @@
 import React, { useEffect } from "react"
 import { useDebugState } from "use-named-state"
 import { MatchListEight } from "../components/MatchList"
-import matches, { matchaf /*, matchvf, matchhf, match3p, matchf */ } from "../data/matches_wc2022"
+import matches, { matchaf, matchvf, /*matchhf, match3p, matchf */ } from "../data/matches_wc2022"
 import { TableSetEight } from "../components/Table"
 import { AchtelfinaleWC } from "../components/Achtelfinale"
-// import { Viertelfinale } from "../components/Viertelfinale"
+import { Viertelfinale } from "../components/Viertelfinale"
 // import { Halbfinale } from '../components/Halbfinale';
-// import { getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../components/helpers';
+import { getKoTeams, /*getKoTeam, FlagSet, getChampion, getLoser*/ } from '../components/helpers';
 // import { Finale, Platz3 } from '../components/Finale';
 import { localeName as locales } from '../components/countries';
 /* eslint-disable react-hooks/exhaustive-deps */
@@ -23,27 +23,27 @@ function App() {
   const [groupH, setGroupH] = useDebugState("groupH",[])
   const [first, setFirst] = useDebugState("first",[])
   const [second, setSecond] = useDebugState("second",[])
-  // const [vfTeams, setVfTeams] = useDebugState("vfTeams",[])
+  const [vfTeams, setVfTeams] = useDebugState("vfTeams",[])
   // const [hfTeams, setHfTeams] = useDebugState("hfTeams",[])
   // const [teams3P, setTeams3P] = useDebugState("teams3P",[])
   // const [fTeams, setFTeams] = useDebugState("fTeams",[])
   // const [champion, setChampion] = useDebugState("champion",null)
-  // useEffect(() => {
-  //   const aTeamVF1 = getKoTeams(matchaf, 0, first[0], second[1])
-  //   const bTeamVF1 = getKoTeams(matchaf, 1, first[2], second[3])
-  //   const teamsVF1 = [aTeamVF1, bTeamVF1]
-  //   const aTeamVF2 = getKoTeams(matchaf, 2, first[4], second[5])
-  //   const bTeamVF2 = getKoTeams(matchaf, 3, first[6], second[7])
-  //   const teamsVF2 = [aTeamVF2, bTeamVF2]
-  //   const aTeamVF3 = getKoTeams(matchaf, 4, first[1], second[0])
-  //   const bTeamVF3 = getKoTeams(matchaf, 5, first[3], second[2])
-  //   const teamsVF3 = [aTeamVF3, bTeamVF3]
-  //   const aTeamVF4 = getKoTeams(matchaf, 6, first[5], second[4])
-  //   const bTeamVF4 = getKoTeams(matchaf, 7, first[7], second[6])
-  //   const teamsVF4 = [aTeamVF4, bTeamVF4]
-  //   const teamsVF = [teamsVF1, teamsVF2, teamsVF3, teamsVF4]
-  //   setVfTeams(teamsVF)
-  // }, [matchaf, first, second])
+  useEffect(() => {
+    const aTeamVF1 = getKoTeams(matchaf, 0, first[0], second[1])
+    const bTeamVF1 = getKoTeams(matchaf, 1, first[2], second[3])
+    const teamsVF1 = [aTeamVF1, bTeamVF1]
+    const aTeamVF2 = getKoTeams(matchaf, 2, first[4], second[5])
+    const bTeamVF2 = getKoTeams(matchaf, 3, first[6], second[7])
+    const teamsVF2 = [aTeamVF2, bTeamVF2]
+    const aTeamVF3 = getKoTeams(matchaf, 4, first[1], second[0])
+    const bTeamVF3 = getKoTeams(matchaf, 5, first[3], second[2])
+    const teamsVF3 = [aTeamVF3, bTeamVF3]
+    const aTeamVF4 = getKoTeams(matchaf, 6, first[5], second[4])
+    const bTeamVF4 = getKoTeams(matchaf, 7, first[7], second[6])
+    const teamsVF4 = [aTeamVF4, bTeamVF4]
+    const teamsVF = [teamsVF1, teamsVF2, teamsVF3, teamsVF4]
+    setVfTeams(teamsVF)
+  }, [matchaf, first, second])
   // useEffect(() => {
   //   const aTeamHF1 = getKoTeam(matchvf, 0, vfTeams[0], 0, vfTeams[1], 1)
   //   const bTeamHF1 = getKoTeam(matchvf, 1, vfTeams[1], 0, vfTeams[1], 1)
@@ -106,9 +106,9 @@ function App() {
             setGroupG={setGroupG}
             setGroupH={setGroupH}
           />
-           <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(6,1fr)"] }}>
+           <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"] }}>
             <AchtelfinaleWC first={first} second={second} matchaf={matchaf} />
-            {/* <Viertelfinale teams={vfTeams} matchvf={matchvf} /> */}
+            <Viertelfinale teams={vfTeams} matchvf={matchvf} />
             {/* <Halbfinale teams={hfTeams} matchhf={matchhf} /> */}
             {/* <Platz3 teams={teams3P} match3p={match3p} /> */}
            {/* <Finale teams={fTeams} matchf={matchf} /> */}

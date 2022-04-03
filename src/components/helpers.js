@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 import React from 'react'
-import Flag from 'react-world-flags'
+import FlagWrapper from './FlagWrapper'
 import { participantName } from './countries'
 
 export function getAssociation20(winningCombination) {
@@ -188,12 +188,12 @@ export function FlagSet({code, large = false}){
     return (
       <React.Fragment>
         {code.map((singleCode, index) => (
-          <Flag key={index} code={singleCode} title={participantName(singleCode)} sx={{ height: large ? "16px" : "14px", ml: index === 0 ? "0px" : "4px"}} fallback={<span>🏴‍☠️</span>} />
+          <FlagWrapper key={index} team={singleCode} participant={participantName(singleCode)} />
         ))}
       </React.Fragment>
     )
   }
   return (
-    <Flag code={code} title={participantName(code)} sx={{ height: large ? "16px" : "14px" }} fallback={<span>🏴‍☠️</span>} />
+    <FlagWrapper team={code} participant={participantName(code)} />
   )
 }
