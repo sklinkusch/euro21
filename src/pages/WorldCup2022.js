@@ -2,12 +2,12 @@
 import React, { useEffect } from "react"
 import { useDebugState } from "use-named-state"
 import { MatchListEight } from "../components/MatchList"
-import matches, { matchaf, matchvf, /*matchhf, match3p, matchf */ } from "../data/matches_wc2022"
+import matches, { matchaf, matchvf, matchhf, /* match3p, matchf */ } from "../data/matches_wc2022"
 import { TableSetEight } from "../components/Table"
 import { AchtelfinaleWC } from "../components/Achtelfinale"
 import { Viertelfinale } from "../components/Viertelfinale"
-// import { Halbfinale } from '../components/Halbfinale';
-import { getKoTeams, /*getKoTeam, FlagSet, getChampion, getLoser*/ } from '../components/helpers';
+import { Halbfinale } from '../components/Halbfinale';
+import { getKoTeams, getKoTeam, /*FlagSet, getChampion, getLoser*/ } from '../components/helpers';
 // import { Finale, Platz3 } from '../components/Finale';
 import { localeName as locales } from '../components/countries';
 /* eslint-disable react-hooks/exhaustive-deps */
@@ -24,7 +24,7 @@ function App() {
   const [first, setFirst] = useDebugState("first",[])
   const [second, setSecond] = useDebugState("second",[])
   const [vfTeams, setVfTeams] = useDebugState("vfTeams",[])
-  // const [hfTeams, setHfTeams] = useDebugState("hfTeams",[])
+  const [hfTeams, setHfTeams] = useDebugState("hfTeams",[])
   // const [teams3P, setTeams3P] = useDebugState("teams3P",[])
   // const [fTeams, setFTeams] = useDebugState("fTeams",[])
   // const [champion, setChampion] = useDebugState("champion",null)
@@ -44,16 +44,16 @@ function App() {
     const teamsVF = [teamsVF1, teamsVF2, teamsVF3, teamsVF4]
     setVfTeams(teamsVF)
   }, [matchaf, first, second])
-  // useEffect(() => {
-  //   const aTeamHF1 = getKoTeam(matchvf, 0, vfTeams[0], 0, vfTeams[1], 1)
-  //   const bTeamHF1 = getKoTeam(matchvf, 1, vfTeams[1], 0, vfTeams[1], 1)
-  //   const teamsHF1 = [aTeamHF1, bTeamHF1]
-  //   const aTeamHF2 = getKoTeam(matchvf, 2, vfTeams[2], 0, vfTeams[2], 1)
-  //   const bTeamHF2 = getKoTeam(matchvf, 3, vfTeams[3], 0, vfTeams[3], 1)
-  //   const teamsHF2 = [aTeamHF2, bTeamHF2]
-  //   const teamsHF = [teamsHF1, teamsHF2]
-  //   setHfTeams(teamsHF)
-  // }, [matchvf, vfTeams])
+  useEffect(() => {
+    const aTeamHF1 = getKoTeam(matchvf, 0, vfTeams[0], 0, vfTeams[0], 1)
+    const bTeamHF1 = getKoTeam(matchvf, 1, vfTeams[1], 0, vfTeams[1], 1)
+    const teamsHF1 = [aTeamHF1, bTeamHF1]
+    const aTeamHF2 = getKoTeam(matchvf, 2, vfTeams[2], 0, vfTeams[2], 1)
+    const bTeamHF2 = getKoTeam(matchvf, 3, vfTeams[3], 0, vfTeams[3], 1)
+    const teamsHF2 = [aTeamHF2, bTeamHF2]
+    const teamsHF = [teamsHF1, teamsHF2]
+    setHfTeams(teamsHF)
+  }, [matchvf, vfTeams])
   // useEffect(() => {
   //   const aTeamF = getKoTeam(matchhf, 0, hfTeams[0], 0, hfTeams[0], 1)
   //   const aTeam3P = getLoser(matchhf, 0, hfTeams[0], 0, hfTeams[0], 1)
@@ -109,7 +109,7 @@ function App() {
            <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"] }}>
             <AchtelfinaleWC first={first} second={second} matchaf={matchaf} />
             <Viertelfinale teams={vfTeams} matchvf={matchvf} />
-            {/* <Halbfinale teams={hfTeams} matchhf={matchhf} /> */}
+            <Halbfinale teams={hfTeams} matchhf={matchhf} />
             {/* <Platz3 teams={teams3P} match3p={match3p} /> */}
            {/* <Finale teams={fTeams} matchf={matchf} /> */}
           </div>
