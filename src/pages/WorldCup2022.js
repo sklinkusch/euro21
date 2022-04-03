@@ -1,9 +1,9 @@
 /** @jsxImportSource theme-ui */
 import React/*, { useEffect }*/ from "react"
-// import { useDebugState } from "use-named-state"
+import { useDebugState } from "use-named-state"
 import { MatchListEight } from "../components/MatchList"
 import matches/*, { matchaf, matchvf, matchhf, match3p, matchf }*/ from "../data/matches_wc2022"
-// import { TableSetEight } from "../components/Table"
+import { TableSetEight } from "../components/Table"
 // import { AchtelfinaleWC } from "../components/Achtelfinale"
 // import { Viertelfinale } from "../components/Viertelfinale"
 // import { Halbfinale } from '../components/Halbfinale';
@@ -13,14 +13,14 @@ import { localeName as locales } from '../components/countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function App() {
-  // const [groupA, setGroupA] = useDebugState("groupA",[])
-  // const [groupB, setGroupB] = useDebugState("groupB",[])
-  // const [groupC, setGroupC] = useDebugState("groupC",[])
-  // const [groupD, setGroupD] = useDebugState("groupD",[])
-  // const [groupE, setGroupE] = useDebugState("groupE",[])
-  // const [groupF, setGroupF] = useDebugState("groupF",[])
-  // const [groupG, setGroupG] = useDebugState("groupG",[])
-  // const [groupH, setGroupH] = useDebugState("groupH",[])
+  const [groupA, setGroupA] = useDebugState("groupA",[])
+  const [groupB, setGroupB] = useDebugState("groupB",[])
+  const [groupC, setGroupC] = useDebugState("groupC",[])
+  const [groupD, setGroupD] = useDebugState("groupD",[])
+  const [groupE, setGroupE] = useDebugState("groupE",[])
+  const [groupF, setGroupF] = useDebugState("groupF",[])
+  const [groupG, setGroupG] = useDebugState("groupG",[])
+  const [groupH, setGroupH] = useDebugState("groupH",[])
   // const [first, setFirst] = useDebugState("first",[])
   // const [second, setSecond] = useDebugState("second",[])
   // const [vfTeams, setVfTeams] = useDebugState("vfTeams",[])
@@ -87,7 +87,7 @@ function App() {
           <MatchListEight matches={matches} />
         </aside>
         <main sx={{ width: "100%" }}>
-          {/* <TableSetEight
+          <TableSetEight
             matches={matches}
             groupA={groupA}
             groupB={groupB}
@@ -105,7 +105,7 @@ function App() {
             setGroupF={setGroupF}
             setGroupG={setGroupG}
             setGroupH={setGroupH}
-          /> */}
+          />
            {/* <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(6,1fr)"] }}>
             <AchtelfinaleWC first={first} second={second} matchaf={matchaf} />
             <Viertelfinale teams={vfTeams} matchvf={matchvf} />

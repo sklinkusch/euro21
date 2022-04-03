@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 import React, { useEffect } from 'react'
-import Flag from "react-world-flags"
+import FlagWrapper from "./FlagWrapper"
 import { participantName as participants, localeName as locales } from './countries'
 import { getColor } from './helpers'
 /* eslint-disable react-hooks/exhaustive-deps */
@@ -216,7 +216,7 @@ function Table({ matches, group, setGroup, notifier, number }) {
           const { team, points, goalDifference, fairPlay } = dataset
           return (
             <tr key={index} sx={{ margin: "0px" }}>
-              <td><Flag code={team} title={participants(team)} sx={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
+              <td><FlagWrapper team={team} participant={participants(team)} /></td>
               <td>{points}</td>
               <td>{goalDifference}</td>
               <td>{fairPlay}</td>
@@ -236,6 +236,22 @@ function TableSetFour({ matches, groupA, groupB, groupC, groupD, setGroupA, setG
       <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} />
       <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} />
       <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" number={3} />
+    </div>
+  )
+}
+
+function TableSetEight({ matches, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF, setGroupG, setGroupH }) {
+  const { A, B, C, D, E, F, G, H } = matches
+  return (
+    <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], gridTemplateRows: ["repeat(4,1fr)", "repeat(4,1fr)", "repeat(2,1fr)"]}}>
+      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} />
+      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} />
+      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} />
+      <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" number={3} />
+      <Table matches={E} group={groupE} setGroup={setGroupE} notifier="E" number={4} />
+      <Table matches={F} group={groupF} setGroup={setGroupF} notifier="F" number={5} />
+      <Table matches={G} group={groupG} setGroup={setGroupG} notifier="G" number={6} />
+      <Table matches={H} group={groupH} setGroup={setGroupH} notifier="H" number={7} />
     </div>
   )
 }
@@ -260,7 +276,7 @@ function TableThird({ third }) {
             return (
               <tr key={index}>
                 <td sx={{ borderBottom: line }}>{team.group}</td>
-                <td sx={{ borderBottom: line }}><Flag code={team.team} title={participants(team.team)} sx={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
+                <td sx={{ borderBottom: line }}><FlagWrapper team={team.team} participant={participants(team.team)} /></td>
                 <td sx={{ borderBottom: line }}>{team.points}</td>
                 <td sx={{ borderBottom: line }}>{team.victories}</td>
                 <td sx={{ borderBottom: line }}>{team.goalDifference}</td>
@@ -274,4 +290,4 @@ function TableThird({ third }) {
   )
 }
 
-export { TableSet, TableSetFour, TableThird }
+export { TableSet, TableSetFour, TableThird, TableSetEight }
