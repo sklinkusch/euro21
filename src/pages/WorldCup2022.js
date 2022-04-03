@@ -1,10 +1,10 @@
 /** @jsxImportSource theme-ui */
-import React/*, { useEffect }*/ from "react"
+import React, { useEffect } from "react"
 import { useDebugState } from "use-named-state"
 import { MatchListEight } from "../components/MatchList"
-import matches/*, { matchaf, matchvf, matchhf, match3p, matchf }*/ from "../data/matches_wc2022"
+import matches, { matchaf /*, matchvf, matchhf, match3p, matchf */ } from "../data/matches_wc2022"
 import { TableSetEight } from "../components/Table"
-// import { AchtelfinaleWC } from "../components/Achtelfinale"
+import { AchtelfinaleWC } from "../components/Achtelfinale"
 // import { Viertelfinale } from "../components/Viertelfinale"
 // import { Halbfinale } from '../components/Halbfinale';
 // import { getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../components/helpers';
@@ -21,8 +21,8 @@ function App() {
   const [groupF, setGroupF] = useDebugState("groupF",[])
   const [groupG, setGroupG] = useDebugState("groupG",[])
   const [groupH, setGroupH] = useDebugState("groupH",[])
-  // const [first, setFirst] = useDebugState("first",[])
-  // const [second, setSecond] = useDebugState("second",[])
+  const [first, setFirst] = useDebugState("first",[])
+  const [second, setSecond] = useDebugState("second",[])
   // const [vfTeams, setVfTeams] = useDebugState("vfTeams",[])
   // const [hfTeams, setHfTeams] = useDebugState("hfTeams",[])
   // const [teams3P, setTeams3P] = useDebugState("teams3P",[])
@@ -68,13 +68,13 @@ function App() {
   //   const myChampion = getChampion(matchf, fTeams[0], fTeams[1])
   //   setChampion(myChampion)
   // })
-  // useEffect(() => {
-  //   const mergedGroups = [groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH]
-  //   const firstPlace = mergedGroups.map(group => group[0])
-  //   const secondPlace = mergedGroups.map(group => group[1])
-  //   setFirst(firstPlace)
-  //   setSecond(secondPlace)
-  // }, [groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH])
+  useEffect(() => {
+    const mergedGroups = [groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH]
+    const firstPlace = mergedGroups.map(group => group[0])
+    const secondPlace = mergedGroups.map(group => group[1])
+    setFirst(firstPlace)
+    setSecond(secondPlace)
+  }, [groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH])
   const lang = navigator.language
   return (
     <div className="App" sx={{ textAlign: "center", py: "16px", backgroundColor: "bg", color: "ft" }}>
@@ -106,13 +106,13 @@ function App() {
             setGroupG={setGroupG}
             setGroupH={setGroupH}
           />
-           {/* <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(6,1fr)"] }}>
+           <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(6,1fr)"] }}>
             <AchtelfinaleWC first={first} second={second} matchaf={matchaf} />
-            <Viertelfinale teams={vfTeams} matchvf={matchvf} />
-            <Halbfinale teams={hfTeams} matchhf={matchhf} />
-            <Platz3 teams={teams3P} match3p={match3p} />
-           <Finale teams={fTeams} matchf={matchf} />
-          </div>  */}
+            {/* <Viertelfinale teams={vfTeams} matchvf={matchvf} /> */}
+            {/* <Halbfinale teams={hfTeams} matchhf={matchhf} /> */}
+            {/* <Platz3 teams={teams3P} match3p={match3p} /> */}
+           {/* <Finale teams={fTeams} matchf={matchf} /> */}
+          </div>
         </main>
       </header>
       {/* <h2>
