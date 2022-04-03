@@ -13,6 +13,7 @@ import { localeName as locales } from '../components/countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function App() {
+  const fifaWorldRank = ["BR", "BE", "FR", "AR", "GB-ENG", "ES", "PT", "MX", "NL", "DK", "DE", "UY", "CH", "US", "HR", "GB-WLS", "SN", "IR", "PE", "JP", "MA", "RS", "PL", "UA", "KR", "CR", "TN", "CM", "CA", "GB-SCT", "AU", "EC", "QA", "GH", "AE", "NZ"]
   const [groupA, setGroupA] = useDebugState("groupA",[])
   const [groupB, setGroupB] = useDebugState("groupB",[])
   const [groupC, setGroupC] = useDebugState("groupC",[])
@@ -105,6 +106,7 @@ function App() {
             setGroupF={setGroupF}
             setGroupG={setGroupG}
             setGroupH={setGroupH}
+            coefficient={fifaWorldRank}
           />
            <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"] }}>
             <AchtelfinaleWC first={first} second={second} matchaf={matchaf} />

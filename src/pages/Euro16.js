@@ -132,6 +132,7 @@ function Euro16() {
             setGroupD={setGroupD}
             setGroupE={setGroupE}
             setGroupF={setGroupF}
+            coefficient={uefaCoefficient}
           />
            <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(6,1fr)"] }}>
             <TableThird third={third} />
