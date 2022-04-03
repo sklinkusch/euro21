@@ -99,7 +99,7 @@ function Euro04() {
       </header>
         {champion && (
           <h2>
-            <span>{locales("Champion")}:</span>{" "}
+            <span>{locales("EChampion")}:</span>{" "}
             <FlagSet code={champion} large={true} />
           </h2>
         )}

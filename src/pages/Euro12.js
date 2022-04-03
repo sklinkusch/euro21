@@ -98,7 +98,7 @@ function Euro12() {
         </main>
       </header>
       <h2>
-        {locales("Champion")}: <FlagSet code={champion} large={true} />
+        {locales("EChampion")}: <FlagSet code={champion} large={true} />
       </h2>
     </div>
   );

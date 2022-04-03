@@ -2,13 +2,13 @@
 import React, { useEffect } from "react"
 import { useDebugState } from "use-named-state"
 import { MatchListEight } from "../components/MatchList"
-import matches, { matchaf, matchvf, matchhf, /* match3p, matchf */ } from "../data/matches_wc2022"
+import matches, { matchaf, matchvf, matchhf, match3p, matchf  } from "../data/matches_wc2022"
 import { TableSetEight } from "../components/Table"
 import { AchtelfinaleWC } from "../components/Achtelfinale"
 import { Viertelfinale } from "../components/Viertelfinale"
 import { Halbfinale } from '../components/Halbfinale';
-import { getKoTeams, getKoTeam, /*FlagSet, getChampion, getLoser*/ } from '../components/helpers';
-// import { Finale, Platz3 } from '../components/Finale';
+import { getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../components/helpers';
+import { Finale, Platz3 } from '../components/Finale';
 import { localeName as locales } from '../components/countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
@@ -25,9 +25,9 @@ function App() {
   const [second, setSecond] = useDebugState("second",[])
   const [vfTeams, setVfTeams] = useDebugState("vfTeams",[])
   const [hfTeams, setHfTeams] = useDebugState("hfTeams",[])
-  // const [teams3P, setTeams3P] = useDebugState("teams3P",[])
-  // const [fTeams, setFTeams] = useDebugState("fTeams",[])
-  // const [champion, setChampion] = useDebugState("champion",null)
+  const [teams3P, setTeams3P] = useDebugState("teams3P",[])
+  const [fTeams, setFTeams] = useDebugState("fTeams",[])
+  const [champion, setChampion] = useDebugState("champion",null)
   useEffect(() => {
     const aTeamVF1 = getKoTeams(matchaf, 0, first[0], second[1])
     const bTeamVF1 = getKoTeams(matchaf, 1, first[2], second[3])
@@ -54,20 +54,20 @@ function App() {
     const teamsHF = [teamsHF1, teamsHF2]
     setHfTeams(teamsHF)
   }, [matchvf, vfTeams])
-  // useEffect(() => {
-  //   const aTeamF = getKoTeam(matchhf, 0, hfTeams[0], 0, hfTeams[0], 1)
-  //   const aTeam3P = getLoser(matchhf, 0, hfTeams[0], 0, hfTeams[0], 1)
-  //   const bTeamF = getKoTeam(matchhf, 1, hfTeams[1], 0, hfTeams[1], 1)
-  //   const bTeam3P = getLoser(matchhf, 1, hfTeams[1], 0, hfTeams[1], 1)
-  //   const teamsF = [aTeamF, bTeamF]
-  //   const myTeams3P = [aTeam3P, bTeam3P]
-  //   setFTeams(teamsF)
-  //   setTeams3P(myTeams3P)
-  // }, [matchhf, hfTeams])
-  // useEffect(() => {
-  //   const myChampion = getChampion(matchf, fTeams[0], fTeams[1])
-  //   setChampion(myChampion)
-  // })
+  useEffect(() => {
+    const aTeamF = getKoTeam(matchhf, 0, hfTeams[0], 0, hfTeams[0], 1)
+    const aTeam3P = getLoser(matchhf, 0, hfTeams[0], 0, hfTeams[0], 1)
+    const bTeamF = getKoTeam(matchhf, 1, hfTeams[1], 0, hfTeams[1], 1)
+    const bTeam3P = getLoser(matchhf, 1, hfTeams[1], 0, hfTeams[1], 1)
+    const teamsF = [aTeamF, bTeamF]
+    const myTeams3P = [aTeam3P, bTeam3P]
+    setFTeams(teamsF)
+    setTeams3P(myTeams3P)
+  }, [matchhf, hfTeams])
+  useEffect(() => {
+    const myChampion = getChampion(matchf, fTeams[0], fTeams[1])
+    setChampion(myChampion)
+  })
   useEffect(() => {
     const mergedGroups = [groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH]
     const firstPlace = mergedGroups.map(group => group[0])
@@ -110,14 +110,14 @@ function App() {
             <AchtelfinaleWC first={first} second={second} matchaf={matchaf} />
             <Viertelfinale teams={vfTeams} matchvf={matchvf} />
             <Halbfinale teams={hfTeams} matchhf={matchhf} />
-            {/* <Platz3 teams={teams3P} match3p={match3p} /> */}
-           {/* <Finale teams={fTeams} matchf={matchf} /> */}
+            <Platz3 teams={teams3P} match3p={match3p} />
+           <Finale teams={fTeams} matchf={matchf} />
           </div>
         </main>
       </header>
-      {/* <h2>
-        {locales("Champion")}: <FlagSet code={champion} large={true} />
-      </h2> */}
+       <h2>
+        {locales("WChampion")}: <FlagSet code={champion} large={true} />
+      </h2>
     </div>
   );
 }
