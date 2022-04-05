@@ -322,5 +322,14 @@
     "it": "Ucraina",
     "pl": "Ukraina",
     "pt": "Ucrânia"
+  },
+  "US": {
+    "de": "Vereinigte Staaten von Amerika",
+    "en": "United States of America",
+    "es": "Estados Unidos de América",
+    "fr": "États-Unis d'Amérique",
+    "it": "Stati Uniti d'America",
+    "pl": "Stany Zjednoczone Ameryki",
+    "pt": "Estados Unidos da América"
   }
 }
