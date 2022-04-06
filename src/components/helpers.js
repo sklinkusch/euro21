@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 import React from 'react'
-import Flag from 'react-world-flags'
+import FlagWrapper from './FlagWrapper'
 import { participantName } from './countries'
 
 export function getAssociation20(winningCombination) {
@@ -63,6 +63,8 @@ export const getColor = (number) => {
     case 3: return "#E6D2B5"
     case 4: return "#EAF044"
     case 5: return "#D79FA6"
+    case 6: return "#FDDEB7"
+    case 7: return "#CACACA"
     default: return "bg"
   }
 }
@@ -78,6 +80,60 @@ export const getKoTeam = (matchArray, indexMA, teamsA, indexTA, teamsB, indexTB)
       } 
       return null
     } else if (teamBGoal > teamAGoal) {
+      if(typeof teamsB === "object" && Array.isArray(teamsB) && teamsB.length > -1) {
+        const teamB = teamsB[indexTB]
+        return teamB === "object" && teamB.hasOwnProperty("team") ? teamB.team : typeof teamB === "string" ? teamB : null
+      } 
+      return null
+    } else {
+      const teamA = typeof teamsA === "object" && Array.isArray(teamsA) && teamsA.length > -1 ? teamsA[indexTA] : null
+      const teamB = typeof teamsB === "object" && Array.isArray(teamsB) && teamsB.length > -1 ? teamsB[indexTB] : null 
+      const tA = teamA === "object" && teamA.hasOwnProperty("team") 
+      ? teamA.team 
+      : typeof teamA === "object" && Array.isArray(teamA)
+        ? teamA
+        : typeof teamA === "string" 
+          ? teamA 
+          : null 
+      const tB = teamB === "object" && teamA.hasOwnProperty("team") 
+      ? teamB.team 
+      : typeof teamB === "object" && Array.isArray(teamB) 
+        ? teamB
+        : typeof teamB === "string" ? teamB : null
+      const array = tA != null && tB != null ? [tA, tB].flat() : null 
+      return array
+    }
+  } else {
+    const teamA = typeof teamsA === "object" && Array.isArray(teamsA) && teamsA.length > -1 ? teamsA[indexTA] : null
+      const teamB = typeof teamsB === "object" && Array.isArray(teamsB) && teamsB.length > -1 ? teamsB[indexTB] : null 
+      const tA = teamA === "object" && teamA.hasOwnProperty("team") 
+      ? teamA.team 
+      : typeof teamA === "object" && Array.isArray(teamA)
+        ? teamA
+        : typeof teamA === "string" 
+          ? teamA 
+          : null 
+      const tB = teamB === "object" && teamA.hasOwnProperty("team") 
+      ? teamB.team 
+      : typeof teamB === "object" && Array.isArray(teamB) 
+        ? teamB
+        : typeof teamB === "string" ? teamB : null
+      const array = tA != null && tB != null ? [tA, tB].flat() : null 
+      return array
+  }
+}
+
+export const getLoser = (matchArray, indexMA, teamsA, indexTA, teamsB, indexTB) => {
+  const teamAGoal = typeof indexMA === "number" ? matchArray[indexMA].goals[0] : matchArray.goals[0]
+  const teamBGoal = typeof indexMA === "number" ? matchArray[indexMA].goals[1] : matchArray.goals[1]
+  if (typeof teamAGoal === "number" && typeof teamBGoal === "number") {
+    if (teamAGoal < teamBGoal) {
+      if(typeof teamsA === "object" && Array.isArray(teamsA) && teamsA.length > -1) {
+        const teamA = teamsA[indexTA]
+        return teamA === "object" && teamA.hasOwnProperty("team") ? teamA.team : typeof teamA === "string" ? teamA : null
+      } 
+      return null
+    } else if (teamBGoal < teamAGoal) {
       if(typeof teamsB === "object" && Array.isArray(teamsB) && teamsB.length > -1) {
         const teamB = teamsB[indexTB]
         return teamB === "object" && teamB.hasOwnProperty("team") ? teamB.team : typeof teamB === "string" ? teamB : null
@@ -186,12 +242,12 @@ export function FlagSet({code, large = false}){
     return (
       <React.Fragment>
         {code.map((singleCode, index) => (
-          <Flag key={index} code={singleCode} title={participantName(singleCode)} sx={{ height: large ? "16px" : "14px", ml: index === 0 ? "0px" : "4px"}} fallback={<span>🏴‍☠️</span>} />
+          <FlagWrapper key={index} team={singleCode} participant={participantName(singleCode)} />
         ))}
       </React.Fragment>
     )
   }
   return (
-    <Flag code={code} title={participantName(code)} sx={{ height: large ? "16px" : "14px" }} fallback={<span>🏴‍☠️</span>} />
+    <FlagWrapper team={code} participant={participantName(code)} />
   )
 }

@@ -20,6 +20,23 @@ function Finale({teams = [], matchf = []}) {
   )
 }
 
+function Platz3({ teams = [], match3p = []}) {
+  return (
+    <div sx={{ width: "100%", gridColumn: ["1 / span 2","1 / span 2", "1 / span 6"], margin: "8px", padding: "8px" }}>
+      <div sx={{ fontSize: "14px", textAlign: "center", textTransform: "uppercase", fontWeight: 500, lineHeight: 1.5 }}>
+        {locales("Place3")}
+      </div>
+      <table sx={{ width: "100%" }}>
+        <tbody>
+          <tr>
+            <FinaleSingle teams={teams} match={match3p} />
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
 function FinaleSingle({teams, match}) {
   const {goals = [], add = ""} = match
   const [ goalsA = "-", goalsB = "-" ] = goals
@@ -33,4 +50,4 @@ function FinaleSingle({teams, match}) {
   )
 }
 
-export { Finale }
+export { Finale, Platz3 }

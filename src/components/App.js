@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react"
 import { HashRouter as Router, Switch, Route } from "react-router-dom"
+const WC22 = lazy(() => import("../pages/WorldCup2022"))
 const Euro20 = lazy(() => import("../pages/Euro20"))
 const Euro16 = lazy(() => import("../pages/Euro16"))
 const Euro12 = lazy(() => import("../pages/Euro12"))
@@ -12,6 +13,9 @@ function App() {
     <Router basename={`/${process.env.PUBLIC_URL}`}>
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
+          <Route path="/wc22">
+            <WC22 />
+          </Route>
           <Route path="/euro20">
             <Euro20 />
           </Route>

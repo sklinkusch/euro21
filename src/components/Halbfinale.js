@@ -2,12 +2,15 @@
 import React from 'react'
 import { localeName as locales } from './countries'
 import { FlagSet } from './helpers'
+import { useLocation } from "react-router-dom"
 
 function Halbfinale({teams = [], matchhf = []}) {
   const [tHF0 = [], tHF1 = []] = teams
   const [mHF0 = {}, mHF1 = {}] = matchhf
+  const location = useLocation()
+  const gridColumn = location.pathname.includes("wc") ? "3 / span 2" : "4 / span 3"
   return (
-    <div sx={{ width: "100%", gridColumn: ["1 / span 2", "2 / span 1", "4 / span 3"], backgroundColor: "#E6D2B5", margin: "4px", padding: "4px", borderRadius: "20px" }}>
+    <div sx={{ width: "100%", gridColumn: ["1 / span 2", "2 / span 1", gridColumn], backgroundColor: "#E6D2B5", margin: "4px", padding: "4px", borderRadius: "20px" }}>
       <div sx={{ fontSize: "14px", textAlign: "center" }}>
         {locales("Semifinal")}
       </div>

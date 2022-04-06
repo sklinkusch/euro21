@@ -1,26 +1,25 @@
 /** @jsxImportSource theme-ui */
 import React, { useEffect } from 'react'
-import Flag from "react-world-flags"
+import FlagWrapper from "./FlagWrapper"
 import { participantName as participants, localeName as locales } from './countries'
 import { getColor } from './helpers'
 /* eslint-disable react-hooks/exhaustive-deps */
 
-function TableSet({ matches, groupA, groupB, groupC, groupD, groupE, groupF, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF }) {
+function TableSet({ matches, groupA, groupB, groupC, groupD, groupE, groupF, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF, coefficient = [] }) {
   const { A, B, C, D, E, F } = matches
   return (
     <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(3,1fr)"], gridTemplateRows: ["repeat(3,1fr)", "repeat(3,1fr)", "repeat(2,1fr)"] }}>
-      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} />
-      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} />
-      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} />
-      <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" number={3} />
-      <Table matches={E} group={groupE} setGroup={setGroupE} notifier="E" number={4} />
-      <Table matches={F} group={groupF} setGroup={setGroupF} notifier="F" number={5} />
+      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} />
+      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} />
+      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} coefficient={coefficient} />
+      <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" number={3} coefficient={coefficient} />
+      <Table matches={E} group={groupE} setGroup={setGroupE} notifier="E" number={4} coefficient={coefficient} />
+      <Table matches={F} group={groupF} setGroup={setGroupF} notifier="F" number={5} coefficient={coefficient} />
     </div>
   )
 }
 
-function Table({ matches, group, setGroup, notifier, number }) {
-  const uefaCoefficient = ["ES", "NL", "DE", "IT", "GB-ENG", "RU", "HR", "PT", "SE", "DK", "FR", "CZ", "UA", "CH", "TR", "SK", "HU", "FI", "GB-SCT", "PL", "AT", "BE", "GB-WLS", "MK"]
+function Table({ matches, group, setGroup, notifier, number, coefficient = [] }) {
   useEffect(() => {
     const teams = [...matches[0].teams, ...matches[1].teams]
     const teamData = teams.map(team => {
@@ -94,8 +93,8 @@ function Table({ matches, group, setGroup, notifier, number }) {
       const sortedSet = set.sort((a, b) => {
         const { ownMatches: aMatches, team: aTeam } = a
         const { ownMatches: bMatches, team: bTeam } = b
-        const aUefa = uefaCoefficient.indexOf(aTeam)
-        const bUefa = uefaCoefficient.indexOf(bTeam)
+        const aUefa = coefficient.indexOf(aTeam)
+        const bUefa = coefficient.indexOf(bTeam)
         const aPoints = aMatches.reduce((acc, curr) => {
           if (teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
             const index = curr.teams.indexOf(aTeam)
@@ -216,7 +215,7 @@ function Table({ matches, group, setGroup, notifier, number }) {
           const { team, points, goalDifference, fairPlay } = dataset
           return (
             <tr key={index} sx={{ margin: "0px" }}>
-              <td><Flag code={team} title={participants(team)} sx={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
+              <td><FlagWrapper team={team} participant={participants(team)} /></td>
               <td>{points}</td>
               <td>{goalDifference}</td>
               <td>{fairPlay}</td>
@@ -228,14 +227,30 @@ function Table({ matches, group, setGroup, notifier, number }) {
   )
 }
 
-function TableSetFour({ matches, groupA, groupB, groupC, groupD, setGroupA, setGroupB, setGroupC, setGroupD}) {
+function TableSetFour({ matches, groupA, groupB, groupC, groupD, setGroupA, setGroupB, setGroupC, setGroupD, coefficient = []}) {
   const { A, B, C, D } = matches
   return (
     <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"], gridTemplateRows: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"] }}>
-      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} />
-      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} />
-      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} />
-      <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" number={3} />
+      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} />
+      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} />
+      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} coefficient={coefficient} />
+      <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" number={3} coefficient={coefficient} />
+    </div>
+  )
+}
+
+function TableSetEight({ matches, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF, setGroupG, setGroupH, coefficient = [] }) {
+  const { A, B, C, D, E, F, G, H } = matches
+  return (
+    <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], gridTemplateRows: ["repeat(4,1fr)", "repeat(4,1fr)", "repeat(2,1fr)"]}}>
+      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} />
+      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} />
+      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} coefficient={coefficient} />
+      <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" number={3} coefficient={coefficient} />
+      <Table matches={E} group={groupE} setGroup={setGroupE} notifier="E" number={4} coefficient={coefficient} />
+      <Table matches={F} group={groupF} setGroup={setGroupF} notifier="F" number={5} coefficient={coefficient} />
+      <Table matches={G} group={groupG} setGroup={setGroupG} notifier="G" number={6} coefficient={coefficient} />
+      <Table matches={H} group={groupH} setGroup={setGroupH} notifier="H" number={7} coefficient={coefficient} />
     </div>
   )
 }
@@ -260,7 +275,7 @@ function TableThird({ third }) {
             return (
               <tr key={index}>
                 <td sx={{ borderBottom: line }}>{team.group}</td>
-                <td sx={{ borderBottom: line }}><Flag code={team.team} title={participants(team.team)} sx={{ height: "14px" }} fallback={<span>🏴‍☠️</span>} /></td>
+                <td sx={{ borderBottom: line }}><FlagWrapper team={team.team} participant={participants(team.team)} /></td>
                 <td sx={{ borderBottom: line }}>{team.points}</td>
                 <td sx={{ borderBottom: line }}>{team.victories}</td>
                 <td sx={{ borderBottom: line }}>{team.goalDifference}</td>
@@ -274,4 +289,4 @@ function TableThird({ third }) {
   )
 }
 
-export { TableSet, TableSetFour, TableThird }
+export { TableSet, TableSetFour, TableThird, TableSetEight }

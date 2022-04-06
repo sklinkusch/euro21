@@ -1,4 +1,13 @@
 {
+  "AE": {
+    "de": "Vereinigte Arabische Emirate",
+    "en": "United Arab Emirates",
+    "es": "Emiratos Árabes Unidos",
+    "fr": "Émirats arabes unis",
+    "it": "Emirati Arabi Uniti",
+    "pl": "Zjednoczone Emiraty Arabskie",
+    "pt": "Emirados Árabes Unidos"
+  },
   "AL": {
     "de": "Albanien",
     "en": "Albania",
@@ -8,6 +17,15 @@
     "pl": "Albania",
     "pt": "Albânia"
   },
+  "AR": {
+    "de": "Argentinien",
+    "en": "Argentina",
+    "es": "Argentina",
+    "fr": "Argentine",
+    "it": "Argentina",
+    "pl": "Argentyna",
+    "pt": "Argentina"
+  },
   "AT": {
     "de": "Österreich",
     "en": "Austria",
@@ -16,6 +34,15 @@
     "it": "Austria",
     "pl": "Austria",
     "pt": "Áustria"
+  },
+  "AU": {
+    "de": "Australien",
+    "en": "Australia",
+    "es": "Australia",
+    "fr": "Australie",
+    "it": "Australia",
+    "pl": "Australia",
+    "pt": "Austrália"
   },
   "BE": {
     "de": "Belgien",
@@ -35,6 +62,24 @@
     "pl": "Bułgaria",
     "pt": "Bulgária"
   },
+  "BR": {
+    "de": "Brasilien",
+    "en": "Brazil",
+    "es": "Brasil",
+    "fr": "Brésil",
+    "it": "Brasile",
+    "pl": "Brazylia",
+    "pt": "Brasil"
+  },
+  "CA": {
+    "de": "Kanada",
+    "en": "Canada",
+    "es": "Canadá",
+    "fr": "Canada",
+    "it": "Canada",
+    "pl": "Kanada",
+    "pt": "Canadá"
+  },
   "CH": {
     "de": "Schweiz",
     "en": "Switzerland",
@@ -43,6 +88,24 @@
     "it": "Svizzera",
     "pl": "Szwajcaria",
     "pt": "Suíça"
+  },
+  "CM": {
+    "de": "Kamerun",
+    "en": "Cameroon",
+    "es": "Camerún",
+    "fr": "Cameroun",
+    "it": "Camerun",
+    "pl": "Kamerun",
+    "pt": "Camarões"
+  },
+  "CR": {
+    "de": "Costa Rica",
+    "en": "Costa Rica",
+    "es": "Costa Rica",
+    "fr": "Costa Rica",
+    "it": "Costa Rica",
+    "pl": "Kostaryka",
+    "pt": "Costa Rica"
   },
   "CZ": {
     "de": "Tschechien",
@@ -70,6 +133,15 @@
     "it": "Danimarca",
     "pl": "Dania",
     "pt": "Dinamarca"
+  },
+  "EC": {
+    "de": "Ecuador",
+    "en": "Ecuador",
+    "es": "Ecuador",
+    "fr": "Équateur",
+    "it": "Ecuador",
+    "pl": "Ekwador",
+    "pt": "Equador"
   },
   "ES": {
     "de": "Spanien",
@@ -134,6 +206,15 @@
     "pl": "Walia",
     "pt": "País de Gales"
   },
+  "GH": {
+    "de": "Ghana",
+    "en": "Ghana",
+    "es": "Ghana",
+    "fr": "Ghana",
+    "it": "Ghana",
+    "pl": "Ghana",
+    "pt": "Gana"
+  },
   "GR": {
     "de": "Griechenland",
     "en": "Greece",
@@ -170,6 +251,15 @@
     "pl": "Irlandia",
     "pt": "Irlanda"
   },
+  "IR": {
+    "de": "Iran",
+    "en": "Iran",
+    "es": "Irán",
+    "fr": "Iran",
+    "it": "Iran",
+    "pl": "Iran",
+    "pt": "Irã"
+  },
   "IS": {
     "de": "Island",
     "en": "Iceland",
@@ -188,6 +278,24 @@
     "pl": "Włochy",
     "pt": "Itália"
   },
+  "JP": {
+    "de": "Japan",
+    "en": "Japan",
+    "es": "Japón",
+    "fr": "Japon",
+    "it": "Giappone",
+    "pl": "Japonia",
+    "pt": "Japão"
+  },
+  "KR": {
+    "de": "Südkorea",
+    "en": "Südkorea",
+    "es": "Corea del Sur",
+    "fr": "Corée du Sud",
+    "it": "Corea del Sud",
+    "pl": "Korea Południowa",
+    "pt": "Coreia do Sul"
+  },
   "LV": {
     "de": "Lettland",
     "en": "Latvia",
@@ -196,6 +304,15 @@
     "it": "Lettonia",
     "pl": "Łotwa",
     "pt": "Letónia"
+  },
+  "MA": {
+    "de": "Marokko",
+    "en": "Morocco",
+    "es": "Marruecos",
+    "fr": "Maroc",
+    "it": "Marocco",
+    "pl": "Maroko",
+    "pt": "Marrocos"
   },
   "MK": {
     "de": "Nordmazedonien",
@@ -206,6 +323,15 @@
     "pl": "Macedonia Północna",
     "pt": "Macedónia do Norte"
   },
+  "MX": {
+    "de": "Mexiko",
+    "en": "Mexico",
+    "es": "México",
+    "fr": "Mexique",
+    "it": "Messico",
+    "pl": "Meksyk",
+    "pt": "México"
+  },
   "NL": {
     "de": "Niederlande",
     "en": "Netherlands",
@@ -214,6 +340,24 @@
     "it": "Paesi Bassi",
     "pl": "Holandia",
     "pt": "Países Baixos"
+  },
+  "NZ": {
+    "de": "Neuseeland",
+    "en": "New Zealand",
+    "es": "Nueva Zelanda",
+    "fr": "Nouvelle-Zélande",
+    "it": "Nuova Zelanda",
+    "pl": "Nowa Zelandia",
+    "pt": "Nova Zelândia"
+  },
+  "PE": {
+    "de": "Peru",
+    "en": "Peru",
+    "es": "Perú",
+    "fr": "Pérou",
+    "it": "Perù",
+    "pl": "Peru",
+    "pt": "Peru"
   },
   "PL": {
     "de": "Polen",
@@ -233,6 +377,15 @@
     "pl": "Portugalia",
     "pt": "Portugal"
   },
+  "QA": {
+    "de": "Katar",
+    "en": "Qatar",
+    "es": "Catar",
+    "fr": "Qatar",
+    "it": "Qatar",
+    "pl": "Katar",
+    "pt": "Catar"
+  },
   "RO": {
     "de": "Rumänien",
     "en": "Romania",
@@ -242,6 +395,15 @@
     "pl": "Rumunia",
     "pt": "Romênia"
   },
+  "RS": {
+    "de": "Serbien",
+    "en": "Serbia",
+    "es": "Serbia",
+    "fr": "Serbie",
+    "it": "Serbia",
+    "pl": "Serbia",
+    "pt": "Sérvia"
+  },
   "RU": {
     "de": "Russland",
     "en": "Russia",
@@ -250,6 +412,15 @@
     "it": "Russia",
     "pl": "Rosja",
     "pt": "Rússia"
+  },
+  "SA": {
+    "de": "Saudi-Arabien",
+    "en": "Saudi Arabia",
+    "es": "Arabia Saudita",
+    "fr": "Arabie Saoudite",
+    "it": "Arabia Saudita",
+    "pl": "Arabia Saudyjska",
+    "pt": "Arábia Saudita"
   },
   "SE": {
     "de": "Schweden",
@@ -269,6 +440,24 @@
     "pl": "Słowacja",
     "pt": "Eslováquia"
   },
+  "SN": {
+    "de": "Senegal",
+    "en": "Senegal",
+    "es": "Senegal",
+    "fr": "Sénégal",
+    "it": "Senegal",
+    "pl": "Senegal",
+    "pt": "Senegal"
+  },
+  "TN": {
+    "de": "Tunesien",
+    "en": "Tunisia",
+    "es": "Túnez",
+    "fr": "Tunisie",
+    "it": "Tunisia",
+    "pl": "Tunezja",
+    "pt": "Tunísia"
+  },
   "TR": {
     "de": "Türkei",
     "en": "Turkey",
@@ -286,5 +475,23 @@
     "it": "Ucraina",
     "pl": "Ukraina",
     "pt": "Ucrânia"
+  },
+  "US": {
+    "de": "Vereinigte Staaten von Amerika",
+    "en": "United States of America",
+    "es": "Estados Unidos de América",
+    "fr": "États-Unis d'Amérique",
+    "it": "Stati Uniti d'America",
+    "pl": "Stany Zjednoczone Ameryki",
+    "pt": "Estados Unidos da América"
+  },
+  "UY": {
+    "de": "Uruguay",
+    "en": "Uruguay",
+    "es": "Uruguay",
+    "fr": "Uruguay",
+    "it": "Uruguay",
+    "pl": "Urugwaj",
+    "pt": "Uruguai"
   }
 }

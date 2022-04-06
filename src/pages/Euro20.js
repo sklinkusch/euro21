@@ -110,7 +110,7 @@ function App() {
   return (
     <div className="App" sx={{ textAlign: "center", py: "16px", backgroundColor: "bg", color: "ft" }}>
       <h1 sx={{ fontSize: 3, fontWeight: "bold", my: "8px", px: ["4px", "4px", "0px"], hyphens: ["auto", "none"] }} lang={lang}>
-        <span>{locales("Title")}</span>{" "}
+        <span>{locales("Euro")}</span>{" "}
         <span>2020 (2021)</span>
       </h1>
       <header className="App-header" sx={{ display: "grid", gridTemplateColumns: ["1fr", "1fr", "1fr 2fr"], borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft" }}>
@@ -143,7 +143,7 @@ function App() {
         </main>
       </header>
       <h2>
-        {locales("Champion")}: <FlagSet code={champion} large={true} />
+        {locales("EChampion")}: <FlagSet code={champion} large={true} />
       </h2>
     </div>
   );

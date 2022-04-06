@@ -3,12 +3,15 @@ import React from 'react'
 // import Flag from 'react-world-flags'
 import { localeName as locales } from './countries'
 import { FlagSet } from "./helpers"
+import { useLocation } from "react-router-dom"
 
 function Viertelfinale({ teams = [], matchvf = [] }) {
   const [tVF0 = [], tVF1 = [], tVF2 = [], tVF3 = []] = teams
   const [mVF0 = {}, mVF1 = {}, mVF2 = {}, mVF3 = {}] = matchvf
+  const location = useLocation()
+  const gridColumn = location.pathname.includes("wc") ? "1 / span 2" : "1 / span 3"
   return (
-    <div sx={{ width: "100%", padding: "4px", margin: "4px", backgroundColor: "greenyellow", borderRadius: "20px", gridColumn: ["1 / span 2","1 / span 1","1 / span 3"] }}>
+    <div sx={{ width: "100%", padding: "4px", margin: "4px", backgroundColor: "greenyellow", borderRadius: "20px", gridColumn: ["1 / span 2","1 / span 1",gridColumn] }}>
       <div sx={{ fontSize: 0, textAlign: "center" }}>
         {locales("Quarterfinal")}
       </div>

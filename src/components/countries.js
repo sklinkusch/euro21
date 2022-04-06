@@ -4,23 +4,26 @@ const lang = navigator.language
 
 export const participantName = (code) => {
   if (code && typeof code === "string" && code != null && code !== "?") {
-    if( /^de/.test(lang)) {
-      return participants[code]["de"]
-    } else if( /^es/.test(lang)) {
-      return participants[code]["es"]
-    } else if( /^fr/.test(lang)) {
-      return participants[code]["fr"]
-    } else if( /^it/.test(lang)) {
-      return participants[code]["it"]
-    } else if( /^pl/.test(lang)) {
-      return participants[code]["pl"]
-    } else if( /^pt/.test(lang)) {
-      return participants[code]["pt"]
+    if (participants.hasOwnProperty(code)) {
+      if( /^de/.test(lang)) {
+        return participants[code]["de"]
+      } else if( /^es/.test(lang)) {
+        return participants[code]["es"]
+      } else if( /^fr/.test(lang)) {
+        return participants[code]["fr"]
+      } else if( /^it/.test(lang)) {
+        return participants[code]["it"]
+      } else if( /^pl/.test(lang)) {
+        return participants[code]["pl"]
+      } else if( /^pt/.test(lang)) {
+        return participants[code]["pt"]
+      } else {
+        return participants[code]["en"]
+      }
     } else {
-      return participants[code]["en"]
+      return code
     }
   }
-  return ""
 }
 
 export const localeName = (code) => {

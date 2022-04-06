@@ -71,7 +71,7 @@ function Euro08() {
   return (
     <div className="App" sx={{ textAlign: "center", py: "16px", backgroundColor: "bg", color: "ft" }}>
       <h1 sx={{ fontSize: 3, fontWeight: "bold", my: "8px", px: ["4px", "4px", "0px"], hyphens: ["auto", "none"] }} lang={lang}>
-        <span>{locales("Title")}</span>{" "}
+        <span>{locales("Euro")}</span>{" "}
         <span>2008</span>
       </h1>
       <header className="App-header" sx={{ display: "grid", gridTemplateColumns: ["1fr", "1fr", "1fr 2fr"], borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft" }}>
@@ -99,7 +99,7 @@ function Euro08() {
       </header>
         {champion && (
           <h2>
-            <span>{locales("Champion")}:</span>{" "}
+            <span>{locales("EChampion")}:</span>{" "}
             <FlagSet code={champion} large={true} />
           </h2>
         )}
