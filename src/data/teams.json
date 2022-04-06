@@ -269,6 +269,15 @@
     "pl": "Macedonia Północna",
     "pt": "Macedónia do Norte"
   },
+  "MX": {
+    "de": "Mexiko",
+    "en": "Mexico",
+    "es": "México",
+    "fr": "Mexique",
+    "it": "Messico",
+    "pl": "Meksyk",
+    "pt": "México"
+  },
   "NL": {
     "de": "Niederlande",
     "en": "Netherlands",
@@ -278,14 +287,14 @@
     "pl": "Holandia",
     "pt": "Países Baixos"
   },
-  "MX": {
-    "de": "Mexiko",
-    "en": "Mexico",
-    "es": "México",
-    "fr": "Mexique",
-    "it": "Messico",
-    "pl": "Meksyk",
-    "pt": "México"
+  "NZ": {
+    "de": "Neuseeland",
+    "en": "New Zealand",
+    "es": "Nueva Zelanda",
+    "fr": "Nouvelle-Zélande",
+    "it": "Nuova Zelanda",
+    "pl": "Nowa Zelandia",
+    "pt": "Nova Zelândia"
   },
   "PE": {
     "de": "Peru",
