@@ -25,7 +25,6 @@ function FlagWrapper({team, participant}) {
     return (
     <span sx={{ cursor: "default"}}>
       <span title={participants("GB-WLS")}>🏴󠁧󠁢󠁷󠁬󠁳󠁿</span>
-      <span title={participants("GB-SCT")}>🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
       <span title={participants("UA")}>🇺🇦</span>
     </span>
     )
