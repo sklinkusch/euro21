@@ -40,12 +40,12 @@ const matches = {
       fairPlay: [null, null]
     },
     {
-      teams: ["US", "Q3"],
+      teams: ["US", "GB-WLS"],
       goals: [null, null],
       fairPlay: [null, null]
     },
     {
-      teams: ["Q3", "IR"],
+      teams: ["GB-WLS", "IR"],
       goals: [null, null],
       fairPlay: [null, null]
     },
@@ -55,7 +55,7 @@ const matches = {
       fairPlay: [null, null]
     },
     {
-      teams: ["Q3", "GB-ENG"],
+      teams: ["GB-WLS", "GB-ENG"],
       goals: [null, null],
       fairPlay: [null, null]
     },

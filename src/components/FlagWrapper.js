@@ -21,14 +21,6 @@ function FlagWrapper({team, participant}) {
     </span>
     )
   }
-  if (team === "Q3") {
-    return (
-    <span sx={{ cursor: "default"}}>
-      <span title={participants("GB-WLS")}>🏴󠁧󠁢󠁷󠁬󠁳󠁿</span>
-      <span title={participants("UA")}>🇺🇦</span>
-    </span>
-    )
-  }
   return (
       <Flag 
         code={team} 
