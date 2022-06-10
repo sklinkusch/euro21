@@ -3,35 +3,34 @@ import React from 'react'
 import Flag from "react-world-flags"
 import { participantName as participants } from "./countries"
 
-function FlagWrapper({team, participant}) {
+function FlagWrapper({ team, participant }) {
   if (team === "Q1") {
     return (
-      <span sx={{ cursor: "default"}}>
-        <span title={participants("AE")}>🇦🇪</span>
+      <span sx={{ cursor: "default" }}>
         <span title={participants("AU")}>🇦🇺</span>
         <span title={participants("PE")}>🇵🇪</span>
       </span>
-      )
+    )
   }
   if (team === "Q2") {
     return (
-    <span sx={{ cursor: "default"}}>
-      <span title={participants("CR")}>🇨🇷</span>
-      <span title={participants("NZ")}>🇳🇿</span>
-    </span>
+      <span sx={{ cursor: "default" }}>
+        <span title={participants("CR")}>🇨🇷</span>
+        <span title={participants("NZ")}>🇳🇿</span>
+      </span>
     )
   }
   return (
-      <Flag 
-        code={team} 
-        title={participant} 
-        sx={{ 
-          height: "14px", 
-          maxWidth: "22px", 
-          marginRight: "8px" 
-        }} 
-        fallback={<span>🏴‍☠️</span>} 
-      />
+    <Flag
+      code={team}
+      title={participant}
+      sx={{
+        height: "14px",
+        maxWidth: "22px",
+        marginRight: "8px"
+      }}
+      fallback={<span>🏴‍☠️</span>}
+    />
   )
 }
 
