@@ -104,12 +104,12 @@ const matches = {
       fairPlay: [null, null]
     },
     {
-      teams: ["FR", "Q1"],
+      teams: ["FR", "AU"],
       goals: [null, null],
       fairPlay: [null, null]
     },
     {
-      teams: ["TN", "Q1"],
+      teams: ["TN", "AU"],
       goals: [null, null],
       fairPlay: [null, null]
     },
@@ -124,7 +124,7 @@ const matches = {
       fairPlay: [null, null]
     },
     {
-      teams: ["Q1", "DK"],
+      teams: ["AU", "DK"],
       goals: [null, null],
       fairPlay: [null, null]
     },

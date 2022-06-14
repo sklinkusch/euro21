@@ -4,14 +4,6 @@ import Flag from "react-world-flags"
 import { participantName as participants } from "./countries"
 
 function FlagWrapper({ team, participant }) {
-  if (team === "Q1") {
-    return (
-      <span sx={{ cursor: "default" }}>
-        <span title={participants("AU")}>🇦🇺</span>
-        <span title={participants("PE")}>🇵🇪</span>
-      </span>
-    )
-  }
   if (team === "Q2") {
     return (
       <span sx={{ cursor: "default" }}>
