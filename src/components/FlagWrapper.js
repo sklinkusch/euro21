@@ -1,17 +1,8 @@
 /** @jsxImportSource theme-ui */
 import React from 'react'
 import Flag from "react-world-flags"
-import { participantName as participants } from "./countries"
 
 function FlagWrapper({ team, participant }) {
-  if (team === "Q2") {
-    return (
-      <span sx={{ cursor: "default" }}>
-        <span title={participants("CR")}>🇨🇷</span>
-        <span title={participants("NZ")}>🇳🇿</span>
-      </span>
-    )
-  }
   return (
     <Flag
       code={team}
