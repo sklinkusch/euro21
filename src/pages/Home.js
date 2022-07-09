@@ -6,7 +6,7 @@ function Home() {
   return (
     <div>
       <h1>Overview</h1>
-      <div sx={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)"}}>
+      <div sx={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)"}}>
         <div>
           <h2>Men's Euro</h2>
           <ul>
@@ -24,6 +24,14 @@ function Home() {
             </li>
             <li>
               <Link to="/euro04">Euro 2004</Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2>Women's Euro</h2>
+          <ul>
+            <li>
+              <Link to="/weuro22">Euro 2022</Link>
             </li>
           </ul>
         </div>
