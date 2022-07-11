@@ -14,8 +14,8 @@ const matches = {
     },
     {
       teams: ["AT", "GB-NIR"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [2, 0],
+      fairPlay: [0, 0],
     },
     {
       teams: ["GB-ENG", "NO"],
