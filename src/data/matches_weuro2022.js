@@ -46,8 +46,8 @@ const matches = {
     },
     {
       teams: ["DK", "FI"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [1, 0],
+      fairPlay: [1, 0],
     },
     {
       teams: ["DE", "ES"],
