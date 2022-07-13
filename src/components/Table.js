@@ -141,8 +141,6 @@ function Table({ matches, group, setGroup, notifier, number, coefficient = [] })
           }
           return acc
         }, 0)
-        if (teams.includes("AT") || teams.includes("NL") || teams.includes("UA")) {
-        }
         if (aPoints > bPoints) {
           return -1
         } else if (bPoints > aPoints) {
