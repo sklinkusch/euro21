@@ -83,8 +83,8 @@ const matches = {
     },
     {
       teams: ["NL", "PT"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [3, 2],
+      fairPlay: [4, 3],
     },
     {
       teams: ["CH", "NL"],
