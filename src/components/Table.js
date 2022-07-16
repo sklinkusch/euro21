@@ -205,17 +205,19 @@ function Table({ matches, group, setGroup, notifier, number, coefficient = [] })
           <td>{locales("Team")}</td>
           <td>{locales("Pts")}</td>
           <td>{locales("Difference")}</td>
+          <td>{locales("Goals")}</td>
           <td>{locales("FairPlay")}</td>
         </tr>
       </thead>
       <tbody>
         {group.map((dataset, index) => {
-          const { team, points, goalDifference, fairPlay } = dataset
+          const { team, points, goals, countergoals, goalDifference, fairPlay } = dataset
           return (
             <tr key={index} sx={{ margin: "0px" }}>
               <td><FlagWrapper team={team} participant={participants(team)} /></td>
               <td>{points}</td>
               <td>{goalDifference}</td>
+              <td>{goals}:{countergoals}</td>
               <td>{fairPlay}</td>
             </tr>
           )
