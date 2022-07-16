@@ -34,11 +34,11 @@ function WEuro22() {
       const aTeamVF1 = first[0].team || ""
       const bTeamVF1 = second[1].team || ""
       const teamsVF1 = [aTeamVF1, bTeamVF1]
-      const aTeamVF2 = first[2].team || ""
-      const bTeamVF2 = second[3].team || ""
+      const aTeamVF2 = first[1].team || ""
+      const bTeamVF2 = second[0].team || ""
       const teamsVF2 = [aTeamVF2, bTeamVF2]
-      const aTeamVF3 = first[1].team || ""
-      const bTeamVF3 = second[0].team || ""
+      const aTeamVF3 = first[2].team || ""
+      const bTeamVF3 = second[3].team || ""
       const teamsVF3 = [aTeamVF3, bTeamVF3]
       const aTeamVF4 = first[3].team || ""
       const bTeamVF4 = second[2].team || ""
@@ -49,9 +49,9 @@ function WEuro22() {
   }, [first, second])
   useEffect(() => {
     const aTeamHF1 = getKoTeam(matchvf, 0, vfTeams[0], 0, vfTeams[0], 1)
-    const bTeamHF1 = getKoTeam(matchvf, 1, vfTeams[1], 0, vfTeams[1], 1)
+    const bTeamHF1 = getKoTeam(matchvf, 2, vfTeams[2], 0, vfTeams[2], 1)
     const teamsHF1 = [aTeamHF1, bTeamHF1]
-    const aTeamHF2 = getKoTeam(matchvf, 2, vfTeams[2], 0, vfTeams[2], 1)
+    const aTeamHF2 = getKoTeam(matchvf, 1, vfTeams[1], 0, vfTeams[1], 1)
     const bTeamHF2 = getKoTeam(matchvf, 3, vfTeams[3], 0, vfTeams[3], 1)
     const teamsHF2 = [aTeamHF2, bTeamHF2]
     const teamsHF = [teamsHF1, teamsHF2]
