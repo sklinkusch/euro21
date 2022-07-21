@@ -1,4 +1,4 @@
-// const locales = require("../data/locales.json")
+import { localeName } from "../components/countries"
 
 const matches = {
   A: [
@@ -133,8 +133,8 @@ const matches = {
 
 export const matchvf = [
   {
-    goals: [null, null],
-    add: null,
+    goals: [2, 1],
+    add: `${localeName("ExtraTime")}`,
   },
   {
     goals: [null, null],
