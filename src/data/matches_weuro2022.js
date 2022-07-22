@@ -141,7 +141,7 @@ export const matchvf = [
     add: null,
   },
   {
-    goals: [null, null],
+    goals: [1, 0],
     add: null,
   },
   {
