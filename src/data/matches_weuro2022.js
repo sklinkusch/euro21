@@ -156,7 +156,7 @@ export const matchhf = [
     add: null,
   },
   {
-    goals: [null, null],
+    goals: [2, 1],
     add: null,
   }
 ]
