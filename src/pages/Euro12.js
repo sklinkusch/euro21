@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useDebugState } from 'use-named-state'
 import { MatchListFour } from "../components/MatchList"
 import { TableSetFour } from "../components/Table"
@@ -100,6 +101,9 @@ function Euro12() {
       <h2>
         {locales("EChampion")}: <FlagSet code={champion} large={true} />
       </h2>
+      <div sx={{ textAlign: "center" }}>
+        <Link to="/">{locales("Back")}</Link>
+      </div>
     </div>
   );
 }

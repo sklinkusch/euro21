@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useDebugState } from 'use-named-state'
 import { MatchList } from "../components/MatchList"
 import { TableSet, TableThird } from "../components/Table"
@@ -145,6 +146,9 @@ function App() {
       <h2>
         {locales("EChampion")}: <FlagSet code={champion} large={true} />
       </h2>
+      <div sx={{ textAlign: "center" }}>
+        <Link to="/">{locales("Back")}</Link>
+      </div>
     </div>
   );
 }
