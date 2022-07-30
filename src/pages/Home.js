@@ -33,6 +33,9 @@ function Home() {
             <li>
               <Link to="/weuro22">Euro 2022</Link>
             </li>
+            <li>
+              <Link to="/weuro17">Euro 2017</Link>
+            </li>
           </ul>
         </div>
         <div>
