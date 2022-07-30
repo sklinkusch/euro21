@@ -46,6 +46,14 @@ function Home() {
             </li>
           </ul>
         </div>
+        <div>
+          <h2>Women's World Cup</h2>
+          <ul>
+            <li>
+              <Link to="/wwc19">World Cup 2019</Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   )
