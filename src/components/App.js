@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react"
 import { HashRouter as Router, Switch, Route } from "react-router-dom"
 import WEuro17 from "../pages/WEuro17"
 import WEuro22 from "../pages/WEuro22"
+import WWC19 from "../pages/WWorldCup2019"
 const WC22 = lazy(() => import("../pages/WorldCup2022"))
 const Euro20 = lazy(() => import("../pages/Euro20"))
 const Euro16 = lazy(() => import("../pages/Euro16"))
@@ -17,6 +18,9 @@ function App() {
         <Switch>
           <Route path="/wc22">
             <WC22 />
+          </Route>
+          <Route path="/wwc19">
+            <WWC19 />
           </Route>
           <Route path="/euro20">
             <Euro20 />
