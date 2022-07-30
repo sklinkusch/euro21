@@ -89,6 +89,24 @@
     "pl": "Szwajcaria",
     "pt": "Suíça"
   },
+  "CI": {
+    "de": "Elfenbeinküste",
+    "en": "Ivory Coast",
+    "es": "Costa de Marfil",
+    "fr": "Côte d'Ivoire",
+    "it": "Costa d'Avorio",
+    "pl": "Wybrzeże Kości Słoniowej",
+    "pt": "Costa do Marfim"
+  },
+  "CL": {
+    "de": "Chile",
+    "en": "Chile",
+    "es": "Chile",
+    "fr": "Chili",
+    "it": "Cile",
+    "pl": "Chile",
+    "pt": "Chile"
+  },
   "CM": {
     "de": "Kamerun",
     "en": "Cameroon",
@@ -97,6 +115,15 @@
     "it": "Camerun",
     "pl": "Kamerun",
     "pt": "Camarões"
+  },
+  "CN": {
+    "de": "Volksrepublik China",
+    "en": "People's Republic of China",
+    "es": "República Popular China",
+    "fr": "République Populaire de Chine",
+    "it": "Repubblica Popolare Cinese",
+    "pl": "Chińska Republika Ludowa",
+    "pt": "República Popular da China"
   },
   "CR": {
     "de": "Costa Rica",
@@ -278,6 +305,15 @@
     "pl": "Włochy",
     "pt": "Itália"
   },
+  "JM": {
+    "de": "Jamaika",
+    "en": "Jamaica",
+    "es": "Jamaica",
+    "fr": "Jamaïque",
+    "it": "Giamaica",
+    "pl": "Jamajka",
+    "pt": "Jamaica"
+  },
   "JP": {
     "de": "Japan",
     "en": "Japan",
@@ -331,6 +367,15 @@
     "it": "Messico",
     "pl": "Meksyk",
     "pt": "México"
+  },
+  "NG": {
+    "de": "Nigeria",
+    "en": "Nigeria",
+    "es": "Nigeria",
+    "fr": "Nigeria",
+    "it": "Nigeria",
+    "pl": "Nigeria",
+    "pt": "Nigéria"
   },
   "NL": {
     "de": "Niederlande",
@@ -458,6 +503,15 @@
     "pl": "Senegal",
     "pt": "Senegal"
   },
+  "TH": {
+    "de": "Thailand",
+    "en": "Thailand",
+    "es": "Tailandia",
+    "fr": "Thaïlande",
+    "it": "Thailandia",
+    "pl": "Tajlandia",
+    "pt": "Tailândia"
+  },
   "TN": {
     "de": "Tunesien",
     "en": "Tunisia",
@@ -502,5 +556,14 @@
     "it": "Uruguay",
     "pl": "Urugwaj",
     "pt": "Uruguai"
+  },
+  "ZA": {
+    "de": "Südafrika",
+    "en": "South Africa",
+    "es": "Sudáfrica",
+    "fr": "Afrique du Sud",
+    "it": "Sudafrica",
+    "pl": "Południowa Afryka",
+    "pt": "África do Sul"
   }
 }
