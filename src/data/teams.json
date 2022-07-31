@@ -125,6 +125,15 @@
     "pl": "Chińska Republika Ludowa",
     "pt": "República Popular da China"
   },
+  "CO": {
+    "de": "Kolumbien",
+    "en": "Colombia",
+    "es": "Colombia",
+    "fr": "Colombie",
+    "it": "Colombia",
+    "pl": "Kolumbia",
+    "pt": "Colômbia"
+  },
   "CR": {
     "de": "Costa Rica",
     "en": "Costa Rica",
@@ -169,6 +178,15 @@
     "it": "Ecuador",
     "pl": "Ekwador",
     "pt": "Equador"
+  },
+  "EG": {
+    "de": "Ägypten",
+    "en": "Egypt",
+    "es": "Egipto",
+    "fr": "Égypte",
+    "it": "Egitto",
+    "pl": "Egipt",
+    "pt": "Egito"
   },
   "ES": {
     "de": "Spanien",
@@ -403,6 +421,15 @@
     "it": "Nuova Zelanda",
     "pl": "Nowa Zelandia",
     "pt": "Nova Zelândia"
+  },
+  "PA": {
+    "de": "Panama",
+    "en": "Panama",
+    "es": "Panamá",
+    "fr": "Panama",
+    "it": "Panama",
+    "pl": "Panama",
+    "pt": "Panamá"
   },
   "PE": {
     "de": "Peru",
