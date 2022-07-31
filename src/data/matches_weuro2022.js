@@ -162,8 +162,8 @@ export const matchhf = [
 ]
 
 export const matchf = {
-  goals: [null, null],
-  add: null,
+  goals: [2, 1],
+  add: `${localeName("ExtraTime")}`,
 }
 
 export default matches
