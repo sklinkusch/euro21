@@ -1,10 +1,11 @@
 import React, { Suspense, lazy } from "react"
 import { HashRouter as Router, Switch, Route } from "react-router-dom"
-import WEuro17 from "../pages/WEuro17"
-import WEuro22 from "../pages/WEuro22"
-import WWC15 from "../pages/WWorldCup2015"
-import WWC19 from "../pages/WWorldCup2019"
+const WEuro17 = lazy(() => import("../pages/WEuro17")) 
+const WEuro22 = lazy(() => import("../pages/WEuro22"))
+const WWC15 = lazy(() => import("../pages/WWorldCup2015"))
+const WWC19 = lazy(() => import("../pages/WWorldCup2019"))
 const WC22 = lazy(() => import("../pages/WorldCup2022"))
+const WC18 = lazy(() => import("../pages/WorldCup2018"))
 const Euro20 = lazy(() => import("../pages/Euro20"))
 const Euro16 = lazy(() => import("../pages/Euro16"))
 const Euro12 = lazy(() => import("../pages/Euro12"))
@@ -19,6 +20,9 @@ function App() {
         <Switch>
           <Route path="/wc22">
             <WC22 />
+          </Route>
+          <Route path="/wc18">
+            <WC18 />
           </Route>
           <Route path="/wwc19">
             <WWC19 />
