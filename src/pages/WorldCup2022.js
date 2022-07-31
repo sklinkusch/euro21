@@ -13,7 +13,7 @@ import { Finale, Platz3 } from '../components/Finale';
 import { localeName as locales } from '../components/countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
-function App() {
+function WorldCup2022() {
   const fifaWorldRank = ["BR", "BE", "FR", "AR", "GB-ENG", "ES", "PT", "MX", "NL", "DK", "DE", "UY", "CH", "US", "HR", "GB-WLS", "SN", "IR", "PE", "JP", "MA", "RS", "PL", "UA", "KR", "CR", "TN", "CM", "CA", "GB-SCT", "AU", "EC", "QA", "GH", "AE", "NZ"]
   const [groupA, setGroupA] = useDebugState("groupA",[])
   const [groupB, setGroupB] = useDebugState("groupB",[])
@@ -128,4 +128,4 @@ function App() {
   );
 }
 
-export default App
+export default WorldCup2022
