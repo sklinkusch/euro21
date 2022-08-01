@@ -50,6 +50,9 @@ function Home() {
             <li>
               <Link to="/wc14">World Cup 2014</Link>
             </li>
+            <li>
+              <Link to="/wc10">World Cup 2010</Link>
+            </li>
           </ul>
         </div>
         <div>
