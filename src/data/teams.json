@@ -368,9 +368,18 @@
     "pl": "Japonia",
     "pt": "Japão"
   },
+  "KP": {
+    "de": "Nordkorea",
+    "en": "North Korea",
+    "es": "Corea del Norte",
+    "fr": "Corée du Nord",
+    "it": "Corea del Nord",
+    "pl": "Korea Północna",
+    "pt": "Coreia do Norte"
+  },
   "KR": {
     "de": "Südkorea",
-    "en": "Südkorea",
+    "en": "South Korea",
     "es": "Corea del Sur",
     "fr": "Corée du Sud",
     "it": "Corea del Sud",
@@ -485,6 +494,15 @@
     "pl": "Portugalia",
     "pt": "Portugal"
   },
+  "PY": {
+    "de": "Paraguay",
+    "en": "Paraguay",
+    "es": "Paraguay",
+    "fr": "Paraguay",
+    "it": "Paraguay",
+    "pl": "Paragwaj",
+    "pt": "Paraguai"
+  },
   "QA": {
     "de": "Katar",
     "en": "Qatar",
@@ -538,6 +556,15 @@
     "it": "Svezia",
     "pl": "Szwecja",
     "pt": "Suécia"
+  },
+  "SI": {
+    "de": "Slowenien",
+    "en": "Slovenia",
+    "es": "Eslovenia",
+    "fr": "Slovénie",
+    "it": "Slovenia",
+    "pl": "Słowenia",
+    "pt": "Eslovénia"
   },
   "SK": {
     "de": "Slowakei",
