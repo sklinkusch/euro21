@@ -7,6 +7,7 @@ const WWC19 = lazy(() => import("../pages/WWorldCup2019"))
 const WC22 = lazy(() => import("../pages/WorldCup2022"))
 const WC18 = lazy(() => import("../pages/WorldCup2018"))
 const WC14 = lazy(() => import("../pages/WorldCup2014"))
+const WC10 = lazy(() => import("../pages/WorldCup2010"))
 const Euro20 = lazy(() => import("../pages/Euro20"))
 const Euro16 = lazy(() => import("../pages/Euro16"))
 const Euro12 = lazy(() => import("../pages/Euro12"))
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/wc14">
             <WC14 />
+          </Route>
+          <Route path="/wc10">
+            <WC10 />
           </Route>
           <Route path="/wwc19">
             <WWC19 />
