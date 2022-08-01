@@ -44,6 +44,15 @@
     "pl": "Australia",
     "pt": "Austrália"
   },
+  "BA": {
+    "de": "Bosnien und Herzegowina",
+    "en": "Bosnia and Herzegovina",
+    "es": "Bosnia y Herzegovina",
+    "fr": "Bosnie-Herzégovine",
+    "it": "Bosnia ed Erzegovina",
+    "pl": "Bośnia i Hercegowina",
+    "pt": "Bósnia e Herzegovina"
+  },
   "BE": {
     "de": "Belgien",
     "en": "Belgium",
@@ -170,6 +179,15 @@
     "pl": "Dania",
     "pt": "Dinamarca"
   },
+  "DZ": {
+    "de": "Algerien",
+    "en": "Algeria",
+    "es": "Argelia",
+    "fr": "Algérie",
+    "it": "Algeria",
+    "pl": "Algieria",
+    "pt": "Argélia"
+  },
   "EC": {
     "de": "Ecuador",
     "en": "Ecuador",
@@ -268,6 +286,15 @@
     "it": "Grecia",
     "pl": "Grecja",
     "pt": "Grécia"
+  },
+  "HN": {
+    "de": "Honduras",
+    "en": "Honduras",
+    "es": "Honduras",
+    "fr": "Honduras",
+    "it": "Honduras",
+    "pl": "Honduras",
+    "pt": "Honduras"
   },
   "HR": {
     "de": "Kroatien",
