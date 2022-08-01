@@ -47,6 +47,9 @@ function Home() {
             <li>
               <Link to="/wc18">World Cup 2018</Link>
             </li>
+            <li>
+              <Link to="/wc14">World Cup 2014</Link>
+            </li>
           </ul>
         </div>
         <div>
