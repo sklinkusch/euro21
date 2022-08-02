@@ -17,6 +17,15 @@
     "pl": "Albania",
     "pt": "Albânia"
   },
+  "AO": {
+    "de": "Angola",
+    "en": "Angola",
+    "es": "Angola",
+    "fr": "Angola",
+    "it": "Angola",
+    "pl": "Angola",
+    "pt": "Angola"
+  },
   "AR": {
     "de": "Argentinien",
     "en": "Argentina",
@@ -584,6 +593,15 @@
     "pl": "Senegal",
     "pt": "Senegal"
   },
+  "TG": {
+    "de": "Togo",
+    "en": "Togo",
+    "es": "Togo",
+    "fr": "Togo",
+    "it": "Togo",
+    "pl": "Togo",
+    "pt": "Togo"
+  },
   "TH": {
     "de": "Thailand",
     "en": "Thailand",
@@ -611,6 +629,15 @@
     "pl": "Turcja",
     "pt": "Turquia"
   },
+  "TT": {
+    "de": "Trinidad und Tobago",
+    "en": "Trinidad and Tobago",
+    "es": "Trinidad y Tobago",
+    "fr": "Trinité-et-Tobago",
+    "it": "Trinidad e Tobago",
+    "pl": "Trynidad i Tobago",
+    "pt": "Trindade e Tobago"
+  },
   "UA": {
     "de": "Ukraine",
     "en": "Ukraine",
@@ -637,6 +664,15 @@
     "it": "Uruguay",
     "pl": "Urugwaj",
     "pt": "Uruguai"
+  },
+  "YU-SCG": {
+    "de": "Serbien und Montenegro",
+    "en": "Serbia and Montenegro",
+    "es": "Serbia y Montenegro",
+    "fr": "Serbie-et-Monténégro",
+    "it": "Serbia e Montenegro",
+    "pl": "Serbia i Czarnogóra",
+    "pt": "Sérvia e Montenegro"
   },
   "ZA": {
     "de": "Südafrika",
