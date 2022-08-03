@@ -9,6 +9,7 @@ const WC2018 = lazy(() => import("../pages/WorldCup2018"))
 const WC2014 = lazy(() => import("../pages/WorldCup2014"))
 const WC2010 = lazy(() => import("../pages/WorldCup2010"))
 const WC2006 = lazy(() => import("../pages/WorldCup2006"))
+const WC2002 = lazy(() => import("../pages/WorldCup2002"))
 const Euro2020 = lazy(() => import("../pages/Euro20"))
 const Euro2016 = lazy(() => import("../pages/Euro16"))
 const Euro2012 = lazy(() => import("../pages/Euro12"))
@@ -36,6 +37,10 @@ const MensWorldCups = [
   {
     path: "/wc2006",
     Component: WC2006
+  },
+  {
+    path: "/wc2002",
+    Component: WC2002
   }
 ]
 
@@ -84,11 +89,23 @@ const WomensEuros = [
   }
 ]
 
+const others = [
+  {
+    path: "/",
+    Component: Home
+  },
+  {
+    path: "*",
+    Component: Home
+  }
+]
+
 const tournaments = [
   ...MensWorldCups,
   ...WomensWorldCups,
   ...MensEuros,
-  ...WomensEuros
+  ...WomensEuros,
+  ...others
 ]
 
 function App() {
@@ -101,9 +118,6 @@ function App() {
               <tournament.Component />
             </Route>
           ))}
-          <Route path="/" >
-            <Home />
-          </Route>
         </Switch>
       </Suspense>
     </Router>
