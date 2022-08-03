@@ -64,6 +64,10 @@ const tournaments = [
         link: "/wc2006",
         title: "World Cup 2006"
       },
+      {
+        link: "/wc2002",
+        title: "World Cup 2002"
+      },
     ],
   },
   {
