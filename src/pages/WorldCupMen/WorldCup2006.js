@@ -2,18 +2,18 @@
 import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useDebugState } from "use-named-state"
-import { MatchListEight } from "../components/MatchList"
-import matches, { matchaf, matchvf, matchhf, match3p, matchf  } from "../data/matches_wc2022"
-import { TableSetEight } from "../components/Table"
-import { AchtelfinaleWC } from "../components/Achtelfinale"
-import { Viertelfinale } from "../components/Viertelfinale"
-import { Halbfinale } from '../components/Halbfinale';
-import { getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../components/helpers';
-import { Finale, Platz3 } from '../components/Finale';
-import { localeName as locales } from '../components/countries';
+import { MatchListEight } from "../../components/MatchList"
+import matches, { matchaf, matchvf, matchhf, match3p, matchf  } from "../../data/matches_wc2006"
+import { TableSetEight } from "../../components/Table"
+import { AchtelfinaleWC } from "../../components/Achtelfinale"
+import { Viertelfinale } from "../../components/Viertelfinale"
+import { Halbfinale } from '../../components/Halbfinale';
+import { getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../../components/helpers';
+import { Finale, Platz3 } from '../../components/Finale';
+import { localeName as locales } from '../../components/countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
-function WorldCup2022() {
+function WorldCup2006() {
   const fifaWorldRank = ["BR", "BE", "FR", "AR", "GB-ENG", "ES", "PT", "MX", "NL", "DK", "DE", "UY", "CH", "US", "HR", "GB-WLS", "SN", "IR", "PE", "JP", "MA", "RS", "PL", "UA", "KR", "CR", "TN", "CM", "CA", "GB-SCT", "AU", "EC", "QA", "GH", "AE", "NZ"]
   const [groupA, setGroupA] = useDebugState("groupA",[])
   const [groupB, setGroupB] = useDebugState("groupB",[])
@@ -82,7 +82,7 @@ function WorldCup2022() {
     <div className="App" sx={{ textAlign: "center", py: "16px", backgroundColor: "bg", color: "ft" }}>
       <h1 sx={{ fontSize: 3, fontWeight: "bold", my: "8px", px: ["4px", "4px", "0px"], hyphens: ["auto", "none"] }} lang={lang}>
         <span>{locales("WorldCup")}</span>{" "}
-        <span>2022</span>
+        <span>2006</span>
       </h1>
       <header className="App-header" sx={{ display: "grid", gridTemplateColumns: ["1fr", "1fr", "1fr 2fr"], borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft" }}>
         <aside sx={{ width: "100%" }}>
@@ -128,4 +128,4 @@ function WorldCup2022() {
   );
 }
 
-export default WorldCup2022
+export default WorldCup2006

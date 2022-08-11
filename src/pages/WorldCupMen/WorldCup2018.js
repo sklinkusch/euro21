@@ -2,15 +2,15 @@
 import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useDebugState } from "use-named-state"
-import { MatchListEight } from "../components/MatchList"
-import matches, { matchaf, matchvf, matchhf, match3p, matchf  } from "../data/matches_wc2018"
-import { TableSetEight } from "../components/Table"
-import { AchtelfinaleWC } from "../components/Achtelfinale"
-import { Viertelfinale } from "../components/Viertelfinale"
-import { Halbfinale } from '../components/Halbfinale';
-import { getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../components/helpers';
-import { Finale, Platz3 } from '../components/Finale';
-import { localeName as locales } from '../components/countries';
+import { MatchListEight } from "../../components/MatchList"
+import matches, { matchaf, matchvf, matchhf, match3p, matchf  } from "../../data/matches_wc2018"
+import { TableSetEight } from "../../components/Table"
+import { AchtelfinaleWC } from "../../components/Achtelfinale"
+import { Viertelfinale } from "../../components/Viertelfinale"
+import { Halbfinale } from '../../components/Halbfinale';
+import { getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../../components/helpers';
+import { Finale, Platz3 } from '../../components/Finale';
+import { localeName as locales } from '../../components/countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function WorldCup2018() {

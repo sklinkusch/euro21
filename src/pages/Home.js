@@ -45,27 +45,27 @@ const tournaments = [
     title: "Men's World Cup",
     editions: [
       {
-        link: "/wc2022",
+        link: "/worldcupmen/2022",
         title: "World Cup 2022"
       },
       {
-        link: "/wc2018",
+        link: "/worldcupmen/2018",
         title: "World Cup 2018"
       },
       {
-        link: "/wc2014",
+        link: "/worldcupmen/2014",
         title: "World Cup 2014"
       },
       {
-        link: "/wc2010",
+        link: "/worldcupmen/2010",
         title: "World Cup 2010"
       },
       {
-        link: "/wc2006",
+        link: "/worldcupmen/2006",
         title: "World Cup 2006"
       },
       {
-        link: "/wc2002",
+        link: "/worldcupmen/2002",
         title: "World Cup 2002"
       },
     ],
