@@ -74,11 +74,11 @@ const tournaments = [
     title: "Women's World Cup",
     editions: [
       {
-        link: "/wwc2019",
+        link: "/worldcupwomen/2019",
         title: "World Cup 2019"
       },
       {
-        link: "/wwc2015",
+        link: "/worldcupwomen/2015",
         title: "World Cup 2015"
       }
     ],

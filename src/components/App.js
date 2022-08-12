@@ -1,27 +1,15 @@
 import React, { Suspense, lazy } from "react"
 import { HashRouter as Router, Switch, Route } from "react-router-dom"
 import WorldCupMen from "../pages/WorldCupMen/WorldCupMen"
+import WorldCupWomen from "../pages/WorldCupWomen/WorldCupWomen"
 const WEuro2017 = lazy(() => import("../pages/WEuro17")) 
 const WEuro2022 = lazy(() => import("../pages/WEuro22"))
-const WWC2015 = lazy(() => import("../pages/WWorldCup2015"))
-const WWC2019 = lazy(() => import("../pages/WWorldCup2019"))
 const Euro2020 = lazy(() => import("../pages/Euro20"))
 const Euro2016 = lazy(() => import("../pages/Euro16"))
 const Euro2012 = lazy(() => import("../pages/Euro12"))
 const Euro2008 = lazy(() => import("../pages/Euro08"))
 const Euro2004 = lazy(() => import("../pages/Euro04"))
 const Home = lazy(() => import("../pages/Home"))
-
-const WomensWorldCups = [
-  {
-    path: "/wwc2019",
-    Component: WWC2019
-  },
-  {
-    path: "/wwc2015",
-    Component: WWC2015
-  }
-]
 
 const MensEuros = [
   {
@@ -69,7 +57,6 @@ const others = [
 ]
 
 const tournaments = [
-  ...WomensWorldCups,
   ...MensEuros,
   ...WomensEuros,
   ...others
@@ -82,6 +69,9 @@ function App() {
         <Switch>
           <Route path="/worldcupmen/:year">
             <WorldCupMen />
+          </Route>
+          <Route path="/worldcupwomen/:year">
+            <WorldCupWomen />
           </Route>
           {tournaments.map((tournament, index) => (
             <Route path={tournament.path} key={index}>
