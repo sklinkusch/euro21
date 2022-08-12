@@ -18,6 +18,16 @@ export function MatchList({ matches }) {
   )
 }
 
+export function MatchListTwo({matches}) {
+  const { A: groupA, B: groupB } = matches
+  return (
+    <div>
+      <GroupMatchList matches={groupA} number={0} />
+      <GroupMatchList matches={groupB} number={1} />
+    </div>
+  )
+}
+
 export function MatchListThree({ matches }) {
   const { A: groupA, B: groupB, C: groupC } = matches
   return (

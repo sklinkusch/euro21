@@ -227,6 +227,16 @@ function Table({ matches, group, setGroup, notifier, number, coefficient = [] })
   )
 }
 
+export function TableSetTwo({ matches, groupA, groupB, setGroupA, setGroupB, setGroupC, coefficient = []}) {
+  const { A, B } = matches
+  return (
+    <div sx={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)"}}>
+      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} />
+      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} />
+    </div>
+  )
+}
+
 export function TableSetThree({ matches, groupA, groupB, groupC, setGroupA, setGroupB, setGroupC, coefficient = [] }) {
   const { A, B, C } = matches
   return (
