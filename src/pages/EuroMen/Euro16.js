@@ -2,15 +2,15 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDebugState } from 'use-named-state'
-import { MatchList } from "../components/MatchList"
-import { TableSet, TableThird } from "../components/Table"
-import matches, { matchaf, matchvf, matchhf, matchf } from "../data/matches_euro2016"
-import { Achtelfinale16 } from "../components/Achtelfinale16"
-import { Viertelfinale } from "../components/Viertelfinale"
-import { Halbfinale } from '../components/Halbfinale';
-import { getAssociation16, getKoTeams, getKoTeam, FlagSet, getChampion } from '../components/helpers';
-import { Finale } from '../components/Finale';
-import { localeName as locales } from '../components/countries';
+import { MatchList } from "../../components/MatchList"
+import { TableSet, TableThird } from "../../components/Table"
+import matches, { matchaf, matchvf, matchhf, matchf } from "../../data/matches_euro2016"
+import { Achtelfinale16 } from "../../components/Achtelfinale16"
+import { Viertelfinale } from "../../components/Viertelfinale"
+import { Halbfinale } from '../../components/Halbfinale';
+import { getAssociation16, getKoTeams, getKoTeam, FlagSet, getChampion } from '../../components/helpers';
+import { Finale } from '../../components/Finale';
+import { localeName as locales } from '../../components/countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function Euro16() {

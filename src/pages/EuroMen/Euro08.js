@@ -2,17 +2,17 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDebugState } from 'use-named-state'
-import { MatchListFour } from "../components/MatchList"
-import { TableSetFour } from "../components/Table"
-import matches, { matchvf, matchhf, matchf } from "../data/matches_euro2004"
-import { Viertelfinale } from "../components/Viertelfinale"
-import { Halbfinale } from '../components/Halbfinale';
-import { getKoTeam, FlagSet, getChampion } from '../components/helpers';
-import { Finale } from '../components/Finale';
-import { localeName as locales } from '../components/countries';
+import { MatchListFour } from "../../components/MatchList"
+import { TableSetFour } from "../../components/Table"
+import matches, { matchvf, matchhf, matchf } from "../../data/matches_euro2008"
+import { Viertelfinale } from "../../components/Viertelfinale"
+import { Halbfinale } from '../../components/Halbfinale';
+import { getKoTeam, FlagSet, getChampion } from '../../components/helpers';
+import { Finale } from '../../components/Finale';
+import { localeName as locales } from '../../components/countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
-function Euro04() {
+function Euro08() {
   const [groupA, setGroupA] = useDebugState("groupA",[])
   const [groupB, setGroupB] = useDebugState("groupB",[])
   const [groupC, setGroupC] = useDebugState("groupC",[])
@@ -50,9 +50,9 @@ function Euro04() {
   }, [first, second])
   useEffect(() => {
     const aTeamHF1 = getKoTeam(matchvf, 0, vfTeams[0], 0, vfTeams[0], 1)
-    const bTeamHF1 = getKoTeam(matchvf, 1, vfTeams[1], 0, vfTeams[1], 1)
+    const bTeamHF1 = getKoTeam(matchvf, 2, vfTeams[2], 0, vfTeams[2], 1)
     const teamsHF1 = [aTeamHF1, bTeamHF1]
-    const aTeamHF2 = getKoTeam(matchvf, 2, vfTeams[2], 0, vfTeams[2], 1)
+    const aTeamHF2 = getKoTeam(matchvf, 1, vfTeams[1], 0, vfTeams[1], 1)
     const bTeamHF2 = getKoTeam(matchvf, 3, vfTeams[3], 0, vfTeams[3], 1)
     const teamsHF2 = [aTeamHF2, bTeamHF2]
     const teamsHF = [teamsHF1, teamsHF2]
@@ -73,7 +73,7 @@ function Euro04() {
     <div className="App" sx={{ textAlign: "center", py: "16px", backgroundColor: "bg", color: "ft" }}>
       <h1 sx={{ fontSize: 3, fontWeight: "bold", my: "8px", px: ["4px", "4px", "0px"], hyphens: ["auto", "none"] }} lang={lang}>
         <span>{locales("Euro")}</span>{" "}
-        <span>2004</span>
+        <span>2008</span>
       </h1>
       <header className="App-header" sx={{ display: "grid", gridTemplateColumns: ["1fr", "1fr", "1fr 2fr"], borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft" }}>
         <aside sx={{ width: "100%" }}>
@@ -111,4 +111,4 @@ function Euro04() {
   );
 }
 
-export default Euro04;
+export default Euro08;
