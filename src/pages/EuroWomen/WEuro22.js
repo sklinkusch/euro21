@@ -2,14 +2,14 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDebugState } from 'use-named-state'
-import { MatchListFour } from "../components/MatchList"
-import { TableSetFour } from "../components/Table"
-import matches, { matchvf, matchhf, matchf } from "../data/matches_weuro2022"
-import { Viertelfinale } from "../components/Viertelfinale"
-import { Halbfinale } from '../components/Halbfinale';
-import { getKoTeam, FlagSet, getChampion } from '../components/helpers';
-import { Finale } from '../components/Finale';
-import { localeName as locales } from '../components/countries';
+import { MatchListFour } from "../../components/MatchList"
+import { TableSetFour } from "../../components/Table"
+import matches, { matchvf, matchhf, matchf } from "../../data/matches_weuro2022"
+import { Viertelfinale } from "../../components/Viertelfinale"
+import { Halbfinale } from '../../components/Halbfinale';
+import { getKoTeam, FlagSet, getChampion } from '../../components/helpers';
+import { Finale } from '../../components/Finale';
+import { localeName as locales } from '../../components/countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function WEuro22() {

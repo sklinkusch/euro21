@@ -7,23 +7,23 @@ const tournaments = [
     title: "Men's Euro",
     editions: [
       {
-        link: "/euro2020",
+        link: "/euromen/2020",
         title: "Euro 2020"
       },
       {
-        link: "/euro2016",
+        link: "/euromen/2016",
         title: "Euro 2016"
       },
       {
-        link: "/euro2012",
+        link: "/euromen/2012",
         title: "Euro 2012"
       },
       {
-        link: "/euro2008",
+        link: "/euromen/2008",
         title: "Euro 2008"
       },
       {
-        link: "/euro2004",
+        link: "/euromen/2004",
         title: "Euro 2004"
       },
     ],
@@ -32,11 +32,11 @@ const tournaments = [
     title: "Women's Euro",
     editions: [
       {
-        link: "/weuro2022",
+        link: "/eurowomen/2022",
         title: "Euro 2022"
       },
       {
-        link: "/weuro2017",
+        link: "/eurowomen/2017",
         title: "Euro 2017"
       },
     ],

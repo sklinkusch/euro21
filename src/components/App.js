@@ -3,20 +3,8 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom"
 import WorldCupMen from "../pages/WorldCupMen/WorldCupMen"
 import WorldCupWomen from "../pages/WorldCupWomen/WorldCupWomen"
 import EuroMen from "../pages/EuroMen/EuroMen"
-const WEuro2017 = lazy(() => import("../pages/WEuro17")) 
-const WEuro2022 = lazy(() => import("../pages/WEuro22"))
+import EuroWomen from "../pages/EuroWomen/EuroWomen"
 const Home = lazy(() => import("../pages/Home"))
-
-const WomensEuros = [
-  {
-    path: "/weuro2022",
-    Component: WEuro2022
-  },
-  {
-    path: "/weuro2017",
-    Component: WEuro2017
-  }
-]
 
 const others = [
   {
@@ -30,7 +18,6 @@ const others = [
 ]
 
 const tournaments = [
-  ...WomensEuros,
   ...others
 ]
 
@@ -47,6 +34,9 @@ function App() {
           </Route>
           <Route path="/euromen/:year">
             <EuroMen />
+          </Route>
+          <Route path="eurowomen/:year">
+            <EuroWomen />
           </Route>
           {tournaments.map((tournament, index) => (
             <Route path={tournament.path} key={index}>
