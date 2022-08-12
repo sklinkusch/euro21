@@ -39,6 +39,10 @@ const tournaments = [
         link: "/eurowomen/2017",
         title: "Euro 2017"
       },
+      {
+        link: "/eurowomen/2013",
+        title: "Euro 2013"
+      }
     ],
   },
   {

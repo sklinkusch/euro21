@@ -35,7 +35,7 @@ function App() {
           <Route path="/euromen/:year">
             <EuroMen />
           </Route>
-          <Route path="eurowomen/:year">
+          <Route path="/eurowomen/:year">
             <EuroWomen />
           </Route>
           {tournaments.map((tournament, index) => (

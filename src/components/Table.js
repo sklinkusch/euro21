@@ -5,7 +5,7 @@ import { participantName as participants, localeName as locales } from './countr
 import { getColor } from './helpers'
 /* eslint-disable react-hooks/exhaustive-deps */
 
-function TableSet({ matches, groupA, groupB, groupC, groupD, groupE, groupF, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF, coefficient = [] }) {
+export function TableSet({ matches, groupA, groupB, groupC, groupD, groupE, groupF, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF, coefficient = [] }) {
   const { A, B, C, D, E, F } = matches
   return (
     <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(3,1fr)"], gridTemplateRows: ["repeat(3,1fr)", "repeat(3,1fr)", "repeat(2,1fr)"] }}>
@@ -227,7 +227,18 @@ function Table({ matches, group, setGroup, notifier, number, coefficient = [] })
   )
 }
 
-function TableSetFour({ matches, groupA, groupB, groupC, groupD, setGroupA, setGroupB, setGroupC, setGroupD, coefficient = []}) {
+export function TableSetThree({ matches, groupA, groupB, groupC, setGroupA, setGroupB, setGroupC, coefficient = [] }) {
+  const { A, B, C } = matches
+  return (
+    <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(3,1fr)"] }}>
+      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} />
+      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} />
+      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} coefficient={coefficient} />
+    </div>
+  )
+}
+
+export function TableSetFour({ matches, groupA, groupB, groupC, groupD, setGroupA, setGroupB, setGroupC, setGroupD, coefficient = []}) {
   const { A, B, C, D } = matches
   return (
     <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"], gridTemplateRows: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"] }}>
@@ -239,7 +250,7 @@ function TableSetFour({ matches, groupA, groupB, groupC, groupD, setGroupA, setG
   )
 }
 
-function TableSetEight({ matches, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF, setGroupG, setGroupH, coefficient = [] }) {
+export function TableSetEight({ matches, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF, setGroupG, setGroupH, coefficient = [] }) {
   const { A, B, C, D, E, F, G, H } = matches
   return (
     <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], gridTemplateRows: ["repeat(4,1fr)", "repeat(4,1fr)", "repeat(2,1fr)"]}}>
@@ -255,7 +266,8 @@ function TableSetEight({ matches, groupA, groupB, groupC, groupD, groupE, groupF
   )
 }
 
-function TableThird({ third }) {
+export function TableThird({ third, emax }) {
+  const max = emax ? emax : 3
   return (
     <table sx={{ fontSize: 0, backgroundColor: "#78C5FC", padding: "4px", margin: "4px", borderRadius: "20px", gridColumn: ["1 / span 2", "1 / span 1", "1 / span 2"] }}>
       <thead>
@@ -270,7 +282,7 @@ function TableThird({ third }) {
       </thead>
       <tbody>
         {third && third.length > 0 && third.map((team, index) => {
-          const line = index === 3 ? "1px dashed black" : "none"
+          const line = index === max ? "1px dashed black" : "none"
           if (team) {
             return (
               <tr key={index}>
@@ -288,5 +300,3 @@ function TableThird({ third }) {
     </table>
   )
 }
-
-export { TableSet, TableSetFour, TableThird, TableSetEight }

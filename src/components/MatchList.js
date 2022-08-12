@@ -4,7 +4,7 @@ import FlagWrapper from './FlagWrapper'
 import { participantName as participants } from "./countries"
 import { getColor } from "./helpers"
 
-function MatchList({ matches }) {
+export function MatchList({ matches }) {
   const { A: groupA, B: groupB, C: groupC, D: groupD, E: groupE, F: groupF } = matches
   return (
     <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(3,1fr)", "repeat(2,1fr)"], gridTemplateRows: ["repeat(3,1fr)", "repeat(2,1fr)", "repeat(3,1fr)"] }}>
@@ -18,7 +18,18 @@ function MatchList({ matches }) {
   )
 }
 
-function MatchListFour({ matches }) {
+export function MatchListThree({ matches }) {
+  const { A: groupA, B: groupB, C: groupC } = matches
+  return (
+    <div sx={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gridTemplateRows: "repeat(2,1fr)"}}>
+      <GroupMatchList matches={groupA} number={0} />
+      <GroupMatchList matches={groupB} number={1} />
+      <GroupMatchList matches={groupC} number={2} />
+    </div>
+  )
+}
+
+export function MatchListFour({ matches }) {
   const { A: groupA, B: groupB, C: groupC, D: groupD } = matches
   return (
     <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"], gridTemplateRows: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"]}}>
@@ -30,7 +41,7 @@ function MatchListFour({ matches }) {
   )
 }
 
-function MatchListEight({ matches }) {
+export function MatchListEight({ matches }) {
   const { A: groupA, B: groupB, C: groupC, D: groupD, E: groupE, F: groupF, G: groupG, H: groupH } = matches
   return (
     <div sx={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gridTemplateRows: "repeat(4, 1fr)" }}>
@@ -71,5 +82,3 @@ function GroupMatchList({ matches, border, number }) {
     </table>
   )
 }
-
-export { MatchList, MatchListFour, MatchListEight }
