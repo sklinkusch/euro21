@@ -5,11 +5,14 @@ const Euro2017 = lazy(() => import("./WEuro17"))
 const Euro2013 = lazy(() => import("./WEuro13"))
 const Euro2009 = lazy(() => import("./WEuro09"))
 const Euro2005 = lazy(() => import("./WEuro05"))
+const Euro2001 = lazy(() => import("./WEuro01"))
 const Home = lazy(() => import("../Home"))
 
 function EuroWomen () {
   const { year } = useParams()
   switch (year) {
+    case "2001":
+      return <Euro2001 />
     case "2005":
       return <Euro2005 />
     case "2009":
