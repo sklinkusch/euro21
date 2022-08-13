@@ -19,7 +19,7 @@ export function TableSet({ matches, groupA, groupB, groupC, groupD, groupE, grou
   )
 }
 
-function Table({ matches, group, setGroup, notifier, number, coefficient = [] }) {
+function Table({ matches, group, setGroup, notifier, number, coefficient = [], modus = "euro" }) {
   useEffect(() => {
     const teams = [...matches[0].teams, ...matches[1].teams]
     const teamData = teams.map(team => {
@@ -141,6 +141,39 @@ function Table({ matches, group, setGroup, notifier, number, coefficient = [] })
           }
           return acc
         }, 0)
+        if (modus === "wc") {
+          if (a.goalDifference > b.goalDifference) {
+            return -1
+          } else if (b.goalDifference > a.goalDifference) {
+            return +1
+          } else if (a.goals > b.goals) {
+            return -1
+          } else if (b.goals > a.goals) {
+            return +1
+          } else if (aPoints > bPoints) {
+            return -1
+          } else if (bPoints > aPoints) {
+            return +1
+          } else if (aGoalDifference > bGoalDifference) {
+            return -1
+          } else if (bGoalDifference > aGoalDifference) {
+            return +1
+          } else if (aGoals > bGoals) {
+            return -1
+          } else if (bGoals > aGoals) {
+            return +1
+          } else if (a.victories > b.victories) {
+            return -1
+          } else if (b.victories > a.victories) {
+            return +1
+          } else if (a.fairPlay < b.fairPlay) {
+            return -1
+          } else if (b.fairPlay < a.fairPlay) {
+            return +1
+          } else {
+            return (aUefa - bUefa)
+          }
+        }
         if (aPoints > bPoints) {
           return -1
         } else if (bPoints > aPoints) {
@@ -248,14 +281,14 @@ export function TableSetThree({ matches, groupA, groupB, groupC, setGroupA, setG
   )
 }
 
-export function TableSetFour({ matches, groupA, groupB, groupC, groupD, setGroupA, setGroupB, setGroupC, setGroupD, coefficient = []}) {
+export function TableSetFour({ matches, groupA, groupB, groupC, groupD, setGroupA, setGroupB, setGroupC, setGroupD, coefficient = [], modus }) {
   const { A, B, C, D } = matches
   return (
     <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"], gridTemplateRows: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"] }}>
-      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} />
-      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} />
-      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} coefficient={coefficient} />
-      <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" number={3} coefficient={coefficient} />
+      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} modus={modus} />
+      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} modus={modus} />
+      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} coefficient={coefficient} modus={modus} />
+      <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" number={3} coefficient={coefficient} modus={modus} />
     </div>
   )
 }
