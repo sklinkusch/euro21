@@ -116,6 +116,10 @@ const tournaments = [
       {
         link: "/worldcupwomen/1995",
         title: "World Cup 1995"
+      },
+      {
+        link: "/worldcupwomen/1991",
+        title: "World Cup 1991"
       }
     ],
   }
