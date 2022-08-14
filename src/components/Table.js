@@ -270,13 +270,13 @@ export function TableSetTwo({ matches, groupA, groupB, setGroupA, setGroupB, set
   )
 }
 
-export function TableSetThree({ matches, groupA, groupB, groupC, setGroupA, setGroupB, setGroupC, coefficient = [] }) {
+export function TableSetThree({ matches, groupA, groupB, groupC, setGroupA, setGroupB, setGroupC, coefficient = [], modus }) {
   const { A, B, C } = matches
   return (
     <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(3,1fr)"] }}>
-      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} />
-      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} />
-      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} coefficient={coefficient} />
+      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} modus={modus} />
+      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} modus={modus} />
+      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} coefficient={coefficient} modus={modus} />
     </div>
   )
 }
