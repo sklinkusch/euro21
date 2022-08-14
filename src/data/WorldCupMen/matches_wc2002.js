@@ -1,6 +1,6 @@
 // import { localeName } from "../components/countries";
 
-import { localeName } from "../components/countries"
+import { localeName } from "../../components/countries"
 
 const matches = {
   A: [

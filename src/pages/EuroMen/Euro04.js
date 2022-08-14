@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useDebugState } from 'use-named-state'
 import { MatchListFour } from "../../components/MatchList"
 import { TableSetFour } from "../../components/Table"
-import matches, { matchvf, matchhf, matchf } from "../../data/matches_euro2004"
+import matches, { matchvf, matchhf, matchf } from "../../data/EuroMen/matches_euro2004"
 import { Viertelfinale } from "../../components/Viertelfinale"
 import { Halbfinale } from '../../components/Halbfinale';
 import { getKoTeam, FlagSet, getChampion } from '../../components/helpers';

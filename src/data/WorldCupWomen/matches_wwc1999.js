@@ -1,6 +1,6 @@
 // const locales = require("../data/locales.json")
 
-import { localeName } from "../components/countries"
+import { localeName } from "../../components/countries"
 
 const matches = {
   A: [
