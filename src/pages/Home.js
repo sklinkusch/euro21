@@ -94,6 +94,10 @@ const tournaments = [
     title: "Women's World Cup",
     editions: [
       {
+        link: "/worldcupwomen/2023",
+        title: "World Cup 2023"
+      },
+      {
         link: "/worldcupwomen/2019",
         title: "World Cup 2019"
       },

@@ -9,6 +9,7 @@ const WorldCup2007 = lazy(() => import("./WWorldCup2007"))
 const WorldCup2011 = lazy(() => import("./WWorldCup2011"))
 const WorldCup2015 = lazy(() => import("./WWorldCup2015"))
 const WorldCup2019 = lazy(() => import("./WWorldCup2019"))
+const WorldCup2023 = lazy(() => import("./WWorldCup2023"))
 
 function WorldCupWomen() {
   const { year } = useParams()
@@ -29,6 +30,8 @@ function WorldCupWomen() {
       return <WorldCup2015 />
     case "2019":
       return <WorldCup2019 />
+    case "2023":
+      return <WorldCup2023 />
     default:
       return <Home />
   }
