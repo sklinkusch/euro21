@@ -3,14 +3,14 @@
 const matches = {
   A: [
     {
-      teams: ["SN", "NL"],
-      goals: [null, null],
-      fairPlay: [null, null]
-    },
-    {
       teams: ["QA", "EC"],
       goals: [0, 2],
       fairPlay: [4, 2]
+    },
+    {
+      teams: ["SN", "NL"],
+      goals: [0, 2],
+      fairPlay: [2, 1]
     },
     {
       teams: ["QA", "SN"],
