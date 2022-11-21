@@ -41,8 +41,8 @@ const matches = {
     },
     {
       teams: ["US", "GB-WLS"],
-      goals: [null, null],
-      fairPlay: [null, null]
+      goals: [1, 1] ,
+      fairPlay: [4, 2]
     },
     {
       teams: ["GB-WLS", "IR"],
