@@ -36,8 +36,8 @@ const matches = {
   B: [
     {
       teams: ["GB-ENG", "IR"],
-      goals: [null, null],
-      fairPlay: [null, null]
+      goals: [6, 2],
+      fairPlay: [0, 2]
     },
     {
       teams: ["US", "GB-WLS"],
