@@ -100,8 +100,8 @@ const matches = {
   D: [
     {
       teams: ["DK", "TN"],
-      goals: [null, null],
-      fairPlay: [null, null]
+      goals: [0, 0],
+      fairPlay: [2, 1]
     },
     {
       teams: ["FR", "AU"],
