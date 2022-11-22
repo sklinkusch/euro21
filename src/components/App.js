@@ -26,22 +26,12 @@ function App() {
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/worldcupmen/:year">
-            <WorldCupMen />
-          </Route>
-          <Route path="/worldcupwomen/:year">
-            <WorldCupWomen />
-          </Route>
-          <Route path="/euromen/:year">
-            <EuroMen />
-          </Route>
-          <Route path="/eurowomen/:year">
-            <EuroWomen />
-          </Route>
+          <Route path="/worldcupmen/:year" element={<WorldCupMen />} />
+          <Route path="/worldcupwomen/:year" element={<WorldCupWomen />} />
+          <Route path="/euromen/:year" element={<EuroMen />} />
+          <Route path="/eurowomen/:year" element={<EuroWomen />} />
           {tournaments.map((tournament, index) => (
-            <Route path={tournament.path} key={index}>
-              <tournament.Component />
-            </Route>
+            <Route path={tournament.path} key={index} element={<tournament.Component />} />
           ))}
         </Routes>
       </Suspense>
