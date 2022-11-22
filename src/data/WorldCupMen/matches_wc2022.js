@@ -3,14 +3,14 @@
 const matches = {
   A: [
     {
-      teams: ["SN", "NL"],
-      goals: [null, null],
-      fairPlay: [null, null]
+      teams: ["QA", "EC"],
+      goals: [0, 2],
+      fairPlay: [4, 2]
     },
     {
-      teams: ["QA", "EC"],
-      goals: [null, null],
-      fairPlay: [null, null]
+      teams: ["SN", "NL"],
+      goals: [0, 2],
+      fairPlay: [2, 1]
     },
     {
       teams: ["QA", "SN"],
@@ -36,13 +36,13 @@ const matches = {
   B: [
     {
       teams: ["GB-ENG", "IR"],
-      goals: [null, null],
-      fairPlay: [null, null]
+      goals: [6, 2],
+      fairPlay: [0, 2]
     },
     {
       teams: ["US", "GB-WLS"],
-      goals: [null, null],
-      fairPlay: [null, null]
+      goals: [1, 1] ,
+      fairPlay: [4, 2]
     },
     {
       teams: ["GB-WLS", "IR"],
@@ -68,13 +68,13 @@ const matches = {
   C: [
     {
       teams: ["AR", "SA"],
-      goals: [null, null],
-      fairPlay: [null, null]
+      goals: [1, 2],
+      fairPlay: [0, 6]
     },
     {
       teams: ["MX", "PL"],
-      goals: [null, null],
-      fairPlay: [null, null]
+      goals: [0, 0],
+      fairPlay: [2, 1]
     },
     {
       teams: ["PL", "SA"],
@@ -100,8 +100,8 @@ const matches = {
   D: [
     {
       teams: ["DK", "TN"],
-      goals: [null, null],
-      fairPlay: [null, null]
+      goals: [0, 0],
+      fairPlay: [2, 1]
     },
     {
       teams: ["FR", "AU"],

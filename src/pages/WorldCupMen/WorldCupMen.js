@@ -10,7 +10,6 @@ const WorldCup2022 = lazy(() => import("./WorldCup2022.js"))
 
 function WorldCupMen () {
   const { year } = useParams()
-  console.log(year)
   switch (year) {
     case "2002":
       return <WorldCup2002 />

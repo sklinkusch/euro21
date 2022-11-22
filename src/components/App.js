@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from "react"
-import { HashRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import WorldCupMen from "../pages/WorldCupMen/WorldCupMen"
 import WorldCupWomen from "../pages/WorldCupWomen/WorldCupWomen"
 import EuroMen from "../pages/EuroMen/EuroMen"
@@ -23,7 +23,7 @@ const tournaments = [
 
 function App() {
   return (
-    <Router basename={`/${process.env.PUBLIC_URL}`}>
+    <Router>
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
           <Route path="/worldcupmen/:year">
