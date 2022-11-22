@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import WorldCupMen from "../pages/WorldCupMen/WorldCupMen"
 import WorldCupWomen from "../pages/WorldCupWomen/WorldCupWomen"
 import EuroMen from "../pages/EuroMen/EuroMen"
@@ -25,25 +25,15 @@ function App() {
   return (
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
-        <Switch>
-          <Route path="/worldcupmen/:year">
-            <WorldCupMen />
-          </Route>
-          <Route path="/worldcupwomen/:year">
-            <WorldCupWomen />
-          </Route>
-          <Route path="/euromen/:year">
-            <EuroMen />
-          </Route>
-          <Route path="/eurowomen/:year">
-            <EuroWomen />
-          </Route>
+        <Routes>
+          <Route path="/worldcupmen/:year" element={<WorldCupMen />} />
+          <Route path="/worldcupwomen/:year" element={<WorldCupWomen />} />
+          <Route path="/euromen/:year" element={<EuroMen />} />
+          <Route path="/eurowomen/:year" element={<EuroWomen />} />
           {tournaments.map((tournament, index) => (
-            <Route path={tournament.path} key={index}>
-              <tournament.Component />
-            </Route>
+            <Route path={tournament.path} key={index} element={<tournament.Component />} />
           ))}
-        </Switch>
+        </Routes>
       </Suspense>
     </Router>
   )
