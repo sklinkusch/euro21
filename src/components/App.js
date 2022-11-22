@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import WorldCupMen from "../pages/WorldCupMen/WorldCupMen"
 import WorldCupWomen from "../pages/WorldCupWomen/WorldCupWomen"
 import EuroMen from "../pages/EuroMen/EuroMen"
@@ -25,7 +25,7 @@ function App() {
   return (
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
-        <Switch>
+        <Routes>
           <Route path="/worldcupmen/:year">
             <WorldCupMen />
           </Route>
@@ -43,7 +43,7 @@ function App() {
               <tournament.Component />
             </Route>
           ))}
-        </Switch>
+        </Routes>
       </Suspense>
     </Router>
   )
