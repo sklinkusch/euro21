@@ -164,8 +164,8 @@ const matches = {
   F: [
     {
       teams: ["MA", "HR"],
-      goals: [null, null],
-      fairPlay: [null, null]
+      goals: [0, 0],
+      fairPlay: [1, 0]
     },
     {
       teams: ["BE", "CA"],
