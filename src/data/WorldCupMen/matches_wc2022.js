@@ -132,8 +132,8 @@ const matches = {
   E: [
     {
       teams: ["DE", "JP"],
-      goals: [null, null],
-      fairPlay: [null, null]
+      goals: [1, 2],
+      fairPlay: [0, 0]
     },
     {
       teams: ["ES", "CR"],
