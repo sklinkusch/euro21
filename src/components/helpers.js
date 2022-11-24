@@ -181,9 +181,11 @@ export const getChampion = (matchArray, teamA, teamB) => {
   const teamAGoal = matchArray.goals[0]
   const teamBGoal = matchArray.goals[1]
   if(teamAGoal > teamBGoal) {
-    return teamA
+    return [teamA].flat()
   } else if (teamBGoal > teamAGoal) {
-    return teamB
+    return [teamB].flat()
+  } else {
+    return [ teamA, teamB ].flat()
   }
 }
 
