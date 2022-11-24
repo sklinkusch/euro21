@@ -195,12 +195,12 @@ const matches = {
   ],
   G: [
     {
-      teams: ["BR", "RS"],
-      goals: [null, null],
-      fairPlay: [null, null]
+      teams: ["CH", "CM"],
+      goals: [1, 0],
+      fairPlay: [2, 1]
     },
     {
-      teams: ["CH", "CM"],
+      teams: ["BR", "RS"],
       goals: [null, null],
       fairPlay: [null, null]
     },
