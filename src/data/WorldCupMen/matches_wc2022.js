@@ -227,12 +227,12 @@ const matches = {
   ],
   H: [
     {
-      teams: ["PT", "GH"],
-      goals: [null, null],
-      fairPlay: [null, null]
+      teams: ["UY", "KR"],
+      goals: [0, 0],
+      fairPlay: [1, 1]
     },
     {
-      teams: ["UY", "KR"],
+      teams: ["PT", "GH"],
       goals: [null, null],
       fairPlay: [null, null]
     },
