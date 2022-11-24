@@ -188,7 +188,7 @@ export function AchtelfinaleWC23({ first, second, matchaf}) {
   const [AF0 = {}, AF1 = {}, AF2 = {}, AF3 = {}, AF4 = {}, AF5 = {}, AF6 = {}, AF7 = {}] = matchaf
   return (
     <div sx={{ width: "100%", gridColumn: ["1 / span 2", "1 / span 2", "1 / span 4"] }}>
-      <div sx={{ textAlign: "center", fontSize: 0 }}>
+      <div sx={{ textAlign: "center", fontSize: 0, width: "100%" }}>
         {locales("Round16")}
       </div>
       <table sx={{ width: "100%" }}>

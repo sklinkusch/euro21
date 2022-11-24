@@ -5,7 +5,7 @@ import { FlagSet } from './helpers'
 
 function Finale({teams = [], matchf = []}) {
   return (
-    <div sx={{ width: "100%", gridColumn: ["1 / span 2","1 / span 2", "1 / span 6"], margin: "8px", padding: "8px" }}>
+    <div sx={{ width: "100%", gridColumn: ["1 / span 2","1 / span 2", "1 / span 6"], my: "8px", padding: "8px" }}>
       <div sx={{ fontSize: "14px", textAlign: "center", textTransform: "uppercase", fontWeight: 500, lineHeight: 1.5 }}>
         {locales("Final")}
       </div>
@@ -22,7 +22,7 @@ function Finale({teams = [], matchf = []}) {
 
 function Platz3({ teams = [], match3p = []}) {
   return (
-    <div sx={{ width: "100%", gridColumn: ["1 / span 2","1 / span 2", "1 / span 6"], margin: "8px", padding: "8px" }}>
+    <div sx={{ width: "100%", gridColumn: ["1 / span 2","1 / span 2", "1 / span 6"], my: "8px", padding: "8px" }}>
       <div sx={{ fontSize: "14px", textAlign: "center", textTransform: "uppercase", fontWeight: 500, lineHeight: 1.5 }}>
         {locales("Place3")}
       </div>

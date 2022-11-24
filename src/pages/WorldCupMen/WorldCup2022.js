@@ -79,12 +79,12 @@ function WorldCup2022() {
   }, [groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH])
   const lang = navigator.language
   return (
-    <div className="App" sx={{ textAlign: "center", py: "16px", backgroundColor: "bg", color: "ft" }}>
+    <div className="App" sx={{ textAlign: "center", py: "16px", backgroundColor: "bg", color: "ft", width: "100%" }}>
       <h1 sx={{ fontSize: 3, fontWeight: "bold", my: "8px", px: ["4px", "4px", "0px"], hyphens: ["auto", "none"] }} lang={lang}>
         <span>{locales("WorldCup")}</span>{" "}
         <span>2022</span>
       </h1>
-      <header className="App-header" sx={{ display: "grid", gridTemplateColumns: ["1fr", "1fr", "1fr 2fr"], borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft" }}>
+      <header className="App-header" sx={{ display: "grid", gridTemplateColumns: ["1fr", "1fr", "1fr 2fr"], borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft", width: "100%" }}>
         <aside sx={{ width: "100%" }}>
           <MatchListEight matches={matches} />
         </aside>
@@ -109,7 +109,7 @@ function WorldCup2022() {
             setGroupH={setGroupH}
             coefficient={fifaWorldRank}
           />
-           <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"] }}>
+           <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], width: "100%", mx: 0 }}>
             <AchtelfinaleWC first={first} second={second} matchaf={matchaf} />
             <Viertelfinale teams={vfTeams} matchvf={matchvf} />
             <Halbfinale teams={hfTeams} matchhf={matchhf} />
@@ -118,7 +118,7 @@ function WorldCup2022() {
           </div>
         </main>
       </header>
-       <h2>
+       <h2 sx={{ width: "100%" }}>
         {locales("WChampion")}: <FlagSet code={champion} large={true} />
       </h2>
       <div sx={{ textAlign: "center" }}>

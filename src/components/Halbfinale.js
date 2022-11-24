@@ -11,13 +11,13 @@ function Halbfinale({teams = [], matchhf = [], full = false}) {
   let gridColumn
   if (full) {
     gridColumn = "1 / 7"
-  } else if (location.pathname.includes("wc")) {
-    gridColumn = ["1 / 3", "2 / 3", "3 / 5"]
+  } else if (location.pathname.includes("worldcup")) {
+    gridColumn = ["1 / 3", "2 / 3", "1 / 5"]
   } else {
     gridColumn = ["1 / 3", "2 / 3", "4 / 7"]
   }
   return (
-    <div sx={{ width: "100%", gridColumn: gridColumn, backgroundColor: "#E6D2B5", margin: "4px", padding: "4px", borderRadius: "20px" }}>
+    <div sx={{ width: "100%", gridColumn: gridColumn, backgroundColor: "#E6D2B5", my: "4px", padding: "4px", borderRadius: "20px" }}>
       <div sx={{ fontSize: "14px", textAlign: "center" }}>
         {locales("Semifinal")}
       </div>
