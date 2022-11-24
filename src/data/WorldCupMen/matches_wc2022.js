@@ -201,16 +201,16 @@ const matches = {
     },
     {
       teams: ["BR", "RS"],
+      goals: [2, 0],
+      fairPlay: [0, 3]
+    },
+    {
+      teams: ["CM", "RS"],
       goals: [null, null],
       fairPlay: [null, null]
     },
     {
       teams: ["BR", "CH"],
-      goals: [null, null],
-      fairPlay: [null, null]
-    },
-    {
-      teams: ["CM", "RS"],
       goals: [null, null],
       fairPlay: [null, null]
     },
@@ -237,12 +237,12 @@ const matches = {
       fairPlay: [2, 4]
     },
     {
-      teams: ["PT", "UY"],
+      teams: ["KR", "GH"],
       goals: [null, null],
       fairPlay: [null, null]
     },
     {
-      teams: ["KR", "GH"],
+      teams: ["PT", "UY"],
       goals: [null, null],
       fairPlay: [null, null]
     },
