@@ -73,18 +73,20 @@ function GroupMatchList({ matches, border, number }) {
     <table sx={{ width: "100%", my: "4px", mx: "4px", py: "2px", px: "2px", backgroundColor: bgcolor, borderRadius: "20px" }}>
       <tbody>
       {matches.map((match, index) => {
-        const { teams, goals } = match
+        const { teams, goals, date } = match
         const [teamA, teamB] = teams
         const [goalsA, goalsB] = goals
         const aGoals = typeof goalsA === "number" ? `${goalsA}` : "-"
         const bGoals = typeof goalsB === "number" ? `${goalsB}` : "-"
         const aParticipants = participants(teamA) ? participants(teamA) : teamA
         const bParticipants = participants(teamB) ? participants(teamB) : teamB
+        const language = navigator.language
+        const formattedDate = date ? new Date(date).toLocaleDateString(language, { year: "2-digit", month: "2-digit", day: "2-digit" }) : null
         return (
           <tr key={index} sx={{ height: "14px" }}>
             <td><FlagWrapper team={teamA} participant={aParticipants} /></td>
             <td><FlagWrapper team={teamB} participant={bParticipants} /></td>
-            <td><span sx={{ fontSize: 0, lineHeight: "16px", color: "ft" }}>{`${aGoals}:${bGoals}`}</span></td>
+            {typeof goalsA === 'number' && typeof goalsB === 'number' ? (<td><span sx={{ fontSize: 0, lineHeight: "16px", color: "ft" }}>{`${aGoals}:${bGoals}`}</span></td>) : formattedDate ? (<td><span sx={{ fontSize: 0, lineHeight: "16px", color: "ft" }}>{formattedDate}</span></td>) : (<td><span sx={{ fontSize: 0, lineHeight: "16px", color: "ft" }}>-:-</span></td>)}
           </tr>
         )
       })}

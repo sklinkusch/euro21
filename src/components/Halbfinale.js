@@ -36,14 +36,15 @@ function Halbfinale({teams = [], matchhf = [], full = false}) {
 }
 
 function HalbfinaleSingle({teams, match}) {
-  const {goals = [], add = ""} = match
+  const {goals = [], add = "", date } = match
   const [ goalsA = "-", goalsB = "-" ] = goals
   const [teamA = undefined, teamB = undefined] = teams
+  const formattedDate = date ? new Date(date).toLocaleDateString(navigator.language, { year: "2-digit", month: "2-digit", day: "2-digit" }) : null
   return (
     <React.Fragment>
       <td><FlagSet code={teamA} /></td>
       <td><FlagSet code={teamB} /></td>
-      {teamA && teamB ? <td sx={{ fontSize: "14px"}}>{`${typeof goalsA === "number" ? goalsA : "-"}:${typeof goalsB === "number" ? goalsB : "-"} ${add ? add : ""}`}</td> : <td sx={{ fontSize: "14px"}}>-:-</td>}
+      {teamA && teamB && typeof goalsA === 'number' && typeof goalsB === 'number' ? (<td sx={{ fontSize: 0 }}>{`${typeof goalsA === "number" ? goalsA : "-"}:${typeof goalsB === "number" ? goalsB : "-"} ${add ? add : ""}`}</td>) : formattedDate ? (<td sx={{ fontSize: 0 }}>{formattedDate}</td>) : (<td sx={{ fontSize: 0 }}>-:-</td>)}
     </React.Fragment>
   )
 }

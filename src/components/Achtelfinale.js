@@ -216,13 +216,14 @@ export function AchtelfinaleWC23({ first, second, matchaf}) {
 }
 
 function AchtelfinaleSingle({ teamA, teamB, match }) {
-  const { goals = [], add = "" } = match
+  const { goals = [], add = "", date } = match
   const [goalsA = "-", goalsB = "-"] = goals
+  const formattedDate = date ? new Date(date).toLocaleDateString(navigator.language, { year: "2-digit", month: "2-digit", day: "2-digit" }) : null
   return (
     <React.Fragment>
       <td><FlagWrapper team={teamA} participant={participants(teamA)} /></td>
       <td><FlagWrapper team={teamB} participant={participants(teamB)} /></td>
-      {teamA && teamB ? <td sx={{ fontSize: 0 }}>{`${typeof goalsA === "number" ? goalsA : "-"}:${typeof goalsB === "number" ? goalsB : "-"} ${add ? add : ""}`}</td> : <td sx={{ fontSize: 0 }}>"-:-"</td>}
+      {teamA && teamB && typeof goalsA === 'number' && typeof goalsB === 'number' ? (<td sx={{ fontSize: 0 }}>{`${typeof goalsA === "number" ? goalsA : "-"}:${typeof goalsB === "number" ? goalsB : "-"} ${add ? add : ""}`}</td>) : formattedDate ? (<td sx={{ fontSize: 0 }}>{formattedDate}</td>) : (<td sx={{ fontSize: 0 }}>-:-</td>)}
     </React.Fragment>
   )
 }
