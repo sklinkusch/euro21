@@ -98,8 +98,8 @@ const matches = {
     },
     {
       teams: ["AR", "MX"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [2, 0],
+      fairPlay: [1, 4],
       date: "2022-11-26T19:00:00Z"
     },
     {
