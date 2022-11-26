@@ -97,6 +97,7 @@ function WWC11() {
             setGroupC={setGroupC}
             setGroupD={setGroupD}
             coefficient={uefaCoefficient}
+            modus="wc"
           />
            <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(6,1fr)"] }}>
             <Viertelfinale teams={vfTeams} matchvf={matchvf} />

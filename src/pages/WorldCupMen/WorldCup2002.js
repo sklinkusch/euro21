@@ -108,6 +108,7 @@ function WorldCup2002() {
             setGroupG={setGroupG}
             setGroupH={setGroupH}
             coefficient={fifaWorldRank}
+            modus="wc"
           />
            <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"] }}>
             <AchtelfinaleWC02 first={first} second={second} matchaf={matchaf} />

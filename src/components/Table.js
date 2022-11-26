@@ -5,16 +5,16 @@ import { participantName as participants, localeName as locales } from './countr
 import { getColor } from './helpers'
 /* eslint-disable react-hooks/exhaustive-deps */
 
-export function TableSet({ matches, groupA, groupB, groupC, groupD, groupE, groupF, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF, coefficient = [] }) {
+export function TableSet({ matches, groupA, groupB, groupC, groupD, groupE, groupF, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF, coefficient = [], modus = "euro" }) {
   const { A, B, C, D, E, F } = matches
   return (
     <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(3,1fr)"], gridTemplateRows: ["repeat(3,1fr)", "repeat(3,1fr)", "repeat(2,1fr)"] }}>
-      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} />
-      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} />
-      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} coefficient={coefficient} />
-      <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" number={3} coefficient={coefficient} />
-      <Table matches={E} group={groupE} setGroup={setGroupE} notifier="E" number={4} coefficient={coefficient} />
-      <Table matches={F} group={groupF} setGroup={setGroupF} notifier="F" number={5} coefficient={coefficient} />
+      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} modus={modus} />
+      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} modus={modus} />
+      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} coefficient={coefficient} modus={modus} />
+      <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" number={3} coefficient={coefficient} modus={modus} />
+      <Table matches={E} group={groupE} setGroup={setGroupE} notifier="E" number={4} coefficient={coefficient} modus={modus} />
+      <Table matches={F} group={groupF} setGroup={setGroupF} notifier="F" number={5} coefficient={coefficient} modus={modus} />
     </div>
   )
 }
@@ -260,12 +260,12 @@ function Table({ matches, group, setGroup, notifier, number, coefficient = [], m
   )
 }
 
-export function TableSetTwo({ matches, groupA, groupB, setGroupA, setGroupB, setGroupC, coefficient = []}) {
+export function TableSetTwo({ matches, groupA, groupB, setGroupA, setGroupB, setGroupC, coefficient = [], modus = "euro" }) {
   const { A, B } = matches
   return (
     <div sx={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)"}}>
-      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} />
-      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} />
+      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} modus={modus} />
+      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} modus={modus} />
     </div>
   )
 }
@@ -293,18 +293,18 @@ export function TableSetFour({ matches, groupA, groupB, groupC, groupD, setGroup
   )
 }
 
-export function TableSetEight({ matches, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF, setGroupG, setGroupH, coefficient = [] }) {
+export function TableSetEight({ matches, groupA, groupB, groupC, groupD, groupE, groupF, groupG, groupH, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF, setGroupG, setGroupH, coefficient = [], modus = "euro" }) {
   const { A, B, C, D, E, F, G, H } = matches
   return (
     <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], gridTemplateRows: ["repeat(4,1fr)", "repeat(4,1fr)", "repeat(2,1fr)"]}}>
-      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} />
-      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} />
-      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} coefficient={coefficient} />
-      <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" number={3} coefficient={coefficient} />
-      <Table matches={E} group={groupE} setGroup={setGroupE} notifier="E" number={4} coefficient={coefficient} />
-      <Table matches={F} group={groupF} setGroup={setGroupF} notifier="F" number={5} coefficient={coefficient} />
-      <Table matches={G} group={groupG} setGroup={setGroupG} notifier="G" number={6} coefficient={coefficient} />
-      <Table matches={H} group={groupH} setGroup={setGroupH} notifier="H" number={7} coefficient={coefficient} />
+      <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} modus={modus} />
+      <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} modus={modus} />
+      <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} coefficient={coefficient} modus={modus} />
+      <Table matches={D} group={groupD} setGroup={setGroupD} notifier="D" number={3} coefficient={coefficient} modus={modus} />
+      <Table matches={E} group={groupE} setGroup={setGroupE} notifier="E" number={4} coefficient={coefficient} modus={modus} />
+      <Table matches={F} group={groupF} setGroup={setGroupF} notifier="F" number={5} coefficient={coefficient} modus={modus} />
+      <Table matches={G} group={groupG} setGroup={setGroupG} notifier="G" number={6} coefficient={coefficient} modus={modus} />
+      <Table matches={H} group={groupH} setGroup={setGroupH} notifier="H" number={7} coefficient={coefficient} modus={modus} />
     </div>
   )
 }
