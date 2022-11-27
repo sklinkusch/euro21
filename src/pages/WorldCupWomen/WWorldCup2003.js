@@ -26,6 +26,9 @@ function WWC03() {
   const [fTeams, setFTeams] = useDebugState("fTeams",[])
   const [champion, setChampion] = useDebugState("champion",null)
   useEffect(() => {
+    document.title = `${locales("WorldCup")} 2003`
+  }, [])
+  useEffect(() => {
     if (first[0]) {
       const aTeamVF1 = first[0].team || ""
       const bTeamVF1 = second[1].team || ""

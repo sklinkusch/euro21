@@ -31,6 +31,9 @@ function WorldCup2023() {
   const [fTeams, setFTeams] = useDebugState("fTeams",[])
   const [champion, setChampion] = useDebugState("champion",null)
   useEffect(() => {
+    document.title = `${locales("WorldCup")} 2023`
+  }, [])
+  useEffect(() => {
     const aTeamVF1 = getKoTeams(matchaf, 1, first[2], second[0])
     const bTeamVF1 = getKoTeams(matchaf, 3, first[6], second[4])
     const teamsVF1 = [aTeamVF1, bTeamVF1]

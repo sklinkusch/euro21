@@ -32,6 +32,9 @@ function WWC19() {
   const [fTeams, setFTeams] = useDebugState("fTeams",[])
   const [champion, setChampion] = useDebugState("champion",null)
   useEffect(() => {
+    document.title = `${locales("WorldCup")} 2019`
+  }, [])
+  useEffect(() => {
     const aTeamVF1 = getKoTeams(matchaf, 1, second[0], winningTeams[association.indexOf(5)])
     const bTeamVF1 = getKoTeams(matchaf, 2, first[3], winningTeams[association.indexOf(1)])
     const teamsVF1 = [aTeamVF1, bTeamVF1]

@@ -31,6 +31,9 @@ function WorldCup2002() {
   const [fTeams, setFTeams] = useDebugState("fTeams",[])
   const [champion, setChampion] = useDebugState("champion",null)
   useEffect(() => {
+    document.title = `${locales("WorldCup")} 2002`
+  }, [])
+  useEffect(() => {
     const aTeamVF1 = getKoTeams(matchaf, 1, first[0], second[5])
     const bTeamVF1 = getKoTeams(matchaf, 5, first[2], second[7])
     const teamsVF1 = [aTeamVF1, bTeamVF1]

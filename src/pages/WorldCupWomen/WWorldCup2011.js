@@ -26,6 +26,9 @@ function WWC11() {
   const [fTeams, setFTeams] = useDebugState("fTeams",[])
   const [champion, setChampion] = useDebugState("champion",null)
   useEffect(() => {
+    document.title = `${locales("WorldCup")} 2011`
+  }, [])
+  useEffect(() => {
     if (first[0]) {
       const aTeamVF1 = first[1].team || ""
       const bTeamVF1 = second[0].team || ""
