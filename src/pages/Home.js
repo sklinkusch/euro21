@@ -1,6 +1,8 @@
 /** @jsxImportSource theme-ui */
-import React from "react"
+import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
+import { localeName as locales } from "../components/countries"
+/* eslint-disable react-hooks/exhaustive-deps */
 
 const tournaments = [
   {
@@ -134,6 +136,9 @@ const tournaments = [
 ]
 
 function Home() {
+  useEffect(() => {
+    document.title = locales("SocTurn")
+  }, [])
   return (
     <div>
       <h1>Overview</h1>
