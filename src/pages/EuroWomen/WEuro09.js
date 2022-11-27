@@ -24,6 +24,9 @@ function WEuro09() {
   const [fTeams, setFTeams] = useDebugState("fTeams",[])
   const [champion, setChampion] = useDebugState("champion",null)
   useEffect(() => {
+    document.title = `${locales("Euro")} 2009`
+  }, [])
+  useEffect(() => {
     const mergedGroups = [groupA, groupB, groupC]
     const firstPlace = mergedGroups.map(group => group[0])
     const secondPlace = mergedGroups.map(group => group[1])

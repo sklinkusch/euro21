@@ -31,6 +31,9 @@ function Euro16() {
   const [fTeams, setFTeams] = useDebugState("fTeams",[])
   const [champion, setChampion] = useDebugState("champion",null)
   useEffect(() => {
+    document.title = `${locales("Euro")} 2016`
+  }, [])
+  useEffect(() => {
     const aTeamVF1 = getKoTeams(matchaf, 0, second[0], second[2])
     const bTeamVF1 = getKoTeams(matchaf, 1, first[3], winningTeams[association.indexOf(3)])
     const teamsVF1 = [aTeamVF1, bTeamVF1]
