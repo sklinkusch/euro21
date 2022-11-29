@@ -66,8 +66,8 @@ const matches = {
     },
     {
       teams: ["GB-WLS", "GB-ENG"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [0, 3],
+      fairPlay: [2, 0],
       date: "2022-11-29T19:00:00Z"
     },
     {
