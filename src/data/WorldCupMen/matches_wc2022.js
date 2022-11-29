@@ -34,8 +34,8 @@ const matches = {
     },
     {
       teams: ["EC", "SN"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [1, 2],
+      fairPlay: [0, 1],
       date: "2022-11-29T15:00:00Z"
     },
   ],
