@@ -110,8 +110,8 @@ const matches = {
     },
     {
       teams: ["SA", "MX"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [1, 2],
+      fairPlay: [6, 1],
       date: "2022-11-30T19:00:00Z"
     },
   ],
