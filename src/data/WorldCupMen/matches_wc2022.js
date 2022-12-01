@@ -180,8 +180,8 @@ const matches = {
     },
     {
       teams: ["JP", "ES"],
-      goals: [null, null],
-      fairPlay: [null, null],
+      goals: [2, 1],
+      fairPlay: [3, 0],
       date: "2022-12-01T19:00:00Z"
     },
     {
