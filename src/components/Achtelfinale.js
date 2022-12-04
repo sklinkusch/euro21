@@ -3,6 +3,38 @@ import React from 'react'
 import FlagWrapper from "./FlagWrapper"
 import { participantName as participants, localeName as locales } from './countries'
 
+function AchtelfinaleNew({ teams, matchaf }) {
+  const [tAF0 = [], tAF1 = [], tAF2 = [], tAF3 = [], tAF4 = [], tAF5 = [], tAF6 = [], tAF7 = []] = teams
+  const [AF0 = {}, AF1 = {}, AF2 = {}, AF3 = {}, AF4 = {}, AF5 = {}, AF6 = {}, AF7 = {}] = matchaf
+  return (
+    <div sx={{ width: "100%", gridColumn: ["1 / span 2", "1 / span 2", "1 / span 4"] }}>
+      <div sx={{ textAlign: "center", fontSize: 0 }}>
+        {locales("Round16")}
+      </div>
+      <table sx={{ width: "100%" }}>
+        <tbody>
+          <tr>
+            <AchtelfinaleSingle teamA={tAF0[0]} teamB={tAF0[1]} match={AF0} />
+            <AchtelfinaleSingle teamA={tAF1[0]} teamB={tAF1[1]} match={AF1} />
+          </tr>
+          <tr>
+            <AchtelfinaleSingle teamA={tAF2[0]} teamB={tAF2[1]} match={AF2} />
+            <AchtelfinaleSingle teamA={tAF3[0]} teamB={tAF3[1]} match={AF3} />
+          </tr>
+          <tr>
+            <AchtelfinaleSingle teamA={tAF4[0]} teamB={tAF4[1]} match={AF4} />
+            <AchtelfinaleSingle teamA={tAF5[0]} teamB={tAF5[1]} match={AF5} />
+          </tr>
+          <tr>
+            <AchtelfinaleSingle teamA={tAF6[0]} teamB={tAF6[1]} match={AF6} />
+            <AchtelfinaleSingle teamA={tAF7[0]} teamB={tAF7[1]} match={AF7} />
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
 function Achtelfinale({ first, second, third, assoc, matchaf = [] }) {
   const firstTeams = first.length === 6 ? first.map((team, index) => {
     return typeof team === "object" && team.hasOwnProperty("team") && team.team ? team.team : null
@@ -219,13 +251,15 @@ function AchtelfinaleSingle({ teamA, teamB, match }) {
   const { goals = [], add = "", date } = match
   const [goalsA = "-", goalsB = "-"] = goals
   const formattedDate = date ? new Date(date).toLocaleDateString(navigator.language, { year: "2-digit", month: "2-digit", day: "2-digit" }) : null
+  const tA = typeof teamA === 'object' ? teamA.team : teamA
+  const tB = typeof teamB === 'object' ? teamB.team : teamB
   return (
     <React.Fragment>
-      <td><FlagWrapper team={teamA} participant={participants(teamA)} /></td>
-      <td><FlagWrapper team={teamB} participant={participants(teamB)} /></td>
-      {teamA && teamB && typeof goalsA === 'number' && typeof goalsB === 'number' ? (<td sx={{ fontSize: 0 }}>{`${typeof goalsA === "number" ? goalsA : "-"}:${typeof goalsB === "number" ? goalsB : "-"} ${add ? add : ""}`}</td>) : formattedDate ? (<td sx={{ fontSize: 0 }}>{formattedDate}</td>) : (<td sx={{ fontSize: 0 }}>-:-</td>)}
+      <td><FlagWrapper team={tA} participant={participants(teamA)} /></td>
+      <td><FlagWrapper team={tB} participant={participants(teamB)} /></td>
+      {tA && tB && typeof goalsA === 'number' && typeof goalsB === 'number' ? (<td sx={{ fontSize: 0 }}>{`${typeof goalsA === "number" ? goalsA : "-"}:${typeof goalsB === "number" ? goalsB : "-"} ${add ? add : ""}`}</td>) : formattedDate ? (<td sx={{ fontSize: 0 }}>{formattedDate}</td>) : (<td sx={{ fontSize: 0 }}>-:-</td>)}
     </React.Fragment>
   )
 }
 
-export { Achtelfinale, AchtelfinaleWC, AchtelfinaleWC02 }
+export { Achtelfinale, AchtelfinaleWC, AchtelfinaleWC02, AchtelfinaleNew }
