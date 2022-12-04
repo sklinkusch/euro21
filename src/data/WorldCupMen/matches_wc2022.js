@@ -329,7 +329,7 @@ export const matchaf = [
     date: "2022-12-05T19:00:00Z"
   },
   {
-    goals: [null, null],
+    goals: [3, 0],
     add: null,
     date: "2022-12-04T19:00:00Z"
   },
