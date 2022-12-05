@@ -1,4 +1,4 @@
-// import { localeName } from "../components/countries";
+import { localeName } from "../../components/countries";
 
 const matches = {
   A: [
@@ -329,8 +329,8 @@ export const matchaf = [
     date: "2022-12-04T19:00:00Z"
   },
   {
-    goals: [null, null],
-    add: null,
+    goals: [1, 3],
+    add: `${localeName("Penalties")}, 1:1 (1:1) ${localeName("ExtraTime")}`,
     date: "2022-12-05T15:00:00Z"
   },
   {
