@@ -263,36 +263,44 @@ const matches = {
 
 export const matchaf = [
   {
-    goals: [2, 1],
-    add: null
+    goals: [4, 3],
+    add: null,
+    date: "2018-06-30T14:00:00Z"
   },
   {
-    goals: [4, 3],
-    add: null
+    goals: [2, 1],
+    add: null,
+    date: "2018-06-30T18:00:00Z"
+  },
+  {
+    goals: [3, 4],
+    add: `${localeName("Penalties")} 1:1 (1:1) ${localeName("ExtraTime")}`,
+    date: "2018-07-01T14:00:00Z"
+  },
+  {
+    goals: [3, 2],
+    add: `${localeName("Penalties")} 1:1 (1:1) ${localeName("ExtraTime")}`,
+    date: "2018-07-01T18:00:00Z"
   },
   {
     goals: [2, 0],
-    add: null
+    add: null,
+    date: "2018-07-02T14:00:00Z"
   },
   {
     goals: [3, 2],
-    add: null
-  },
-  {
-    goals: [3, 4],
-    add: `${localeName("Penalties")} 1:1 ${localeName("ExtraTime")}`
-  },
-  {
-    goals: [3, 2],
-    add: `${localeName("Penalties")} 1:1 ${localeName("ExtraTime")}`
+    add: null,
+    date: "2018-07-02T18:00:00Z"
   },
   {
     goals: [1, 0],
-    add: null
+    add: null,
+    date: "2018-07-03T14:00:00Z"
   },
   {
     goals: [3, 4],
-    add: `${localeName("Penalties")} 1:1 ${localeName("ExtraTime")}`
+    add: `${localeName("Penalties")} 1:1 (1:1) ${localeName("ExtraTime")}`,
+    date: "2018-07-03T18:00:00Z"
   },
 ]
 
@@ -306,12 +314,12 @@ export const matchvf = [
     add: null
   },
   {
-    goals: [3, 4],
-    add: `${localeName("Penalties")} 2:2 ${localeName("ExtraTime")}`
-  },
-  {
     goals: [0, 2],
     add: null
+  },
+  {
+    goals: [3, 4],
+    add: `${localeName("Penalties")} 2:2 ${localeName("ExtraTime")}`
   },
 ]
 

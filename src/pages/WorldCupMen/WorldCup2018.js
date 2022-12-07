@@ -5,7 +5,7 @@ import { useDebugState } from "use-named-state"
 import { MatchListEight } from "../../components/MatchList"
 import matches, { matchaf, matchvf, matchhf, match3p, matchf  } from "../../data/WorldCupMen/matches_wc2018"
 import { TableSetEight } from "../../components/Table"
-import { AchtelfinaleWC } from "../../components/Achtelfinale"
+import { AchtelfinaleNew } from "../../components/Achtelfinale"
 import { Viertelfinale } from "../../components/Viertelfinale"
 import { Halbfinale } from '../../components/Halbfinale';
 import { getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../../components/helpers';
@@ -25,6 +25,7 @@ function WorldCup2018() {
   const [groupH, setGroupH] = useDebugState("groupH",[])
   const [first, setFirst] = useDebugState("first",[])
   const [second, setSecond] = useDebugState("second",[])
+  const [afTeams, setAfTeams] = useDebugState("afTeams", [])
   const [vfTeams, setVfTeams] = useDebugState("vfTeams",[])
   const [hfTeams, setHfTeams] = useDebugState("hfTeams",[])
   const [teams3P, setTeams3P] = useDebugState("teams3P",[])
@@ -34,17 +35,45 @@ function WorldCup2018() {
     document.title = `${locales("WorldCup")} 2018`
   }, [])
   useEffect(() => {
-    const aTeamVF1 = getKoTeams(matchaf, 0, first[0], second[1])
-    const bTeamVF1 = getKoTeams(matchaf, 1, first[2], second[3])
+    const aTeamAF1 = first[2]
+    const bTeamAF1 = second[3]
+    const teamsAF1 = [aTeamAF1, bTeamAF1]
+    const aTeamAF2 = first[0]
+    const bTeamAF2 = second[1]
+    const teamsAF2 = [aTeamAF2, bTeamAF2]
+    const aTeamAF3 = first[1]
+    const bTeamAF3 = second[0]
+    const teamsAF3 = [aTeamAF3, bTeamAF3]
+    const aTeamAF4 = first[3]
+    const bTeamAF4 = second[2]
+    const teamsAF4 = [aTeamAF4, bTeamAF4]
+    const aTeamAF5 = first[4]
+    const bTeamAF5 = second[5]
+    const teamsAF5 = [aTeamAF5, bTeamAF5]
+    const aTeamAF6 = first[6]
+    const bTeamAF6 = second[7]
+    const teamsAF6 = [aTeamAF6, bTeamAF6]
+    const aTeamAF7 = first[5]
+    const bTeamAF7 = second[4]
+    const teamsAF7 = [aTeamAF7, bTeamAF7]
+    const aTeamAF8 = first[7]
+    const bTeamAF8 = second[6]
+    const teamsAF8 = [aTeamAF8, bTeamAF8]
+    const teamsAF = [teamsAF1, teamsAF2, teamsAF3, teamsAF4, teamsAF5, teamsAF6, teamsAF7, teamsAF8]
+    setAfTeams(teamsAF)
+  })
+  useEffect(() => {
+    const aTeamVF1 = getKoTeams(matchaf, 1, first[0], second[1])
+    const bTeamVF1 = getKoTeams(matchaf, 0, first[2], second[3])
     const teamsVF1 = [aTeamVF1, bTeamVF1]
-    const aTeamVF2 = getKoTeams(matchaf, 2, first[4], second[5])
-    const bTeamVF2 = getKoTeams(matchaf, 3, first[6], second[7])
+    const aTeamVF2 = getKoTeams(matchaf, 4, first[4], second[5])
+    const bTeamVF2 = getKoTeams(matchaf, 5, first[6], second[7])
     const teamsVF2 = [aTeamVF2, bTeamVF2]
-    const aTeamVF3 = getKoTeams(matchaf, 4, first[1], second[0])
-    const bTeamVF3 = getKoTeams(matchaf, 5, first[3], second[2])
+    const aTeamVF3 = getKoTeams(matchaf, 6, first[5], second[4])
+    const bTeamVF3 = getKoTeams(matchaf, 7, first[7], second[6])
     const teamsVF3 = [aTeamVF3, bTeamVF3]
-    const aTeamVF4 = getKoTeams(matchaf, 6, first[5], second[4])
-    const bTeamVF4 = getKoTeams(matchaf, 7, first[7], second[6])
+    const aTeamVF4 = getKoTeams(matchaf, 2, first[1], second[0])
+    const bTeamVF4 = getKoTeams(matchaf, 3, first[3], second[2])
     const teamsVF4 = [aTeamVF4, bTeamVF4]
     const teamsVF = [teamsVF1, teamsVF2, teamsVF3, teamsVF4]
     setVfTeams(teamsVF)
@@ -53,8 +82,8 @@ function WorldCup2018() {
     const aTeamHF1 = getKoTeam(matchvf, 0, vfTeams[0], 0, vfTeams[0], 1)
     const bTeamHF1 = getKoTeam(matchvf, 1, vfTeams[1], 0, vfTeams[1], 1)
     const teamsHF1 = [aTeamHF1, bTeamHF1]
-    const aTeamHF2 = getKoTeam(matchvf, 2, vfTeams[2], 0, vfTeams[2], 1)
-    const bTeamHF2 = getKoTeam(matchvf, 3, vfTeams[3], 0, vfTeams[3], 1)
+    const aTeamHF2 = getKoTeam(matchvf, 3, vfTeams[3], 0, vfTeams[3], 1)
+    const bTeamHF2 = getKoTeam(matchvf, 2, vfTeams[2], 0, vfTeams[2], 1)
     const teamsHF2 = [aTeamHF2, bTeamHF2]
     const teamsHF = [teamsHF1, teamsHF2]
     setHfTeams(teamsHF)
@@ -114,7 +143,7 @@ function WorldCup2018() {
             modus="wc"
           />
            <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"] }}>
-            <AchtelfinaleWC first={first} second={second} matchaf={matchaf} />
+            <AchtelfinaleNew teams={afTeams} matchaf={matchaf} />
             <Viertelfinale teams={vfTeams} matchvf={matchvf} />
             <Halbfinale teams={hfTeams} matchhf={matchhf} />
             <Platz3 teams={teams3P} match3p={match3p} />
