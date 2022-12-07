@@ -264,11 +264,19 @@ const matches = {
 export const matchaf = [
   {
     goals: [3, 2],
-    add: `${localeName("Penalties")} 1:1 ${localeName("ExtraTime")}`
+    add: `${localeName("Penalties")} 1:1 (1:1) ${localeName("ExtraTime")}`
   },
   {
     goals: [2, 0],
     add: null
+  },
+  {
+    goals: [2, 1],
+    add: null
+  },
+  {
+    goals: [5, 3],
+    add: `${localeName("Penalties")} 1:1 (1:1) ${localeName("ExtraTime")}`
   },
   {
     goals: [2, 0],
@@ -277,14 +285,6 @@ export const matchaf = [
   {
     goals: [2, 1],
     add: localeName("ExtraTime")
-  },
-  {
-    goals: [2, 1],
-    add: null
-  },
-  {
-    goals: [5, 3],
-    add: `${localeName("Penalties")} 1:1 ${localeName("ExtraTime")}`
   },
   {
     goals: [1, 0],
@@ -298,20 +298,20 @@ export const matchaf = [
 
 export const matchvf = [
   {
+    goals: [0, 1],
+    add: null
+  },
+  {
     goals: [2, 1],
     add: null
   },
   {
-    goals: [0, 1],
+    goals: [1, 0],
     add: null
   },
   {
     goals: [4, 3],
     add: `${localeName("Penalties")} 0:0 ${localeName("ExtraTime")}`
-  },
-  {
-    goals: [1, 0],
-    add: null
   },
 ]
 
