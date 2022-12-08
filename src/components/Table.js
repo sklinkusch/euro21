@@ -309,10 +309,11 @@ export function TableSetEight({ matches, groupA, groupB, groupC, groupD, groupE,
   )
 }
 
-export function TableThird({ third, emax }) {
+export function TableThird({ third, emax, maxColumns }) {
   const max = emax ? emax : 3
+  const cols = maxColumns ? `1 / span ${maxColumns}` : "1 / span 2"
   return (
-    <table sx={{ fontSize: 0, backgroundColor: "#78C5FC", padding: "4px", margin: "4px", borderRadius: "20px", gridColumn: ["1 / span 2", "1 / span 1", "1 / span 2"] }}>
+    <table sx={{ fontSize: 0, backgroundColor: "#78C5FC", padding: "4px", margin: "4px", borderRadius: "20px", gridColumn: ["1 / span 2", "1 / span 2", cols] }}>
       <thead>
         <tr>
         <td>{locales("Group")}</td>

@@ -14,7 +14,7 @@ function Halbfinale({teams = [], matchhf = [], full = false}) {
   } else if (location.pathname.includes("worldcup")) {
     gridColumn = ["1 / 3", "1 / 3", "1 / 5"]
   } else {
-    gridColumn = ["1 / 3", "2 / 3", "4 / 7"]
+    gridColumn = ["1 / 3", "2 / 3", "1 / 7"]
   }
   return (
     <div sx={{ width: "100%", gridColumn: gridColumn, backgroundColor: "#E6D2B5", my: "4px", padding: "4px", borderRadius: "20px" }}>

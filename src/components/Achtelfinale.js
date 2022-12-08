@@ -3,11 +3,12 @@ import React from 'react'
 import FlagWrapper from "./FlagWrapper"
 import { participantName as participants, localeName as locales } from './countries'
 
-function AchtelfinaleNew({ teams, matchaf }) {
+function AchtelfinaleNew({ teams, matchaf, maxColumn }) {
+  const col = maxColumn ? `1 / span ${maxColumn}` : "1 / span 4"
   const [tAF0 = [], tAF1 = [], tAF2 = [], tAF3 = [], tAF4 = [], tAF5 = [], tAF6 = [], tAF7 = []] = teams
   const [AF0 = {}, AF1 = {}, AF2 = {}, AF3 = {}, AF4 = {}, AF5 = {}, AF6 = {}, AF7 = {}] = matchaf
   return (
-    <div sx={{ width: "100%", gridColumn: ["1 / span 2", "1 / span 2", "1 / span 4"] }}>
+    <div sx={{ width: "100%", gridColumn: ["1 / span 2", "1 / span 2", col] }}>
       <div sx={{ textAlign: "center", fontSize: 0 }}>
         {locales("Round16")}
       </div>

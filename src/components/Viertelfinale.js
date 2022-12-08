@@ -9,7 +9,7 @@ function Viertelfinale({ teams = [], matchvf = [] }) {
   const [tVF0 = [], tVF1 = [], tVF2 = [], tVF3 = []] = teams
   const [mVF0 = {}, mVF1 = {}, mVF2 = {}, mVF3 = {}] = matchvf
   const location = useLocation()
-  const gridColumn = location.pathname.includes("worldcup") ? "1 / span 4" : "1 / span 3"
+  const gridColumn = location.pathname.includes("worldcup") ? "1 / span 4" : "1 / span 6"
   return (
     <div sx={{ width: "100%", padding: "4px", my: "4px", backgroundColor: "greenyellow", borderRadius: "20px", gridColumn: ["1 / span 2","1 / span 2",gridColumn] }}>
       <div sx={{ fontSize: 0, textAlign: "center" }}>
