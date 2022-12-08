@@ -104,7 +104,7 @@ function WEuro13() {
             setGroupC={setGroupC}
           />
           <div sx={{ display: "grid", gridTemplateColumns: ["1fr 1fr", "1fr", "1fr 1fr"] }}>
-            <TableThird third={third} max={1} />
+            <TableThird third={third} emax={1} />
           </div>
           <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(6,1fr)"] }}>
             <Viertelfinale teams={vfTeams} matchvf={matchvf} />
