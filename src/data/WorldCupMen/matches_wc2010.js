@@ -298,12 +298,12 @@ export const matchaf = [
 
 export const matchvf = [
   {
-    goals: [4, 2],
-    add: `${localeName("Penalties")} 1:1 ${localeName("ExtraTime")}`
-  },
-  {
     goals: [2, 1],
     add: null
+  },
+  {
+    goals: [4, 2],
+    add: `${localeName("Penalties")} 1:1 ${localeName("ExtraTime")}`
   },
   {
     goals: [0, 4],
