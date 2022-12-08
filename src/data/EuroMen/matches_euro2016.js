@@ -203,15 +203,15 @@ export const matchaf = [
     add: `${localeName("Penalties")}, 1:1 ${localeName("ExtraTime")}`,
   },
   {
-    goals: [0, 1],
-    add: localeName("ExtraTime"),
-  },
-  {
     goals: [1, 0],
     add: null,
   },
   {
-    goals: [0, 4],
+    goals: [0, 1],
+    add: localeName("ExtraTime"),
+  },
+  {
+    goals: [2, 1],
     add: null,
   },
   {
@@ -219,11 +219,11 @@ export const matchaf = [
     add: null,
   },
   {
-    goals: [2, 0],
+    goals: [0, 4],
     add: null,
   },
   {
-    goals: [2, 1],
+    goals: [2, 0],
     add: null,
   },
   {
