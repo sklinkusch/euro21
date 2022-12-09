@@ -5,7 +5,7 @@ import { useDebugState } from 'use-named-state'
 import { MatchList } from "../../components/MatchList"
 import { TableSet, TableThird } from "../../components/Table"
 import matches, { matchaf, matchvf, matchhf, match3p, matchf } from "../../data/WorldCupWomen/matches_wwc2015"
-import { Achtelfinale15 } from "../../components/Achtelfinale16"
+import { AchtelfinaleNew } from "../../components/Achtelfinale"
 import { Viertelfinale } from "../../components/Viertelfinale"
 import { Halbfinale } from '../../components/Halbfinale';
 import { getAssociation16, getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../../components/helpers';
@@ -26,6 +26,7 @@ function WWC15() {
   const [third, setThird] = useDebugState("third",[])
   const [winningTeams, setWinningTeams] = useDebugState("winningTeams",[])
   const [association, setAssociation] = useDebugState("association",[])
+  const [afTeams, setAfTeams] = useDebugState("afTeams",[])
   const [vfTeams, setVfTeams] = useDebugState("vfTeams",[])
   const [hfTeams, setHfTeams] = useDebugState("hfTeams",[])
   const [teams3P, setTeams3P] = useDebugState("teams3P", [])
@@ -34,6 +35,34 @@ function WWC15() {
   useEffect(() => {
     document.title = `${locales("WorldCup")} 2015`
   }, [])
+  useEffect(() => {
+    const aTeamAF1 = first[1]
+    const bTeamAF1 = winningTeams[association.indexOf(1)]
+    const teamsAF1 = [aTeamAF1, bTeamAF1]
+    const aTeamAF2 = second[0]
+    const bTeamAF2 = second[2]
+    const teamsAF2 = [aTeamAF2, bTeamAF2]
+    const aTeamAF3 = first[4]
+    const bTeamAF3 = second[3]
+    const teamsAF3 = [aTeamAF3, bTeamAF3]
+    const aTeamAF4 = first[5]
+    const bTeamAF4 = second[4]
+    const teamsAF4 = [aTeamAF4, bTeamAF4]
+    const aTeamAF5 = first[0]
+    const bTeamAF5 = winningTeams[association.indexOf(7)]
+    const teamsAF5 = [aTeamAF5, bTeamAF5]
+    const aTeamAF6 = second[1]
+    const bTeamAF6 = second[5]
+    const teamsAF6 = [aTeamAF6, bTeamAF6]
+    const aTeamAF7 = first[3]
+    const bTeamAF7 = winningTeams[association.indexOf(3)]
+    const teamsAF7 = [aTeamAF7, bTeamAF7]
+    const aTeamAF8 = first[2]
+    const bTeamAF8 = winningTeams[association.indexOf(5)]
+    const teamsAF8 = [aTeamAF8, bTeamAF8]
+    const teamsAF = [teamsAF1, teamsAF2, teamsAF3, teamsAF4, teamsAF5, teamsAF6, teamsAF7, teamsAF8]
+    setAfTeams(teamsAF)
+  })
   useEffect(() => {
     const aTeamVF1 = getKoTeams(matchaf, 0, first[1], winningTeams[association.indexOf(1)])
     const bTeamVF1 = getKoTeams(matchaf, 3, first[5], second[4])
@@ -145,10 +174,10 @@ function WWC15() {
             modus="wc"
           />
            <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(6,1fr)"] }}>
-            <TableThird third={third} />
-            <Achtelfinale15 first={first} second={second} third={winningTeams} assoc={association} matchaf={matchaf} />
-            <Viertelfinale teams={vfTeams} matchvf={matchvf} />
-            <Halbfinale teams={hfTeams} matchhf={matchhf} />
+            <TableThird third={third} maxColumns={6} />
+            <AchtelfinaleNew teams={afTeams} matchaf={matchaf} maxColumn={6} />
+            <Viertelfinale teams={vfTeams} matchvf={matchvf} maxColumns={6} />
+            <Halbfinale teams={hfTeams} matchhf={matchhf} full={true} />
             <Platz3 teams={teams3P} match3p={match3p} />
            <Finale teams={fTeams} matchf={matchf} />
           </div> 
