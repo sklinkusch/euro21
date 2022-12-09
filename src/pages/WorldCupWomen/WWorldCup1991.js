@@ -114,9 +114,9 @@ function WWC91() {
             modus="wc"
           />
            <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(6,1fr)"] }}>
-            <TableThird third={third} emax={1} />
-            <Viertelfinale teams={vfTeams} matchvf={matchvf} />
-            <Halbfinale teams={hfTeams} matchhf={matchhf} />
+            <TableThird third={third} emax={1} maxColumns={6} />
+            <Viertelfinale teams={vfTeams} matchvf={matchvf} maxColumns={6} />
+            <Halbfinale teams={hfTeams} matchhf={matchhf} full={true} />
             <Platz3 teams={teams3P} match3p={match3p} />
            <Finale teams={fTeams} matchf={matchf} />
           </div> 

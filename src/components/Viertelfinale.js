@@ -5,11 +5,11 @@ import { localeName as locales } from './countries'
 import { FlagSet } from "./helpers"
 import { useLocation } from "react-router-dom"
 
-function Viertelfinale({ teams = [], matchvf = [] }) {
+function Viertelfinale({ teams = [], matchvf = [], maxColumns }) {
   const [tVF0 = [], tVF1 = [], tVF2 = [], tVF3 = []] = teams
   const [mVF0 = {}, mVF1 = {}, mVF2 = {}, mVF3 = {}] = matchvf
   const location = useLocation()
-  const gridColumn = location.pathname.includes("worldcup") ? "1 / span 4" : "1 / span 6"
+  const gridColumn = maxColumns ? `1 / span ${maxColumns}` : location.pathname.includes("worldcup") ? "1 / span 4" : "1 / span 6"
   return (
     <div sx={{ width: "100%", padding: "4px", my: "4px", backgroundColor: "greenyellow", borderRadius: "20px", gridColumn: ["1 / span 2","1 / span 2",gridColumn] }}>
       <div sx={{ fontSize: 0, textAlign: "center" }}>
