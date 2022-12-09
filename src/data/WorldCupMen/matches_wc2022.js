@@ -352,8 +352,8 @@ export const matchaf = [
 
 export const matchvf = [
   {
-    goals: [null, null],
-    add: null,
+    goals: [4, 2],
+    add: `${localeName("Penalties")}, 1:1 (0:0) ${localeName("ExtraTime")}`,
     date: "2022-12-09T15:00:00Z"
   },
   {
