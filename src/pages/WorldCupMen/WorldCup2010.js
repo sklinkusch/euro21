@@ -5,7 +5,7 @@ import { useDebugState } from "use-named-state"
 import { MatchListEight } from "../../components/MatchList"
 import matches, { matchaf, matchvf, matchhf, match3p, matchf  } from "../../data/WorldCupMen/matches_wc2010"
 import { TableSetEight } from "../../components/Table"
-import { AchtelfinaleNew } from "../../components/Achtelfinale"
+import { Achtelfinale } from "../../components/Achtelfinale"
 import { Viertelfinale } from "../../components/Viertelfinale"
 import { Halbfinale } from '../../components/Halbfinale';
 import { getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../../components/helpers';
@@ -143,7 +143,7 @@ function WorldCup2010() {
             modus="wc"
           />
            <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"] }}>
-            <AchtelfinaleNew teams={afTeams} matchaf={matchaf} />
+            <Achtelfinale teams={afTeams} matchaf={matchaf} />
             <Viertelfinale teams={vfTeams} matchvf={matchvf} />
             <Halbfinale teams={hfTeams} matchhf={matchhf} />
             <Platz3 teams={teams3P} match3p={match3p} />

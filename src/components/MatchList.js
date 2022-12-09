@@ -84,9 +84,9 @@ function GroupMatchList({ matches, border, number }) {
         const formattedDate = date ? new Date(date).toLocaleDateString(language, { year: "2-digit", month: "2-digit", day: "2-digit" }) : null
         return (
           <tr key={index} sx={{ height: "14px" }}>
-            <td><FlagWrapper team={teamA} participant={aParticipants} /></td>
-            <td><FlagWrapper team={teamB} participant={bParticipants} /></td>
-            {typeof goalsA === 'number' && typeof goalsB === 'number' ? (<td><span sx={{ fontSize: 0, lineHeight: "16px", color: "ft" }}>{`${aGoals}:${bGoals}`}</span></td>) : formattedDate ? (<td><span sx={{ fontSize: 0, lineHeight: "16px", color: "ft" }}>{formattedDate}</span></td>) : (<td><span sx={{ fontSize: 0, lineHeight: "16px", color: "ft" }}>-:-</span></td>)}
+            <td sx={{ width: "25%" }}><FlagWrapper team={teamA} participant={aParticipants} /></td>
+            <td sx={{ width: "25%" }}><FlagWrapper team={teamB} participant={bParticipants} /></td>
+            {typeof goalsA === 'number' && typeof goalsB === 'number' ? (<td sx={{ width: "50%" }}><span sx={{ fontSize: 0, lineHeight: "16px", color: "ft" }}>{`${aGoals}:${bGoals}`}</span></td>) : formattedDate ? (<td sx={{ width: "50%"}}><span sx={{ fontSize: 0, lineHeight: "16px", color: "ft" }}>{formattedDate}</span></td>) : (<td sx={{ width: "50%" }}><span sx={{ fontSize: 0, lineHeight: "16px", color: "ft" }}>-:-</span></td>)}
           </tr>
         )
       })}

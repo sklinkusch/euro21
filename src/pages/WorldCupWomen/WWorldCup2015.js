@@ -5,7 +5,7 @@ import { useDebugState } from 'use-named-state'
 import { MatchList } from "../../components/MatchList"
 import { TableSet, TableThird } from "../../components/Table"
 import matches, { matchaf, matchvf, matchhf, match3p, matchf } from "../../data/WorldCupWomen/matches_wwc2015"
-import { AchtelfinaleNew } from "../../components/Achtelfinale"
+import { Achtelfinale } from "../../components/Achtelfinale"
 import { Viertelfinale } from "../../components/Viertelfinale"
 import { Halbfinale } from '../../components/Halbfinale';
 import { getAssociation16, getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../../components/helpers';
@@ -175,7 +175,7 @@ function WWC15() {
           />
            <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(6,1fr)"] }}>
             <TableThird third={third} maxColumns={6} />
-            <AchtelfinaleNew teams={afTeams} matchaf={matchaf} maxColumn={6} />
+            <Achtelfinale teams={afTeams} matchaf={matchaf} maxColumn={6} />
             <Viertelfinale teams={vfTeams} matchvf={matchvf} maxColumns={6} />
             <Halbfinale teams={hfTeams} matchhf={matchhf} full={true} />
             <Platz3 teams={teams3P} match3p={match3p} />

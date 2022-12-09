@@ -5,7 +5,7 @@ import { useDebugState } from 'use-named-state'
 import { MatchList } from "../../components/MatchList"
 import { TableSet, TableThird } from "../../components/Table"
 import matches, { matchaf, matchvf, matchhf, matchf } from "../../data/EuroMen/matches_euro2016"
-import { AchtelfinaleNew } from "../../components/Achtelfinale"
+import { Achtelfinale } from "../../components/Achtelfinale"
 import { Viertelfinale } from "../../components/Viertelfinale"
 import { Halbfinale } from '../../components/Halbfinale';
 import { getAssociation16, getKoTeams, getKoTeam, FlagSet, getChampion } from '../../components/helpers';
@@ -169,7 +169,7 @@ function Euro16() {
           />
            <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(6,1fr)"] }}>
             <TableThird third={third} maxColumns={6} />
-            <AchtelfinaleNew teams={afTeams} matchaf={matchaf} maxColumn={6} />
+            <Achtelfinale teams={afTeams} matchaf={matchaf} maxColumn={6} />
             <Viertelfinale teams={vfTeams} matchvf={matchvf} />
             <Halbfinale teams={hfTeams} matchhf={matchhf} />
            <Finale teams={fTeams} matchf={matchf} />
