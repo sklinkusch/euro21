@@ -357,8 +357,8 @@ export const matchvf = [
     date: "2022-12-09T15:00:00Z"
   },
   {
-    goals: [null, null],
-    add: null,
+    goals: [3, 4],
+    add: `${localeName("Penalties")}, 2:2 (2:2) ${localeName("ExtraTime")}`,
     date: "2022-12-09T19:00:00Z"
   },
   {
