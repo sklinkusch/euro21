@@ -39,7 +39,8 @@ function HalbfinaleSingle({teams, match}) {
   const {goals = [], add = "", date } = match
   const [ goalsA = "-", goalsB = "-" ] = goals
   const [teamA = undefined, teamB = undefined] = teams
-  const formattedDate = date ? new Date(date).toLocaleDateString(navigator.language, { year: "2-digit", month: "2-digit", day: "2-digit" }) : null
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+  const formattedDate = date ? new Date(date).toLocaleString(navigator.language, { year: "2-digit", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", timeZone: tz }) : null
   return (
     <React.Fragment>
       <td sx={{ width: "25%" }}><FlagSet code={teamA} /></td>

@@ -59,7 +59,7 @@ export const getColor = (number) => {
   switch (number) {
     case 0: return "#7AACAC"
     case 1: return "#CBD0CC"
-    case 2: return "greenyellow"
+    case 2: return "#ADFF2F"
     case 3: return "#E6D2B5"
     case 4: return "#EAF044"
     case 5: return "#D79FA6"

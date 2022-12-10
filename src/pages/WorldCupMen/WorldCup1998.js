@@ -116,7 +116,7 @@ function WorldCup1998() {
         <span>{locales("WorldCup")}</span>{" "}
         <span>1998</span>
       </h1>
-      <header className="App-header" sx={{ display: "grid", gridTemplateColumns: ["1fr", "1fr", "1fr 2fr"], borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft", width: "100%" }}>
+      <header className="App-header" sx={{ display: "grid", gridTemplateColumns: "1fr", borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft", width: "100%" }}>
         <aside sx={{ width: "100%" }}>
           <MatchListEight matches={matches} />
         </aside>

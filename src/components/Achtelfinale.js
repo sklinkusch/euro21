@@ -39,7 +39,8 @@ function Achtelfinale({ teams, matchaf, maxColumn }) {
 function AchtelfinaleSingle({ teamA, teamB, match }) {
   const { goals = [], add = "", date } = match
   const [goalsA = "-", goalsB = "-"] = goals
-  const formattedDate = date ? new Date(date).toLocaleDateString(navigator.language, { year: "2-digit", month: "2-digit", day: "2-digit" }) : null
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+  const formattedDate = date ? new Date(date).toLocaleString(navigator.language, { year: "2-digit", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", timeZone: tz }) : null
   const tA = typeof teamA === 'object' ? teamA.team : teamA
   const tB = typeof teamB === 'object' ? teamB.team : teamB
   return (

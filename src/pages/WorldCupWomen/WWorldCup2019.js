@@ -151,7 +151,7 @@ function WWC19() {
         <span>{locales("WorldCup")}</span>{" "}
         <span>2019</span>
       </h1>
-      <header className="App-header" sx={{ display: "grid", gridTemplateColumns: ["1fr", "1fr", "1fr 2fr"], borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft" }}>
+      <header className="App-header" sx={{ display: "grid", gridTemplateColumns: "1fr", borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft" }}>
         <aside sx={{ width: "100%" }}>
           <MatchList matches={matches} />
         </aside>

@@ -7,7 +7,7 @@ import { getColor } from "./helpers"
 export function MatchList({ matches }) {
   const { A: groupA, B: groupB, C: groupC, D: groupD, E: groupE, F: groupF } = matches
   return (
-    <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(3,1fr)", "repeat(2,1fr)"], gridTemplateRows: ["repeat(3,1fr)", "repeat(2,1fr)", "repeat(3,1fr)"] }}>
+    <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(3,1fr)"], gridTemplateRows: ["repeat(3,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"] }}>
       <GroupMatchList matches={groupA} number={0} />
       <GroupMatchList matches={groupB} number={1} />
       <GroupMatchList matches={groupC} number={2} />
@@ -21,7 +21,7 @@ export function MatchList({ matches }) {
 export function MatchListTwo({matches}) {
   const { A: groupA, B: groupB } = matches
   return (
-    <div>
+    <div sx={{ display: "grid", gridTemplateColumns: ["1fr", "1fr", "repeat(2,1fr)"] }}>
       <GroupMatchList matches={groupA} number={0} />
       <GroupMatchList matches={groupB} number={1} />
     </div>
@@ -31,7 +31,7 @@ export function MatchListTwo({matches}) {
 export function MatchListThree({ matches }) {
   const { A: groupA, B: groupB, C: groupC } = matches
   return (
-    <div sx={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gridTemplateRows: "repeat(2,1fr)"}}>
+    <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)","repeat(3,1fr)"], gridTemplateRows: ["repeat(2,1fr)", "repeat(2,1fr)","1fr"]}}>
       <GroupMatchList matches={groupA} number={0} />
       <GroupMatchList matches={groupB} number={1} />
       <GroupMatchList matches={groupC} number={2} />
@@ -42,7 +42,7 @@ export function MatchListThree({ matches }) {
 export function MatchListFour({ matches }) {
   const { A: groupA, B: groupB, C: groupC, D: groupD } = matches
   return (
-    <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"], gridTemplateRows: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"]}}>
+    <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], gridTemplateRows: ["repeat(2,1fr)", "repeat(2,1fr)", "1fr"]}}>
       <GroupMatchList matches={groupA} number={0} />
       <GroupMatchList matches={groupB} number={1} />
       <GroupMatchList matches={groupC} number={2} />
@@ -54,7 +54,7 @@ export function MatchListFour({ matches }) {
 export function MatchListEight({ matches }) {
   const { A: groupA, B: groupB, C: groupC, D: groupD, E: groupE, F: groupF, G: groupG, H: groupH } = matches
   return (
-    <div sx={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gridTemplateRows: "repeat(4, 1fr)" }}>
+    <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], gridTemplateRows: ["repeat(4, 1fr)", "repeat(4, 1fr)", "repeat(2, 1fr)"] }}>
       <GroupMatchList matches={groupA} number={0} />
       <GroupMatchList matches={groupB} number={1} />
       <GroupMatchList matches={groupC} number={2} />
@@ -81,7 +81,8 @@ function GroupMatchList({ matches, border, number }) {
         const aParticipants = participants(teamA) ? participants(teamA) : teamA
         const bParticipants = participants(teamB) ? participants(teamB) : teamB
         const language = navigator.language
-        const formattedDate = date ? new Date(date).toLocaleDateString(language, { year: "2-digit", month: "2-digit", day: "2-digit" }) : null
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+        const formattedDate = date ? new Date(date).toLocaleString(language, { year: "2-digit", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", timeZone: tz }) : null
         return (
           <tr key={index} sx={{ height: "14px" }}>
             <td sx={{ width: "25%" }}><FlagWrapper team={teamA} participant={aParticipants} /></td>

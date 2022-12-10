@@ -95,7 +95,7 @@ function WWC95() {
         <span>{locales("WorldCup")}</span>{" "}
         <span>1995</span>
       </h1>
-      <header className="App-header" sx={{ display: "grid", gridTemplateColumns: ["1fr", "1fr", "1fr 2fr"], borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft" }}>
+      <header className="App-header" sx={{ display: "grid", gridTemplateColumns: "1fr", borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft" }}>
         <aside sx={{ width: "100%" }}>
           <MatchListThree matches={matches} />
         </aside>

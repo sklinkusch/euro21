@@ -284,7 +284,7 @@ export function TableSetThree({ matches, groupA, groupB, groupC, setGroupA, setG
 export function TableSetFour({ matches, groupA, groupB, groupC, groupD, setGroupA, setGroupB, setGroupC, setGroupD, coefficient = [], modus }) {
   const { A, B, C, D } = matches
   return (
-    <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"], gridTemplateRows: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(2,1fr)"] }}>
+    <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], gridTemplateRows: ["repeat(2,1fr)", "repeat(2,1fr)", "1fr"] }}>
       <Table matches={A} group={groupA} setGroup={setGroupA} notifier="A" number={0} coefficient={coefficient} modus={modus} />
       <Table matches={B} group={groupB} setGroup={setGroupB} notifier="B" number={1} coefficient={coefficient} modus={modus} />
       <Table matches={C} group={groupC} setGroup={setGroupC} notifier="C" number={2} coefficient={coefficient} modus={modus} />
