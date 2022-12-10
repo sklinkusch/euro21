@@ -1,6 +1,7 @@
 import React, { lazy } from 'react'
 import { useParams } from "react-router-dom"
 const Home = lazy(() => import("../Home.js"))
+const WorldCup1998 = lazy(() => import("./WorldCup1998.js"))
 const WorldCup2002 = lazy(() => import("./WorldCup2002.js"))
 const WorldCup2006 = lazy(() => import("./WorldCup2006.js"))
 const WorldCup2010 = lazy(() => import("./WorldCup2010.js"))
@@ -11,6 +12,8 @@ const WorldCup2022 = lazy(() => import("./WorldCup2022.js"))
 function WorldCupMen () {
   const { year } = useParams()
   switch (year) {
+    case "1998":
+      return <WorldCup1998 />
     case "2002":
       return <WorldCup2002 />
     case "2006":

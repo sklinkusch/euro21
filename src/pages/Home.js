@@ -90,6 +90,10 @@ const tournaments = [
         link: "/worldcupmen/2002",
         title: "World Cup 2002"
       },
+      {
+        link: "/worldcupmen/1998",
+        title: "World Cup 1998"
+      },
     ],
   },
   {
