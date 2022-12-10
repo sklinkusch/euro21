@@ -367,7 +367,7 @@ export const matchvf = [
     date: "2022-12-10T15:00:00Z"
   },
   {
-    goals: [null, null],
+    goals: [1, 2],
     add: null,
     date: "2022-12-10T19:00:00Z"
   }
