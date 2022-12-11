@@ -6,9 +6,9 @@ import { FlagSet } from './helpers'
 function Finale({teams = [], matchf = []}) {
   return (
     <div sx={{ width: "100%", gridColumn: ["1 / span 2","1 / span 2", "1 / span 6"], my: "8px", padding: "8px" }}>
-      <div sx={{ fontSize: "14px", textAlign: "center", textTransform: "uppercase", fontWeight: 500, lineHeight: 1.5 }}>
+      <h3 sx={{ textAlign: "center", textTransform: "uppercase", py: 0, my: "2px" }}>
         {locales("Final")}
-      </div>
+      </h3>
       <table sx={{ width: "100%" }}>
         <tbody>
           <tr>
@@ -23,9 +23,9 @@ function Finale({teams = [], matchf = []}) {
 function Platz3({ teams = [], match3p = []}) {
   return (
     <div sx={{ width: "100%", gridColumn: ["1 / span 2","1 / span 2", "1 / span 6"], my: "8px", padding: "8px" }}>
-      <div sx={{ fontSize: "14px", textAlign: "center", textTransform: "uppercase", fontWeight: 500, lineHeight: 1.5 }}>
+      <h3 sx={{ textAlign: "center", textTransform: "uppercase", my: "2px", py: 0 }}>
         {locales("Place3")}
-      </div>
+      </h3>
       <table sx={{ width: "100%" }}>
         <tbody>
           <tr>

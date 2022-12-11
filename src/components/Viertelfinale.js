@@ -12,9 +12,9 @@ function Viertelfinale({ teams = [], matchvf = [], maxColumns }) {
   const gridColumn = maxColumns ? `1 / span ${maxColumns}` : location.pathname.includes("worldcup") ? "1 / span 4" : "1 / span 6"
   return (
     <div sx={{ width: "100%", padding: "4px", my: "4px", backgroundColor: "greenyellow", borderRadius: "20px", gridColumn: ["1 / span 2","1 / span 2",gridColumn] }}>
-      <div sx={{ fontSize: 0, textAlign: "center" }}>
+      <h3 sx={{ textAlign: "center", py: 0, my: "2px" }}>
         {locales("Quarterfinal")}
-      </div>
+      </h3>
       <table sx={{ width: "100%" }}>
         <tbody>
           <tr>

@@ -9,9 +9,9 @@ function Achtelfinale({ teams, matchaf, maxColumn }) {
   const [AF0 = {}, AF1 = {}, AF2 = {}, AF3 = {}, AF4 = {}, AF5 = {}, AF6 = {}, AF7 = {}] = matchaf
   return (
     <div sx={{ width: "100%", gridColumn: ["1 / span 2", "1 / span 2", col] }}>
-      <div sx={{ textAlign: "center", fontSize: 0 }}>
+      <h3 sx={{ textAlign: "center", my: "2px", py: 0 }}>
         {locales("Round16")}
-      </div>
+      </h3>
       <table sx={{ width: "100%" }}>
         <tbody>
           <tr>

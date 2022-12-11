@@ -18,9 +18,9 @@ function Halbfinale({teams = [], matchhf = [], full = false}) {
   }
   return (
     <div sx={{ width: "100%", gridColumn: gridColumn, backgroundColor: "#E6D2B5", my: "4px", padding: "4px", borderRadius: "20px" }}>
-      <div sx={{ fontSize: "14px", textAlign: "center" }}>
+      <h3 sx={{ textAlign: "center", py: 0, my: "2px" }}>
         {locales("Semifinal")}
-      </div>
+      </h3>
       <table sx={{ width: "100%" }}>
         <tbody>
           <tr>
