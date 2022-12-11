@@ -232,31 +232,34 @@ function Table({ matches, group, setGroup, notifier, number, coefficient = [], m
   }, [matches])
   const bgcolor = getColor(number)
   return (
-    <table sx={{ fontSize: 0, backgroundColor: bgcolor, px: "4px", py: "4px", my: "4px", mx: "4px", borderRadius: "20px" }}>
-      <thead>
-        <tr sx={{ margin: "0" }}>
-          <td>{locales("Team")}</td>
-          <td>{locales("Pts")}</td>
-          <td>{locales("Difference")}</td>
-          <td>{locales("Goals")}</td>
-          <td>{locales("FairPlay")}</td>
-        </tr>
-      </thead>
-      <tbody>
-        {group.map((dataset, index) => {
-          const { team, points, goals, countergoals, goalDifference, fairPlay } = dataset
-          return (
-            <tr key={index} sx={{ margin: "0px" }}>
-              <td><FlagWrapper team={team} participant={participants(team)} /></td>
-              <td>{points}</td>
-              <td>{goalDifference}</td>
-              <td>{goals}:{countergoals}</td>
-              <td>{fairPlay}</td>
-            </tr>
-          )
-        })}
-      </tbody>
-    </table>
+    <div sx={{ fontSize: 0, backgroundColor: bgcolor, px: "4px", py: "4px", my: "4px", mx: "4px", borderRadius: "20px", position: "relative" }}>
+      <div sx={{ fontSize: "6vw", color: "#ffffff70", position: "absolute", width: "100%", height: "100%", fontWeight: "bold" }}>{notifier}</div>
+      <table sx={{ width: "100%" }}>
+        <thead>
+          <tr sx={{ margin: "0" }}>
+            <td>{locales("Team")}</td>
+            <td>{locales("Pts")}</td>
+            <td>{locales("Difference")}</td>
+            <td>{locales("Goals")}</td>
+            <td>{locales("FairPlay")}</td>
+          </tr>
+        </thead>
+        <tbody>
+          {group.map((dataset, index) => {
+            const { team, points, goals, countergoals, goalDifference, fairPlay } = dataset
+            return (
+              <tr key={index} sx={{ margin: "0px" }}>
+                <td><FlagWrapper team={team} participant={participants(team)} /></td>
+                <td>{points}</td>
+                <td>{goalDifference}</td>
+                <td>{goals}:{countergoals}</td>
+                <td>{fairPlay}</td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </div>
   )
 }
 
