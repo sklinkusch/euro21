@@ -233,8 +233,8 @@ function Table({ matches, group, setGroup, notifier, number, coefficient = [], m
   const bgcolor = getColor(number)
   return (
     <div sx={{ fontSize: 0, backgroundColor: bgcolor, px: "4px", py: "4px", my: "4px", mx: "4px", borderRadius: "20px", position: "relative" }}>
-      <div sx={{ fontSize: "6vw", color: "#ffffff70", position: "absolute", width: "100%", height: "100%", fontWeight: "bold" }}>{notifier}</div>
-      <table sx={{ width: "100%" }}>
+      <div sx={{ fontSize: "6vw", color: "#ffffff70", position: "absolute", width: "100%", height: "100%", fontWeight: "bold", zIndex: 2 }}>{notifier}</div>
+      <table sx={{ width: "100%", position: "relative", zIndex: 5 }}>
         <thead>
           <tr sx={{ margin: "0" }}>
             <td>{locales("Team")}</td>
