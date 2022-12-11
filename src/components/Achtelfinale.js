@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import React from 'react'
-import FlagWrapper from "./FlagWrapper"
-import { participantName as participants, localeName as locales } from './countries'
+import { FlagSet } from "./helpers"
+import { localeName as locales } from './countries'
 
 function Achtelfinale({ teams, matchaf, maxColumn }) {
   const col = maxColumn ? `1 / span ${maxColumn}` : "1 / span 4"
@@ -45,8 +45,8 @@ function AchtelfinaleSingle({ teamA, teamB, match }) {
   const tB = typeof teamB === 'object' ? teamB.team : teamB
   return (
     <React.Fragment>
-      <td sx={{ width: "12.5%" }}><FlagWrapper team={tA} participant={participants(teamA)} /></td>
-      <td sx={{ width: "12.5%" }}><FlagWrapper team={tB} participant={participants(teamB)} /></td>
+      <td sx={{ width: "12.5%" }}><FlagSet code={tA} /></td>
+      <td sx={{ width: "12.5%" }}><FlagSet code={tB} /></td>
       {tA && tB && typeof goalsA === 'number' && typeof goalsB === 'number' ? (<td sx={{ fontSize: 0, width: "25%" }}>{`${typeof goalsA === "number" ? goalsA : "-"}:${typeof goalsB === "number" ? goalsB : "-"} ${add ? add : ""}`}</td>) : formattedDate ? (<td sx={{ fontSize: 0, width: "25%" }}>{formattedDate}</td>) : (<td sx={{ fontSize: 0, width: "25%" }}>-:-</td>)}
     </React.Fragment>
   )
