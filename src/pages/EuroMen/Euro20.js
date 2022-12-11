@@ -13,7 +13,7 @@ import { Finale } from '../../components/Finale';
 import { localeName as locales } from '../../components/countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
-function App() {
+function Euro20() {
   const uefaCoefficient = ["ES", "NL", "DE", "IT", "GB-ENG", "RU", "HR", "PT", "SE", "DK", "FR", "CZ", "UA", "CH", "TR", "SK", "HU", "FI", "GB-SCT", "PL", "AT", "BE", "GB-WLS", "MK"]
   const [groupA, setGroupA] = useDebugState("groupA",[])
   const [groupB, setGroupB] = useDebugState("groupB",[])
@@ -185,4 +185,4 @@ function App() {
   );
 }
 
-export default App;
+export default Euro20;
