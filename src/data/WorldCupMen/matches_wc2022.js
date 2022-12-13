@@ -375,7 +375,7 @@ export const matchvf = [
 
 export const matchhf = [
   {
-    goals: [null, null],
+    goals: [3, 0],
     add: null,
     date: "2022-12-13T19:00:00Z"
   },
