@@ -380,7 +380,7 @@ export const matchhf = [
     date: "2022-12-13T19:00:00Z"
   },
   {
-    goals: [null, null],
+    goals: [2, 0],
     add: null,
     date: "2022-12-14T19:00:00Z"
   },
