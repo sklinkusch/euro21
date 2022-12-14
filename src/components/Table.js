@@ -5,27 +5,30 @@ import { participantName as participants, localeName as locales } from './countr
 import { getColor } from './helpers'
 /* eslint-disable react-hooks/exhaustive-deps */
 
-/*
+
 function sortFunction(teamData, mode) {
-  const points = Array.from(new Set(teamData.map(team => team.points))).sort((a,b) => b.points - a.points)
+  const points = ((Array.from(new Set(teamData.map(team => team.points)))).sort((a,b) => b - a))
   const pointsNumber = points.reduce((acc, curr) => {
     const obj = { ...acc }
     obj[curr] = teamData.reduce((iacc, icurr) => {
-      if (icurr.points === curr) return iacc++
-      return iacc
+      let val = iacc
+      if (icurr.points === curr)
+        val += 1
+      return val
     }, 0)
     return obj
   },{})
   const tDataWithPointRanks = teamData.map((team, index, array) => {
     let rank = array.length
     for (let a = 0; a <= team.points; a++) {
-      rank += pointsNumber[a] || 0
+      rank -= pointsNumber[a] || 0
     }
+    rank += 1
     return { ...team, rank }
   })
   const teamsPoints = tDataWithPointRanks.reduce((acc, curr) => {
     const arr = [ ...acc ]
-    const ind = points.indexOf(curr.points) || -1
+    const ind = points.indexOf(curr.points)
     if (ind > -1 && ind < arr.length) 
       arr[ind].push(curr)
     return arr
@@ -59,21 +62,23 @@ function sortFunction(teamData, mode) {
     let teamsAfterDirectComparisonB = []
       teamsAfterDirectComparisonA.forEach(singleTeam => {
         if (singleTeam.length === 1) {
-          teamsAfterDirectComparisonB.push(singleTeam)
+          teamsAfterDirectComparisonB.push(...singleTeam)
         } else {
           const sortedTeams = singleTeam.sort((a, b) => {
             const { ownMatches: aMatches, team: aTeam } = a
             const { ownMatches: bMatches, team: bTeam } = b
+            const singleTeamKeys = singleTeam.map(t => t.team)
             const aPoints = aMatches.reduce((acc, curr) => {
-              if (singleTeam.includes(curr.teams[0]) && singleTeam.includes(curr.teams[1])) {
+              const pts = acc
+              if (singleTeamKeys.includes(curr.teams[0]) && singleTeamKeys.includes(curr.teams[1])) {
                 const index = curr.teams.indexOf(aTeam)
-                const indexOp = index === 0 ? 0 : 1
-                return curr.goals[index] > curr.goals[indexOp] ? acc + 3 : curr.goals[index] === curr.goals[indexOp] ? acc + 1 : acc
+                const indexOp = index === 0 ? 1 : 0
+                return curr.goals[index] > curr.goals[indexOp] ? pts + 3 : curr.goals[index] === curr.goals[indexOp] ? pts + 1 : pts
               }
-              return acc
+              return pts
             }, 0)
             const aGoalDifference = aMatches.reduce((acc, curr) => {
-              if (singleTeam.includes(curr.teams[0]) && singleTeam.includes(curr.teams[1])) {
+              if (singleTeamKeys.includes(curr.teams[0]) && singleTeamKeys.includes(curr.teams[1])) {
                 const index = curr.teams.indexOf(aTeam)
                 const indexOp = index === 0 ? 0 : 1
                 return (acc + (curr.goals[index] - curr.goals[indexOp]))
@@ -81,22 +86,23 @@ function sortFunction(teamData, mode) {
               return acc
             }, 0)
             const aGoals = aMatches.reduce((acc, curr) => {
-              if (singleTeam.includes(curr.teams[0]) && singleTeam.includes(curr.teams[1])) {
+              if (singleTeamKeys.includes(curr.teams[0]) && singleTeamKeys.includes(curr.teams[1])) {
                 const index = curr.teams.indexOf(aTeam)
                 return acc + curr.goals[index]
               }
               return acc
             }, 0)
             const bPoints = bMatches.reduce((acc, curr) => {
-              if (singleTeam.includes(curr.teams[0]) && singleTeam.includes(curr.teams[1])) {
+              const pts = acc
+              if (singleTeamKeys.includes(curr.teams[0]) && singleTeamKeys.includes(curr.teams[1])) {
                 const index = curr.teams.indexOf(bTeam)
-                const indexOp = index === 0 ? 0 : 1
-                return curr.goals[index] > curr.goals[indexOp] ? acc + 3 : curr.goals[index] === curr.goals[indexOp] ? acc + 1 : acc
+                const indexOp = index === 0 ? 1 : 0
+                return curr.goals[index] > curr.goals[indexOp] ? pts + 3 : curr.goals[index] === curr.goals[indexOp] ? pts + 1 : pts
               }
-              return acc
+              return pts
             }, 0)
             const bGoalDifference = bMatches.reduce((acc, curr) => {
-              if (singleTeam.includes(curr.teams[0]) && singleTeam.includes(curr.teams[1])) {
+              if (singleTeamKeys.includes(curr.teams[0]) && singleTeamKeys.includes(curr.teams[1])) {
                 const index = curr.teams.indexOf(bTeam)
                 const indexOp = index === 0 ? 0 : 1
                 return (acc + (curr.goals[index] - curr.goals[indexOp]))
@@ -104,7 +110,7 @@ function sortFunction(teamData, mode) {
               return acc
             }, 0)
             const bGoals = bMatches.reduce((acc, curr) => {
-              if (singleTeam.includes(curr.teams[0]) && singleTeam.includes(curr.teams[1])) {
+              if (singleTeamKeys.includes(curr.teams[0]) && singleTeamKeys.includes(curr.teams[1])) {
                 const index = curr.teams.indexOf(bTeam)
                 return acc + curr.goals[index]
               }
@@ -132,8 +138,9 @@ function sortFunction(teamData, mode) {
           const sortedTeams = singleTeam.sort((a, b) => {
             const { ownMatches: aMatches, team: aTeam } = a
             const { ownMatches: bMatches, team: bTeam } = b
+            const singleTeamKeys = singleTeam.map(t => t.team)
             const aPoints = aMatches.reduce((acc, curr) => {
-              if (singleTeam.includes(curr.teams[0]) && singleTeam.includes(curr.teams[1])) {
+              if (singleTeamKeys.includes(curr.teams[0]) && singleTeamKeys.includes(curr.teams[1])) {
                 const index = curr.teams.indexOf(aTeam)
                 const indexOp = index === 0 ? 0 : 1
                 return curr.goals[index] > curr.goals[indexOp] ? acc + 3 : curr.goals[index] === curr.goals[indexOp] ? acc + 1 : acc
@@ -141,7 +148,7 @@ function sortFunction(teamData, mode) {
               return acc
             }, 0)
             const aGoalDifference = aMatches.reduce((acc, curr) => {
-              if (singleTeam.includes(curr.teams[0]) && singleTeam.includes(curr.teams[1])) {
+              if (singleTeamKeys.includes(curr.teams[0]) && singleTeamKeys.includes(curr.teams[1])) {
                 const index = curr.teams.indexOf(aTeam)
                 const indexOp = index === 0 ? 0 : 1
                 return (acc + (curr.goals[index] - curr.goals[indexOp]))
@@ -149,14 +156,14 @@ function sortFunction(teamData, mode) {
               return acc
             }, 0)
             const aGoals = aMatches.reduce((acc, curr) => {
-              if (singleTeam.includes(curr.teams[0]) && singleTeam.includes(curr.teams[1])) {
+              if (singleTeamKeys.includes(curr.teams[0]) && singleTeamKeys.includes(curr.teams[1])) {
                 const index = curr.teams.indexOf(aTeam)
                 return acc + curr.goals[index]
               }
               return acc
             }, 0)
             const bPoints = bMatches.reduce((acc, curr) => {
-              if (singleTeam.includes(curr.teams[0]) && singleTeam.includes(curr.teams[1])) {
+              if (singleTeamKeys.includes(curr.teams[0]) && singleTeamKeys.includes(curr.teams[1])) {
                 const index = curr.teams.indexOf(bTeam)
                 const indexOp = index === 0 ? 0 : 1
                 return curr.goals[index] > curr.goals[indexOp] ? acc + 3 : curr.goals[index] === curr.goals[indexOp] ? acc + 1 : acc
@@ -164,7 +171,7 @@ function sortFunction(teamData, mode) {
               return acc
             }, 0)
             const bGoalDifference = bMatches.reduce((acc, curr) => {
-              if (singleTeam.includes(curr.teams[0]) && singleTeam.includes(curr.teams[1])) {
+              if (singleTeamKeys.includes(curr.teams[0]) && singleTeamKeys.includes(curr.teams[1])) {
                 const index = curr.teams.indexOf(bTeam)
                 const indexOp = index === 0 ? 0 : 1
                 return (acc + (curr.goals[index] - curr.goals[indexOp]))
@@ -192,7 +199,7 @@ function sortFunction(teamData, mode) {
     return teamsAfterDirectComparisonB
   }
 }
-*/
+
 
 export function TableSet({ matches, groupA, groupB, groupC, groupD, groupE, groupF, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF, coefficient = [], modus = "euro" }) {
   const { A, B, C, D, E, F } = matches
@@ -262,142 +269,142 @@ function Table({ matches, group, setGroup, notifier, number, coefficient = [], m
       return { team, points, goals, countergoals, goalDifference, fairPlay, ownMatches, matches, victories, group: notifier }
     })
     // sort first by overall points
-    //const sortedTable = sortFunction(teamData, modus)
-    const groupFirstSortPoints = teamData.sort((a, b) => b.points - a.points)
-    const pointsRaw = groupFirstSortPoints.map(team => team.points)
-    const mySet = new Set(pointsRaw)
-    const values = mySet.values()
-    const points = Array.from(values)
-    const groupEqualPoints = points.reduce((acc, curr) => {
-      const arr = [...acc]
-      const subarray = groupFirstSortPoints.filter(team => team.points === curr)
-      arr.push(subarray)
-      return arr
-    }, [])
-    const sortedEqualPoints = groupEqualPoints.map(set => {
-      const length = set.length
-      if (length === 1) {
-        return set
-      }
-      const teams = set.map(item => item.team)
-      const sortedSet = set.sort((a, b) => {
-        const { ownMatches: aMatches, team: aTeam } = a
-        const { ownMatches: bMatches, team: bTeam } = b
-        const aUefa = coefficient.indexOf(aTeam)
-        const bUefa = coefficient.indexOf(bTeam)
-        const aPoints = aMatches.reduce((acc, curr) => {
-          if (teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
-            const index = curr.teams.indexOf(aTeam)
-            const indexOp = index === 0 ? 0 : 1
-            return curr.goals[index] > curr.goals[indexOp] ? acc + 3 : curr.goals[index] === curr.goals[indexOp] ? acc + 1 : acc
-          }
-          return acc
-        }, 0)
-        const aGoalDifference = aMatches.reduce((acc, curr) => {
-          if (teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
-            const index = curr.teams.indexOf(aTeam)
-            const indexOp = index === 0 ? 0 : 1
-            return (acc + (curr.goals[index] - curr.goals[indexOp]))
-          }
-          return acc
-        }, 0)
-        const aGoals = aMatches.reduce((acc, curr) => {
-          if (teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
-            const index = curr.teams.indexOf(aTeam)
-            return acc + curr.goals[index]
-          }
-          return acc
-        }, 0)
-        const bPoints = bMatches.reduce((acc, curr) => {
-          if (teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
-            const index = curr.teams.indexOf(bTeam)
-            const indexOp = index === 0 ? 0 : 1
-            return curr.goals[index] > curr.goals[indexOp] ? acc + 3 : curr.goals[index] === curr.goals[indexOp] ? acc + 1 : acc
-          }
-          return acc
-        }, 0)
-        const bGoalDifference = bMatches.reduce((acc, curr) => {
-          if (teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
-            const index = curr.teams.indexOf(bTeam)
-            const indexOp = index === 0 ? 0 : 1
-            return (acc + (curr.goals[index] - curr.goals[indexOp]))
-          }
-          return acc
-        }, 0)
-        const bGoals = bMatches.reduce((acc, curr) => {
-          if (teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
-            const index = curr.teams.indexOf(bTeam)
-            return acc + curr.goals[index]
-          }
-          return acc
-        }, 0)
-        if (modus === "wc") {
-          if (a.goalDifference > b.goalDifference) {
-            return -1
-          } else if (b.goalDifference > a.goalDifference) {
-            return +1
-          } else if (a.goals > b.goals) {
-            return -1
-          } else if (b.goals > a.goals) {
-            return +1
-          } else if (aPoints > bPoints) {
-            return -1
-          } else if (bPoints > aPoints) {
-            return +1
-          } else if (aGoalDifference > bGoalDifference) {
-            return -1
-          } else if (bGoalDifference > aGoalDifference) {
-            return +1
-          } else if (aGoals > bGoals) {
-            return -1
-          } else if (bGoals > aGoals) {
-            return +1
-          } else if (a.victories > b.victories) {
-            return -1
-          } else if (b.victories > a.victories) {
-            return +1
-          } else if (a.fairPlay < b.fairPlay) {
-            return -1
-          } else if (b.fairPlay < a.fairPlay) {
-            return +1
-          } else {
-            return (aUefa - bUefa)
-          }
-        }
-        if (aPoints > bPoints) {
-          return -1
-        } else if (bPoints > aPoints) {
-          return +1
-        } else if (aGoalDifference > bGoalDifference) {
-          return -1
-        } else if (bGoalDifference > aGoalDifference) {
-          return +1
-        } else if (aGoals > bGoals) {
-          return -1
-        } else if (bGoals > aGoals) {
-          return +1
-        } else if (a.goalDifference > b.goalDifference) {
-          return -1
-        } else if (b.goalDifference > a.goalDifference) {
-          return +1
-        } else if (a.goals > b.goals) {
-          return -1
-        } else if (b.goals > a.goals) {
-          return +1
-        } else if (a.victories > b.victories) {
-          return -1
-        } else if (b.victories > a.victories) {
-          return +1
-        } else if (a.fairPlay < b.fairPlay) {
-          return -1
-        } else if (b.fairPlay < a.fairPlay) {
-          return +1
-        } else {
-          return (aUefa - bUefa)
-        }
-      })
-      return sortedSet
-    }).reduce((acc, curr) => acc.concat(curr), [])
+    const sortedTable = sortFunction(teamData, modus)
+    // const groupFirstSortPoints = teamData.sort((a, b) => b.points - a.points)
+    // const pointsRaw = groupFirstSortPoints.map(team => team.points)
+    // const mySet = new Set(pointsRaw)
+    // const values = mySet.values()
+    // const points = Array.from(values)
+    // const groupEqualPoints = points.reduce((acc, curr) => {
+    //   const arr = [...acc]
+    //   const subarray = groupFirstSortPoints.filter(team => team.points === curr)
+    //   arr.push(subarray)
+    //   return arr
+    // }, [])
+    // const sortedEqualPoints = groupEqualPoints.map(set => {
+    //   const length = set.length
+    //   if (length === 1) {
+    //     return set
+    //   }
+    //   const teams = set.map(item => item.team)
+    //   const sortedSet = set.sort((a, b) => {
+    //     const { ownMatches: aMatches, team: aTeam } = a
+    //     const { ownMatches: bMatches, team: bTeam } = b
+    //     const aUefa = coefficient.indexOf(aTeam)
+    //     const bUefa = coefficient.indexOf(bTeam)
+    //     const aPoints = aMatches.reduce((acc, curr) => {
+    //       if (teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
+    //         const index = curr.teams.indexOf(aTeam)
+    //         const indexOp = index === 0 ? 0 : 1
+    //         return curr.goals[index] > curr.goals[indexOp] ? acc + 3 : curr.goals[index] === curr.goals[indexOp] ? acc + 1 : acc
+    //       }
+    //       return acc
+    //     }, 0)
+    //     const aGoalDifference = aMatches.reduce((acc, curr) => {
+    //       if (teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
+    //         const index = curr.teams.indexOf(aTeam)
+    //         const indexOp = index === 0 ? 0 : 1
+    //         return (acc + (curr.goals[index] - curr.goals[indexOp]))
+    //       }
+    //       return acc
+    //     }, 0)
+    //     const aGoals = aMatches.reduce((acc, curr) => {
+    //       if (teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
+    //         const index = curr.teams.indexOf(aTeam)
+    //         return acc + curr.goals[index]
+    //       }
+    //       return acc
+    //     }, 0)
+    //     const bPoints = bMatches.reduce((acc, curr) => {
+    //       if (teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
+    //         const index = curr.teams.indexOf(bTeam)
+    //         const indexOp = index === 0 ? 0 : 1
+    //         return curr.goals[index] > curr.goals[indexOp] ? acc + 3 : curr.goals[index] === curr.goals[indexOp] ? acc + 1 : acc
+    //       }
+    //       return acc
+    //     }, 0)
+    //     const bGoalDifference = bMatches.reduce((acc, curr) => {
+    //       if (teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
+    //         const index = curr.teams.indexOf(bTeam)
+    //         const indexOp = index === 0 ? 0 : 1
+    //         return (acc + (curr.goals[index] - curr.goals[indexOp]))
+    //       }
+    //       return acc
+    //     }, 0)
+    //     const bGoals = bMatches.reduce((acc, curr) => {
+    //       if (teams.includes(curr.teams[0]) && teams.includes(curr.teams[1])) {
+    //         const index = curr.teams.indexOf(bTeam)
+    //         return acc + curr.goals[index]
+    //       }
+    //       return acc
+    //     }, 0)
+    //     if (modus === "wc") {
+    //       if (a.goalDifference > b.goalDifference) {
+    //         return -1
+    //       } else if (b.goalDifference > a.goalDifference) {
+    //         return +1
+    //       } else if (a.goals > b.goals) {
+    //         return -1
+    //       } else if (b.goals > a.goals) {
+    //         return +1
+    //       } else if (aPoints > bPoints) {
+    //         return -1
+    //       } else if (bPoints > aPoints) {
+    //         return +1
+    //       } else if (aGoalDifference > bGoalDifference) {
+    //         return -1
+    //       } else if (bGoalDifference > aGoalDifference) {
+    //         return +1
+    //       } else if (aGoals > bGoals) {
+    //         return -1
+    //       } else if (bGoals > aGoals) {
+    //         return +1
+    //       } else if (a.victories > b.victories) {
+    //         return -1
+    //       } else if (b.victories > a.victories) {
+    //         return +1
+    //       } else if (a.fairPlay < b.fairPlay) {
+    //         return -1
+    //       } else if (b.fairPlay < a.fairPlay) {
+    //         return +1
+    //       } else {
+    //         return (aUefa - bUefa)
+    //       }
+    //     }
+    //     if (aPoints > bPoints) {
+    //       return -1
+    //     } else if (bPoints > aPoints) {
+    //       return +1
+    //     } else if (aGoalDifference > bGoalDifference) {
+    //       return -1
+    //     } else if (bGoalDifference > aGoalDifference) {
+    //       return +1
+    //     } else if (aGoals > bGoals) {
+    //       return -1
+    //     } else if (bGoals > aGoals) {
+    //       return +1
+    //     } else if (a.goalDifference > b.goalDifference) {
+    //       return -1
+    //     } else if (b.goalDifference > a.goalDifference) {
+    //       return +1
+    //     } else if (a.goals > b.goals) {
+    //       return -1
+    //     } else if (b.goals > a.goals) {
+    //       return +1
+    //     } else if (a.victories > b.victories) {
+    //       return -1
+    //     } else if (b.victories > a.victories) {
+    //       return +1
+    //     } else if (a.fairPlay < b.fairPlay) {
+    //       return -1
+    //     } else if (b.fairPlay < a.fairPlay) {
+    //       return +1
+    //     } else {
+    //       return (aUefa - bUefa)
+    //     }
+    //   })
+    //   return sortedSet
+    // }).reduce((acc, curr) => acc.concat(curr), [])
     // const sortedTeamData = teamData.sort((a, b) => {
     //   if (a.points > b.points) {
     //     return -1
@@ -418,8 +425,8 @@ function Table({ matches, group, setGroup, notifier, number, coefficient = [], m
     //   }
     //   return 0
     // })
-    setGroup(sortedEqualPoints)
-    // setGroup(sortedTable)
+    // setGroup(sortedEqualPoints)
+    setGroup(sortedTable)
   }, [matches])
   const bgcolor = getColor(number)
   return (
