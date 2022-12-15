@@ -1,0 +1,29 @@
+{
+	"name": "euro21",
+	"version": "1.0.0",
+	"repository": {
+		"url": "https://github.com/sklinkusch/euro21"
+	},
+	"author": {
+		"name": "Stefan Klinkusch",
+		"email": "stefan.klinkusch@googlemail.com",
+		"url": "https://sklinkusch.vercel.app"
+	},
+	"license": "MIT",
+	"private": true,
+	"workspaces": [
+		"cms",
+		"frontend"
+	],
+	"scripts": {
+		"cms:start": "yarn workspace cms start",
+		"cms:dev": "yarn workspace cms dev",
+		"cms:build": "yarn workspace cms build",
+		"cms:deploy": "yarn workspace cms deploy",
+		"cms:graphql": "yarn workspace cms graphql-deploy",
+		"frontend:start": "yarn workspace frontend start",
+		"frontend:build": "yarn workspace frontend build",
+		"frontend:test": "yarn workspace frontend test",
+		"frontend:eject": "yarn workspace frontend eject"
+	}
+}

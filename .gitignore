@@ -7,6 +7,8 @@ yarn.lock
 
 # dependencies
 /node_modules
+/cms/node_modules
+/frontend/node_modules
 /.pnp
 .pnp.js
 
