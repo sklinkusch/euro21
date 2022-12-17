@@ -387,7 +387,7 @@ export const matchhf = [
 ]
 
 export const match3p = {
-    goals: [null, null],
+    goals: [2, 1],
     add: null,
     date: "2022-12-17T15:00:00Z"
 }
