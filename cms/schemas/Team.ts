@@ -44,6 +44,11 @@ const Team = {
     {title: 'Cook-Inseln', value: 'CK'},
     {title: 'Costa Rica', value: 'CR'},
     {title: 'Curaçao', value: 'CW'},
+    {title: 'Dänemark', value: 'DK'},
+    {title: 'Deutschland', value: 'DE'},
+    {title: 'Dominica', value: 'DM'},
+    {title: 'Dominikanische Republik', value: 'DO'},
+    {title: 'Dschibuti', value: 'DJ'},
   ],
 }
 
