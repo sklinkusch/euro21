@@ -1,3 +1,12 @@
+type Props = {
+  aRegular: number | undefined
+  bRegular: number | undefined
+  aExtra: number | undefined
+  bExtra: number | undefined
+  aPenalties: number | undefined
+  bPenalties: number | undefined
+}
+
 const MatchResult = {
   name: 'MatchResult',
   type: 'object',
@@ -40,6 +49,47 @@ const MatchResult = {
       validation: (Rule: any) => Rule.integer().positive(),
     },
   ],
+  preview: {
+    select: {
+      aRegular: 'goalsTeamARegular',
+      bRegular: 'goalsTeamBRegular',
+      aExtra: 'goalsTeamAExtra',
+      bExtra: 'goalsTeamBExtra',
+      aPenalties: 'goalsTeamAPenalties',
+      bPenalties: 'goalsTeamBPenalties',
+    },
+    prepare({aRegular, bRegular, aExtra, bExtra, aPenalties, bPenalties}: Props) {
+      if (
+        typeof aRegular === 'number' &&
+        typeof bRegular === 'number' &&
+        typeof aExtra === 'number' &&
+        typeof bExtra === 'number' &&
+        typeof aPenalties === 'number' &&
+        typeof bPenalties === 'number'
+      ) {
+        return {
+          title: `${aRegular}:${bRegular}, ${aExtra}:${bExtra} n.V.,${aPenalties}:${bPenalties} i.E.`,
+        }
+      } else if (
+        typeof aRegular === 'number' &&
+        typeof bRegular === 'number' &&
+        typeof aExtra === 'number' &&
+        typeof bExtra === 'number'
+      ) {
+        return {
+          title: `${aRegular}:${bRegular}, ${aExtra}:${bExtra} n.V.`,
+        }
+      } else if (typeof aRegular === 'number' && typeof bRegular === 'number') {
+        return {
+          title: `${aRegular}:${bRegular}`,
+        }
+      } else {
+        return {
+          title: '-:-',
+        }
+      }
+    },
+  },
 }
 
 export default MatchResult
