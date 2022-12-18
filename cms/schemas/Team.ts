@@ -37,6 +37,13 @@ const Team = {
     {title: 'Bulgarien', value: 'BG'},
     {title: 'Burkina Faso', value: 'BF'},
     {title: 'Burundi', value: 'BI'},
+    {title: 'Cayman Islands', value: 'KY'},
+    {title: 'Chile', value: 'CL'},
+    {title: 'China (Volksrepublik)', value: 'CN'},
+    {title: 'Chinesisch Taipeh', value: 'TW-OLY'},
+    {title: 'Cook-Inseln', value: 'CK'},
+    {title: 'Costa Rica', value: 'CR'},
+    {title: 'Curaçao', value: 'CW'},
   ],
 }
 
