@@ -157,6 +157,9 @@ const Team = {
       {title: 'Portugal', value: 'PT'},
       {title: 'Puerto Rico', value: 'PR'},
       {title: 'Republik Kongo', value: 'CG'},
+      {title: 'Ruanda', value: 'RW'},
+      {title: 'Rumänien', value: 'RO'},
+      {title: 'Russland', value: 'RU'},
     ],
   },
 }
