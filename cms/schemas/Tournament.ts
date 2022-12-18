@@ -22,9 +22,9 @@ const Tournament = {
       of: [{type: 'MatchResult'}],
       validation: (Rule: any) =>
         Rule.custom((array: any[]) => {
-          if (array.length === 0) {
+          if (typeof array === 'undefined') {
             return true
-          } else if (array.length === 16) {
+          } else if (typeof array === 'object' && Array.isArray(array) && array.length === 16) {
             return true
           }
           return false
@@ -37,9 +37,9 @@ const Tournament = {
       of: [{type: 'MatchResult'}],
       validation: (Rule: any) =>
         Rule.custom((array: any[]) => {
-          if (array.length === 0) {
+          if (typeof array === 'undefined') {
             return true
-          } else if (array.length === 8) {
+          } else if (typeof array === 'object' && Array.isArray(array) && array.length === 8) {
             return true
           }
           return false
@@ -52,9 +52,9 @@ const Tournament = {
       of: [{type: 'MatchResult'}],
       validation: (Rule: any) =>
         Rule.custom((array: any[]) => {
-          if (array.length === 0) {
+          if (typeof array === 'undefined') {
             return true
-          } else if (array.length === 4) {
+          } else if (typeof array === 'object' && Array.isArray(array) && array.length === 4) {
             return true
           }
           return false
@@ -67,9 +67,9 @@ const Tournament = {
       of: [{type: 'MatchResult'}],
       validation: (Rule: any) =>
         Rule.custom((array: any[]) => {
-          if (array.length === 0) {
+          if (typeof array === 'undefined') {
             return true
-          } else if (array.length === 2) {
+          } else if (typeof array === 'object' && Array.isArray(array) && array.length === 2) {
             return true
           }
           return false
@@ -82,9 +82,9 @@ const Tournament = {
       of: [{type: 'MatchResult'}],
       validation: (Rule: any) =>
         Rule.custom((array: any[]) => {
-          if (array.length === 0) {
+          if (typeof array === 'undefined') {
             return true
-          } else if (array.length === 1) {
+          } else if (typeof array === 'object' && Array.isArray(array) && array.length === 1) {
             return true
           }
           return false
@@ -97,9 +97,9 @@ const Tournament = {
       of: [{type: 'MatchResult'}],
       validation: (Rule: any) =>
         Rule.custom((array: any[]) => {
-          if (array.length === 0) {
+          if (typeof array === 'undefined') {
             return true
-          } else if (array.length === 1) {
+          } else if (typeof array === 'object' && Array.isArray(array) && array.length === 1) {
             return true
           }
           return false

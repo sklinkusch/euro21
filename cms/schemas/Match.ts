@@ -1,3 +1,11 @@
+type Props = {
+  tA: string
+  tB: string
+  gA: number | undefined
+  gB: number | undefined
+  date: string
+}
+
 const Match = {
   name: 'Match',
   type: 'object',
@@ -39,7 +47,42 @@ const Match = {
       title: 'Fairplay-Wertung Team B',
       validation: (Rule: any) => Rule.integer().positive(),
     },
+    {
+      name: 'date',
+      type: 'datetime',
+      title: 'Datum',
+      validation: (Rule: any) => Rule.required(),
+    },
   ],
+  preview: {
+    select: {
+      tA: 'teamA',
+      tB: 'teamB',
+      gA: 'goalsTeamA',
+      gB: 'goalsTeamB',
+      date: 'date',
+    },
+    prepare({tA, tB, gA, gB, date}: Props) {
+      const unformattedDate = new Date(date)
+      const formattedDate = unformattedDate.toLocaleString('de-DE', {
+        hour: '2-digit',
+        minute: '2-digit',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+      })
+      if (typeof gA === 'number' && typeof gB === 'number') {
+        return {
+          title: `${tA} - ${tB}  ${gA}:${gB}`,
+          subtitle: formattedDate,
+        }
+      }
+      return {
+        title: `${tA} - ${tB}   -:-`,
+        subtitle: date,
+      }
+    },
+  },
 }
 
 export default Match
