@@ -71,6 +71,9 @@ const Team = {
     {title: 'Guyana', value: 'GY'},
     {title: 'Guinea', value: 'GN'},
     {title: 'Guinea-Bissau', value: 'GW'},
+    {title: 'Haiti', value: 'HT'},
+    {title: 'Honduras', value: 'HN'},
+    {title: 'Hongkong', value: 'HK'},
   ],
 }
 
