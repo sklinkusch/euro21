@@ -56,6 +56,9 @@ const Team = {
     {title: 'Eritrea', value: 'ER'},
     {title: 'Estland', value: 'EE'},
     {title: 'Eswatini', value: 'SZ'},
+    {title: 'Fidschi', value: 'FJ'},
+    {title: 'Finnland', value: 'FI'},
+    {title: 'Frankreich', value: 'FR'},
   ],
 }
 
