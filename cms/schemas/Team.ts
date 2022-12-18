@@ -59,6 +59,18 @@ const Team = {
     {title: 'Fidschi', value: 'FJ'},
     {title: 'Finnland', value: 'FI'},
     {title: 'Frankreich', value: 'FR'},
+    {title: 'Gabun', value: 'GA'},
+    {title: 'Gambia', value: 'GM'},
+    {title: 'Georgien', value: 'GE'},
+    {title: 'Ghana', value: 'GH'},
+    {title: 'Gibraltar', value: 'GI'},
+    {title: 'Grenada', value: 'GD'},
+    {title: 'Griechenland', value: 'GR'},
+    {title: 'Guam', value: 'GU'},
+    {title: 'Guatemala', value: 'GT'},
+    {title: 'Guyana', value: 'GY'},
+    {title: 'Guinea', value: 'GN'},
+    {title: 'Guinea-Bissau', value: 'GW'},
   ],
 }
 
