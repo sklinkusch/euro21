@@ -49,6 +49,13 @@ const Team = {
     {title: 'Dominica', value: 'DM'},
     {title: 'Dominikanische Republik', value: 'DO'},
     {title: 'Dschibuti', value: 'DJ'},
+    {title: 'Ecuador', value: 'EC'},
+    {title: 'Elfenbeinküste', value: 'CI'},
+    {title: 'El Salvador', value: 'SV'},
+    {title: 'England', value: 'GB-ENG'},
+    {title: 'Eritrea', value: 'ER'},
+    {title: 'Estland', value: 'EE'},
+    {title: 'Eswatini', value: 'SZ'},
   ],
 }
 
