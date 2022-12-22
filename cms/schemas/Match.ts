@@ -12,6 +12,12 @@ const Match = {
   title: 'Spiel in der Gruppe',
   fields: [
     {
+      name: 'date',
+      type: 'datetime',
+      title: 'Datum',
+      validation: (Rule: any) => Rule.required(),
+    },
+    {
       name: 'teamA',
       type: 'Team',
       title: 'Mannschaft A',
@@ -47,12 +53,6 @@ const Match = {
       title: 'Fairplay-Wertung Team B',
       validation: (Rule: any) => Rule.integer().positive(),
     },
-    {
-      name: 'date',
-      type: 'datetime',
-      title: 'Datum',
-      validation: (Rule: any) => Rule.required(),
-    },
   ],
   preview: {
     select: {
@@ -65,6 +65,7 @@ const Match = {
     prepare({tA, tB, gA, gB, date}: Props) {
       const unformattedDate = new Date(date)
       const formattedDate = unformattedDate.toLocaleString('de-DE', {
+        timeZone: 'Europe/Berlin',
         hour: '2-digit',
         minute: '2-digit',
         day: '2-digit',
