@@ -5,6 +5,7 @@ type Props = {
   bExtra: number | undefined
   aPenalties: number | undefined
   bPenalties: number | undefined
+  date: string
 }
 
 const MatchResult = {
@@ -12,6 +13,12 @@ const MatchResult = {
   type: 'object',
   title: 'Spielergebnis',
   fields: [
+    {
+      name: 'date',
+      type: 'datetime',
+      title: 'Datum',
+      validation: (Rule: any) => Rule.required(),
+    },
     {
       name: 'goalsTeamARegular',
       type: 'number',
@@ -57,8 +64,18 @@ const MatchResult = {
       bExtra: 'goalsTeamBExtra',
       aPenalties: 'goalsTeamAPenalties',
       bPenalties: 'goalsTeamBPenalties',
+      date: 'date',
     },
-    prepare({aRegular, bRegular, aExtra, bExtra, aPenalties, bPenalties}: Props) {
+    prepare({aRegular, bRegular, aExtra, bExtra, aPenalties, bPenalties, date}: Props) {
+      const unformattedDate = new Date(date)
+      const formattedDate = unformattedDate.toLocaleString('de-DE', {
+        timeZone: 'Europe/Berlin',
+        hour: '2-digit',
+        minute: '2-digit',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+      })
       if (
         typeof aRegular === 'number' &&
         typeof bRegular === 'number' &&
@@ -69,6 +86,7 @@ const MatchResult = {
       ) {
         return {
           title: `${aRegular}:${bRegular}, ${aExtra}:${bExtra} n.V.,${aPenalties}:${bPenalties} i.E.`,
+          subtitle: formattedDate,
         }
       } else if (
         typeof aRegular === 'number' &&
@@ -78,14 +96,17 @@ const MatchResult = {
       ) {
         return {
           title: `${aRegular}:${bRegular}, ${aExtra}:${bExtra} n.V.`,
+          subtitle: formattedDate,
         }
       } else if (typeof aRegular === 'number' && typeof bRegular === 'number') {
         return {
           title: `${aRegular}:${bRegular}`,
+          subtitle: formattedDate,
         }
       } else {
         return {
           title: '-:-',
+          subtitle: formattedDate,
         }
       }
     },
