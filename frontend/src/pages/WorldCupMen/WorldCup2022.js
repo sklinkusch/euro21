@@ -11,6 +11,7 @@ import { Halbfinale } from '../../components/Halbfinale';
 import { getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../../components/helpers';
 import { Finale, Platz3 } from '../../components/Finale';
 import { localeName as locales } from '../../components/countries';
+import sanityClient from "../../sanityClient"
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function WorldCup2022() {
@@ -34,6 +35,16 @@ function WorldCup2022() {
   useEffect(() => {
     document.title = `${locales("WorldCup")} 2022`
   }, [])
+  useEffect(() => {
+    sanityClient
+    .fetch(
+      `*[_type == "Tournament" && TournamentName == 'Fußball-Weltmeisterschaft 2022']{
+        TournamentName,
+      }`
+    )
+    .then(data => console.log(data))
+    .catch(error => console.error(error))
+  },[])
   useEffect(() => {
     const aTeamAF1 = first[0]
     const bTeamAF1 = second[1]
