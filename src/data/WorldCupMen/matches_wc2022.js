@@ -387,15 +387,15 @@ export const matchhf = [
 ]
 
 export const match3p = {
-    goals: [null, null],
+    goals: [2, 1],
     add: null,
     date: "2022-12-17T15:00:00Z"
 }
 
 
 export const matchf = {
-    goals: [null, null],
-    add: null,
+    goals: [4, 2],
+    add: `${localeName("Penalties")}, 3:3 (2:2) ${localeName("ExtraTime")}`,
     date: "2022-12-18T15:00:00Z"
 }
 
