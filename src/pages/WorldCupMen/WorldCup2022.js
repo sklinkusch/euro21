@@ -36,11 +36,11 @@ function WorldCup2022() {
     document.title = `${locales("WorldCup")} 2022`
   }, [])
   useEffect(() => {
+    const query = '*[_type == $type && TournamentName == $name] {TournamentName}'
+    const params = { type: 'Tournament', name: 'Fußball-Weltmeisterschaft 2022' }
     sanityClient
     .fetch(
-      `*[_type == "Tournament" && TournamentName == 'Fußball-Weltmeisterschaft 2022']{
-        TournamentName,
-      }`
+      query, params
     )
     .then(data => console.log(data))
     .catch(error => console.error(error))
