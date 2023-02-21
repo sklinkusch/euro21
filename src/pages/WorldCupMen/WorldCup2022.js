@@ -5,8 +5,8 @@ import { useDebugState } from "use-named-state"
 import { NewMatchList } from "../../components/MatchList"
 import { GeneralTableSet } from "../../components/Table"
 import { AchtelfinaleNew } from "../../components/Achtelfinale"
+import { ViertelfinaleNew } from "../../components/Viertelfinale"
 // import { FlagSet } from "../../components/helpers"
-// import { Viertelfinale } from "../../components/Viertelfinale"
 // import { Halbfinale } from '../../components/Halbfinale';
 // import { getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../../components/helpers';
 // import { Finale, Platz3 } from '../../components/Finale';
@@ -58,6 +58,7 @@ function WorldCup2022() {
           {matches.hasOwnProperty("groups") && matches.groups && (<GeneralTableSet matches={matches.groups} />)}
           <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], width: "100%", mx: 0 }}>
             {matches.hasOwnProperty("AF") && matches.AF && (<AchtelfinaleNew matches={matches.AF} />)}
+            {matches.hasOwnProperty("VF") && matches.VF && (<ViertelfinaleNew matches={matches.VF} />)}
           </div>
            {/* <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], width: "100%", mx: 0 }}>
             <Achtelfinale teams={afTeams} matchaf={matchaf} />
