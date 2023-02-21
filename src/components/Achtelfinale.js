@@ -3,6 +3,41 @@ import React from 'react'
 import { FlagSet } from "./helpers"
 import { localeName as locales } from './countries'
 
+function AchtelfinaleNew({ matches, maxColumn }) {
+  const col = maxColumn ? `1 / span ${maxColumn}` : "1 / span 4"
+  const arrangement = [[0, 4], [1, 5], [2, 6], [3, 7]]
+  return (
+    <div sx={{ width: "100%", gridColumn: ["1 / span 2", "1 / span 2", col] }}>
+      <h3 sx={{ textAlign: "center", my: "2px", py: 0 }}>
+        {locales("Round16")}
+      </h3>
+      <table sx={{ width: "100%" }}>
+        <tbody>
+          {matches.length === 8 && arrangement.map((row, index) => (
+            <tr key={index}>
+              <AchtelfinaleSingleNew match={matches[row[0]]} />
+              <AchtelfinaleSingleNew match={matches[row[1]]} />
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function AchtelfinaleSingleNew({ match }) {
+  const {teams, goals, add, date } = match
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+  const formattedDate = date ? new Date(date).toLocaleString(navigator.language, { year: "2-digit", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", timeZone: tz }) : null
+  return (
+    <React.Fragment>
+      <td sx={{ width: "12.5%" }}><FlagSet code={teams[0]} /></td>
+      <td sx={{ width: "12.5%" }}><FlagSet code={teams[1]} /></td>
+      {teams[0] && teams[1] && typeof goals[0] === 'number' && typeof goals[1] === 'number' ? (<td sx={{ fontSize: 0, width: "25%" }}>{`${typeof goals[0] === "number" ? goals[0] : "-"}:${typeof goals[1] === "number" ? goals[1] : "-"} ${add ? add : ""}`}</td>) : formattedDate ? (<td sx={{ fontSize: 0, width: "25%" }}>{formattedDate}</td>) : (<td sx={{ fontSize: 0, width: "25%" }}>-:-</td>)}
+    </React.Fragment>
+  )
+}
+
 function Achtelfinale({ teams, matchaf, maxColumn }) {
   const col = maxColumn ? `1 / span ${maxColumn}` : "1 / span 4"
   const [tAF0 = [], tAF1 = [], tAF2 = [], tAF3 = [], tAF4 = [], tAF5 = [], tAF6 = [], tAF7 = []] = teams
@@ -52,4 +87,4 @@ function AchtelfinaleSingle({ teamA, teamB, match }) {
   )
 }
 
-export { Achtelfinale }
+export { Achtelfinale, AchtelfinaleNew }

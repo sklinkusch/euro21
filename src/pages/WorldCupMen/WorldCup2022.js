@@ -4,9 +4,8 @@ import { Link } from "react-router-dom"
 import { useDebugState } from "use-named-state"
 import { NewMatchList } from "../../components/MatchList"
 import { GeneralTableSet } from "../../components/Table"
+import { AchtelfinaleNew } from "../../components/Achtelfinale"
 // import { FlagSet } from "../../components/helpers"
-// import { TableSetEight } from "../../components/Table"
-// import { Achtelfinale } from "../../components/Achtelfinale"
 // import { Viertelfinale } from "../../components/Viertelfinale"
 // import { Halbfinale } from '../../components/Halbfinale';
 // import { getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../../components/helpers';
@@ -28,8 +27,8 @@ function WorldCup2022() {
   }, [])
   useEffect(() => {
     async function fetchData () {
-      const longLang = await navigator && navigator.hasOwnProperty("language") ? navigator.language : ""
-      const lang = await longLang.length > 0 ? longLang.substring(0,2) : "en"
+      const longLang = navigator && "language" in navigator ? navigator.language : ""
+      const lang = longLang.length > 0 ? longLang.substring(0,2) : "en"
       const response = await fetch(`https://euro21-api.vercel.app/worldcup?year=2022&lang=${lang}`)
       const data = await response.json()
       // const { groups, AF, VF, HF, F, champion: fchampion } = await data
@@ -57,27 +56,9 @@ function WorldCup2022() {
         </aside>
         <main sx={{ width: "100%" }}>
           {matches.hasOwnProperty("groups") && matches.groups && (<GeneralTableSet matches={matches.groups} />)}
-          {/* {Object.keys(matches).length === 8 && (<TableSetEight
-            matches={matches}
-            groupA={groupA}
-            groupB={groupB}
-            groupC={groupC}
-            groupD={groupD}
-            groupE={groupE}
-            groupF={groupF}
-            groupG={groupG}
-            groupH={groupH}
-            setGroupA={setGroupA}
-            setGroupB={setGroupB}
-            setGroupC={setGroupC}
-            setGroupD={setGroupD}
-            setGroupE={setGroupE}
-            setGroupF={setGroupF}
-            setGroupG={setGroupG}
-            setGroupH={setGroupH}
-            coefficient={fifaWorldRank}
-            modus="wc"
-          />)} */}
+          <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], width: "100%", mx: 0 }}>
+            {matches.hasOwnProperty("AF") && matches.AF && (<AchtelfinaleNew matches={matches.AF} />)}
+          </div>
            {/* <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], width: "100%", mx: 0 }}>
             <Achtelfinale teams={afTeams} matchaf={matchaf} />
             <Viertelfinale teams={vfTeams} matchvf={matchvf} />
