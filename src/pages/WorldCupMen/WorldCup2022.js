@@ -3,6 +3,7 @@ import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useDebugState } from "use-named-state"
 import { NewMatchList } from "../../components/MatchList"
+import { GeneralTableSet } from "../../components/Table"
 // import { FlagSet } from "../../components/helpers"
 // import { TableSetEight } from "../../components/Table"
 // import { Achtelfinale } from "../../components/Achtelfinale"
@@ -55,6 +56,7 @@ function WorldCup2022() {
           {matches.hasOwnProperty("groups") && matches.groups && (<NewMatchList matches={matches.groups} />)}
         </aside>
         <main sx={{ width: "100%" }}>
+          {matches.hasOwnProperty("groups") && matches.groups && (<GeneralTableSet matches={matches.groups} />)}
           {/* {Object.keys(matches).length === 8 && (<TableSetEight
             matches={matches}
             groupA={groupA}
