@@ -7,9 +7,8 @@ import { GeneralTableSet } from "../../components/Table"
 import { AchtelfinaleNew } from "../../components/Achtelfinale"
 import { ViertelfinaleNew } from "../../components/Viertelfinale"
 import { HalbfinaleNew } from "../../components/Halbfinale"
-// import { FlagSet } from "../../components/helpers"
-// import { getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../../components/helpers';
-// import { Finale, Platz3 } from '../../components/Finale';
+import { FinaleNew, Platz3New } from '../../components/Finale';
+import { FlagSet } from "../../components/helpers"
 import { localeName as locales } from '../../components/countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
@@ -52,16 +51,14 @@ function WorldCup2022() {
             {matches.hasOwnProperty("AF") && matches.AF && (<AchtelfinaleNew matches={matches.AF} />)}
             {matches.hasOwnProperty("VF") && matches.VF && (<ViertelfinaleNew matches={matches.VF} />)}
             {matches.hasOwnProperty("HF") && matches.HF && (<HalbfinaleNew matches={matches.HF} />)}
+            {matches.hasOwnProperty("3P") && matches["3P"] && (<Platz3New match={matches["3P"]} />)}
+            {matches.hasOwnProperty("F") && matches.F && (<FinaleNew match={matches.F} />)}
           </div>
-           {/* <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], width: "100%", mx: 0 }}>
-            <Platz3 teams={teams3P} match3p={match3p} />
-           <Finale teams={fTeams} matchf={matchf} />
-          </div> */}
         </main>
       </header>
-       {/* <h2 sx={{ width: "100%" }}>
-        {locales("WChampion")}: <FlagSet code={champion} large={true} />
-      </h2> */}
+       {matches.hasOwnProperty("champion") && matches.champion && <h2 sx={{ width: "100%" }}>
+        {locales("WChampion")}: <FlagSet code={matches.champion} large={true} />
+      </h2>}
       <div sx={{ textAlign: "center" }}>
         <Link to="/">{locales("Back")}</Link>
       </div>
