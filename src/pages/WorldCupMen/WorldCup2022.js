@@ -6,8 +6,8 @@ import { NewMatchList } from "../../components/MatchList"
 import { GeneralTableSet } from "../../components/Table"
 import { AchtelfinaleNew } from "../../components/Achtelfinale"
 import { ViertelfinaleNew } from "../../components/Viertelfinale"
+import { HalbfinaleNew } from "../../components/Halbfinale"
 // import { FlagSet } from "../../components/helpers"
-// import { Halbfinale } from '../../components/Halbfinale';
 // import { getKoTeams, getKoTeam, FlagSet, getChampion, getLoser } from '../../components/helpers';
 // import { Finale, Platz3 } from '../../components/Finale';
 import { localeName as locales } from '../../components/countries';
@@ -31,15 +31,7 @@ function WorldCup2022() {
       const lang = longLang.length > 0 ? longLang.substring(0,2) : "en"
       const response = await fetch(`https://euro21-api.vercel.app/worldcup?year=2022&lang=${lang}`)
       const data = await response.json()
-      // const { groups, AF, VF, HF, F, champion: fchampion } = await data
-      // const thirdP = await data["3P"]
       setMatches(await data)
-      // setMatchaf(await AF)
-      // setMatchvf(await VF)
-      // setMatchhf(await HF)
-      // setMatch3p(await thirdP)
-      // setMatchf(await F)
-      // setChampion(await fchampion)
     }
     fetchData()
   },[])
@@ -59,11 +51,9 @@ function WorldCup2022() {
           <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], width: "100%", mx: 0 }}>
             {matches.hasOwnProperty("AF") && matches.AF && (<AchtelfinaleNew matches={matches.AF} />)}
             {matches.hasOwnProperty("VF") && matches.VF && (<ViertelfinaleNew matches={matches.VF} />)}
+            {matches.hasOwnProperty("HF") && matches.HF && (<HalbfinaleNew matches={matches.HF} />)}
           </div>
            {/* <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"], width: "100%", mx: 0 }}>
-            <Achtelfinale teams={afTeams} matchaf={matchaf} />
-            <Viertelfinale teams={vfTeams} matchvf={matchvf} />
-            <Halbfinale teams={hfTeams} matchhf={matchhf} />
             <Platz3 teams={teams3P} match3p={match3p} />
            <Finale teams={fTeams} matchf={matchf} />
           </div> */}
