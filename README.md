@@ -24,4 +24,3 @@ rounds of European Soccer Championships (from 2004 on) and World Cups (from
 - ReactJS
 - [React Router](https://reactrouter.com)
 - [Theme-UI](https://theme-ui.com)
-- [Sanity](https://sanity.io) (work in progress)

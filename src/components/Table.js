@@ -200,6 +200,57 @@ function sortFunction(teamData, mode) {
   }
 }
 
+export function GeneralTableSet({ matches }) {
+  const keys = Object.keys(matches)
+  const sortedKeys = keys.sort()
+  const sortedValues = sortedKeys.map(key => matches[key])
+  if (sortedValues.length > 0) {
+    return (
+      <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(3,1fr)"]}}>
+        {sortedValues.map((group, index) => (<NewTable table={group.table} number={index} key={index} notifier={sortedKeys[index]} />))}
+      </div>
+    )
+  }
+  return null
+}
+
+function NewTable ({ table, number, notifier }) {
+  const bgcolor = getColor(number)
+  if (table.length > 0) {
+    return (
+    <div sx={{ fontSize: 0, backgroundColor: bgcolor, px: "4px", py: "4px", my: "4px", mx: "4px", borderRadius: "20px", position: "relative" }}>
+      <div sx={{ fontSize: "6vw", color: "#ffffff70", position: "absolute", width: "100%", height: "100%", fontWeight: "bold", zIndex: 2 }}>{notifier}</div>
+      <table sx={{ width: "100%", position: "relative", zIndex: 5 }}>
+        <thead>
+          <tr sx={{ margin: "0" }}>
+            <td>{locales("Team")}</td>
+            <td>{locales("Pts")}</td>
+            <td>{locales("Difference")}</td>
+            <td>{locales("Goals")}</td>
+            <td>{locales("FairPlay")}</td>
+          </tr>
+        </thead>
+        <tbody>
+          {table.map((dataset, index) => {
+            const { team, points, goals, countergoals, goalDifference, fairPlay } = dataset
+            return (
+              <tr key={index} sx={{ margin: "0px" }}>
+                <td><FlagWrapper team={team} participant={participants(team)} /></td>
+                <td>{points}</td>
+                <td>{goalDifference}</td>
+                <td>{goals}:{countergoals}</td>
+                <td>{fairPlay}</td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </div>
+    )
+  }
+  return null
+}
+
 
 export function TableSet({ matches, groupA, groupB, groupC, groupD, groupE, groupF, setGroupA, setGroupB, setGroupC, setGroupD, setGroupE, setGroupF, coefficient = [], modus = "euro" }) {
   const { A, B, C, D, E, F } = matches

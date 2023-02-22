@@ -4,6 +4,34 @@ import { localeName as locales } from './countries'
 import { FlagSet } from './helpers'
 import { useLocation } from "react-router-dom"
 
+function HalbfinaleNew({ matches, full = false }) {
+  const location = useLocation()
+  let gridColumn
+  if (full) {
+    gridColumn = "1 / 7"
+  } else if (location.pathname.includes("worldcup")) {
+    gridColumn = ["1 / 3", "1 / 3", "1 / 5"]
+  } else {
+    gridColumn = ["1 / 3", "1 / 3", "1 / 7"]
+  }
+  return (
+    <div sx={{ width: "100%", gridColumn: gridColumn, backgroundColor: "#E6D2B5", my: "4px", padding: "4px", borderRadius: "20px" }}>
+      <h3 sx={{ textAlign: "center", py: 0, my: "2px" }}>
+        {locales("Semifinal")}
+      </h3>
+      <table sx={{ width: "100%" }}>
+        <tbody>
+          {matches.length > 0 && matches.map((match, index) => (
+            <tr key={index}>
+              <HalbfinaleSingleNew match={match} />
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
 function Halbfinale({teams = [], matchhf = [], full = false}) {
   const [tHF0 = [], tHF1 = []] = teams
   const [mHF0 = {}, mHF1 = {}] = matchhf
@@ -35,6 +63,19 @@ function Halbfinale({teams = [], matchhf = [], full = false}) {
   )
 }
 
+function HalbfinaleSingleNew({ match }) {
+  const { teams, goals, add, date } = match
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+  const formattedDate = date ? new Date(date).toLocaleString(navigator.language, { year: "2-digit", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", timeZone: tz }) : null
+  return (
+    <React.Fragment>
+      <td sx={{ width: "25%" }}><FlagSet code={teams[0]} /></td>
+      <td sx={{ width: "25%" }}><FlagSet code={teams[1]} /></td>
+      {teams[0] && teams[1] && typeof goals[0] === 'number' && typeof goals[1] === 'number' ? (<td sx={{ fontSize: 0, width: "50%" }}>{`${typeof goals[0] === "number" ? goals[0] : "-"}:${typeof goals[1] === "number" ? goals[1] : "-"} ${add ? add : ""}`}</td>) : formattedDate ? (<td sx={{ fontSize: 0, width: "50%" }}>{formattedDate}</td>) : (<td sx={{ fontSize: 0, width: "50%" }}>-:-</td>)}
+    </React.Fragment>
+  )
+}
+
 function HalbfinaleSingle({teams, match}) {
   const {goals = [], add = "", date } = match
   const [ goalsA = "-", goalsB = "-" ] = goals
@@ -50,4 +91,4 @@ function HalbfinaleSingle({teams, match}) {
   )
 }
 
-export { Halbfinale }
+export { Halbfinale, HalbfinaleNew }
