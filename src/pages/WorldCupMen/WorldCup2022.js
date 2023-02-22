@@ -13,14 +13,7 @@ import { localeName as locales } from '../../components/countries';
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function WorldCup2022() {
-  // const fifaWorldRank = ["BR", "BE", "FR", "AR", "GB-ENG", "ES", "PT", "MX", "NL", "DK", "DE", "UY", "CH", "US", "HR", "GB-WLS", "SN", "IR", "PE", "JP", "MA", "RS", "PL", "UA", "KR", "CR", "TN", "CM", "CA", "GB-SCT", "AU", "EC", "QA", "GH", "AE", "NZ"]
-  // const [champion, setChampion] = useDebugState("champion",null)
   const [matches, setMatches] = useDebugState("matches",{})
-  // const [matchaf, setMatchaf] = useDebugState("matchaf",[])
-  // const [matchvf, setMatchvf] = useDebugState("matchvf",[])
-  // const [matchhf, setMatchhf] = useDebugState("matchhf",[])
-  // const [match3p, setMatch3p] = useDebugState("match3p",[])
-  // const [matchf, setMatchf] = useDebugState("matchf",[])
   useEffect(() => {
     document.title = `${locales("WorldCup")} 2022`
   }, [])
