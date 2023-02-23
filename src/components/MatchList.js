@@ -2,15 +2,16 @@
 import React from 'react'
 import FlagWrapper from './FlagWrapper'
 import { participantName as participants } from "./countries"
-import { getColor } from "./helpers"
+import { getColor, getGridValue } from "./helpers"
 
 export function NewMatchList({ matches }) {
   const keys = Object.keys(matches)
   const sortedKeys = keys.sort()
   const sortedValues = sortedKeys.map(key => matches[key])
+  const gridValue = getGridValue(keys.length)
   if (sortedValues.length > 0) {
     return (
-      <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(3,1fr)"]}}>
+      <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", `repeat(${gridValue},1fr)`]}}>
         {sortedValues.map((group, index) => (<GroupMatchList matches={group.matches} number={index} key={index} identifier={sortedKeys[index]} />))}
       </div>
     )
