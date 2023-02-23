@@ -49,11 +49,9 @@ function WorldCup2014() {
           </div>
         </main>
       </header>
-       <h2>
         {matches.hasOwnProperty("champion") && matches.champion && <h2 sx={{ width: "100%", fontSize: 2 }}>
         {locales("WChampion")}: <FlagSet code={matches.champion} large={true} />
       </h2>}
-      </h2>
       <div sx={{ textAlign: "center" }}>
         <Link to="/">{locales("Back")}</Link>
       </div>
