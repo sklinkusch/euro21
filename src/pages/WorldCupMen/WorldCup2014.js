@@ -50,7 +50,7 @@ function WorldCup2014() {
         </main>
       </header>
        <h2>
-        {matches.hasOwnProperty("champion") && matches.champion && <h2 sx={{ width: "100%" }}>
+        {matches.hasOwnProperty("champion") && matches.champion && <h2 sx={{ width: "100%", fontSize: 2 }}>
         {locales("WChampion")}: <FlagSet code={matches.champion} large={true} />
       </h2>}
       </h2>
