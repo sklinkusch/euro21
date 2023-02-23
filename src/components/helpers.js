@@ -3,6 +3,35 @@ import React from 'react'
 import FlagWrapper from './FlagWrapper'
 import { participantName } from './countries'
 
+export function getGridValue(length) {
+  switch (length) {
+    case 16:
+      return 4
+    case 15:
+      return 3
+    case 12:
+      return 4
+    case 10:
+      return 4
+    case 9:
+      return 3
+    case 8:
+      return 4
+    case 6:
+      return 3
+    case 4:
+      return 4
+    case 3:
+      return 3
+    case 2:
+      return 2
+    case 1:
+      return 1
+    default:
+      return 3
+  }
+}
+
 export function getAssociation20(winningCombination) {
   switch (winningCombination) {
     case "ABCD":
