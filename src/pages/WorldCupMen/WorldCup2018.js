@@ -21,7 +21,7 @@ function WorldCup2018() {
     async function fetchData () {
       const longLang = navigator && "language" in navigator ? navigator.language : ""
       const lang = longLang.length > 0 ? longLang.substring(0,2) : "en"
-      const response = await fetch(`https://euro21-api.vercel.app/worldcup?year=2018&lang=${lang}`)
+      const response = await fetch(`https://euro21-api.vercel.app/worldcupmen?year=2018&lang=${lang}`)
       const data = await response.json()
       setMatches(await data)
     }
