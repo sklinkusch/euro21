@@ -161,13 +161,13 @@ const matches = {
       date: "2023-07-22T01:00:00Z"
     },
     {
-      teams: ["NL", "Q23A"],
+      teams: ["NL", "PT"],
       goals: [null, null],
       fairPlay: [null, null],
       date: "2023-07-23T07:30:00Z"
     },
     {
-      teams: ["Q23A", "VN"],
+      teams: ["PT", "VN"],
       goals: [null, null],
       fairPlay: [null, null],
       date: "2023-07-27T01:00:00Z"
@@ -185,7 +185,7 @@ const matches = {
       date: "2023-08-01T07:00:00Z"
     },
     {
-      teams: ["Q23A", "US"],
+      teams: ["PT", "US"],
       goals: [null, null],
       fairPlay: [null, null],
       date: "2023-08-01T07:00:00Z"
