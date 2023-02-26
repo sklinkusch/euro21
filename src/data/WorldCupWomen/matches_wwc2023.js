@@ -199,13 +199,13 @@ const matches = {
       date: "2023-07-23T10:00:00Z"
     },
     {
-      teams: ["BR", "Q23C"],
+      teams: ["BR", "PA"],
       goals: [null, null],
       fairPlay: [null, null],
       date: "2023-07-24T11:00:00Z"
     },
     {
-      teams: ["Q23C", "JM"],
+      teams: ["PA", "JM"],
       goals: [null, null],
       fairPlay: [null, null],
       date: "2023-07-29T10:00:00Z"
@@ -223,7 +223,7 @@ const matches = {
       date: "2023-08-02T10:00:00Z"
     },
     {
-      teams: ["Q23C", "FR"],
+      teams: ["PA", "FR"],
       goals: [null, null],
       fairPlay: [null, null],
       date: "2023-08-02T10:00:00Z"
