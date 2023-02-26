@@ -15,7 +15,7 @@ import { localeName as locales } from '../../components/countries';
 function WorldCup2010() {
   const [matches, setMatches] = useDebugState("matches",{})
   useEffect(() => {
-    document.title = `${locales("WorldCup")} 2014`
+    document.title = `${locales("WorldCup")} 2010`
   }, [])
   useEffect(() => {
     async function fetchData () {
