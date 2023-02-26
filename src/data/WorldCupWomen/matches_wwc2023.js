@@ -117,7 +117,7 @@ const matches = {
   ],
   D: [
     {
-      teams: ["GB-ENG", "Q23B"],
+      teams: ["GB-ENG", "HT"],
       goals: [null, null],
       fairPlay: [null, null],
       date: "2023-07-22T09:30:00Z"
@@ -129,7 +129,7 @@ const matches = {
       date: "2023-07-22T12:00:00Z"
     },
     {
-      teams: ["CN", "Q23B"],
+      teams: ["CN", "HT"],
       goals: [null, null],
       fairPlay: [null, null],
       date: "2023-07-28T08:30:00Z"
@@ -141,7 +141,7 @@ const matches = {
       date: "2023-07-28T11:00:00Z"
     },
     {
-      teams: ["Q23B", "DK"],
+      teams: ["HT", "DK"],
       goals: [null, null],
       fairPlay: [null, null],
       date: "2023-08-01T11:00:00Z"
