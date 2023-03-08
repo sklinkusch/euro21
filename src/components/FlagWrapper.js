@@ -8,7 +8,7 @@ import TW_OLY from "../images/TW_OLY.svg"
 import YU_SCG from "../images/YU_SCG.svg"
 
 function FlagWrapper({ team, participant, large = false }) {
-  const styles = large ? { height: "21px", maxWidth: "30px", mr: "8px" } : { height: "14px", maxWidth: "22px", mr: "8px" }
+  const styles = large ? { height: "21px", maxWidth: "30px", minWidth: "21px", mr: "8px" } : { height: "14px", maxWidth: "22px", minWidth: "14px", mr: "8px" }
   switch(team) {
     case "GB-NIR":
       return <img src={GB_NIR} alt={participant} title={participant} sx={{ ...styles }} />

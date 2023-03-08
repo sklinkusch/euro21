@@ -33,6 +33,7 @@ function WorldCup2002() {
       <h1 sx={{ fontSize: 3, fontWeight: "bold", my: "8px", px: ["4px", "4px", "0px"], hyphens: ["auto", "none"] }} lang={lang}>
         <span>{locales("WorldCup")}</span>{" "}
         <span>2002</span>
+        {matches.hasOwnProperty("host") && matches.host && (<FlagSet code={matches.host} large={true} />)}
       </h1>
       <header className="App-header" sx={{ display: "grid", gridTemplateColumns: "1fr", borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "ft" }}>
         <aside sx={{ width: "100%" }}>
