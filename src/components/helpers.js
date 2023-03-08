@@ -268,17 +268,17 @@ export const getKoTeams = (matchArray, index, teamA, teamB) => {
   }
 }
 
-export function FlagSet({code, large = false}){
+export function FlagSet({code, large = false }){
   if (typeof code === "object" && Array.isArray(code) && code.length > 0) {
     return (
       <React.Fragment>
         {code.map((singleCode, index) => (
-          <FlagWrapper key={index} team={singleCode} participant={participantName(singleCode)} />
+          <FlagWrapper key={index} team={singleCode} participant={participantName(singleCode)} large={large} />
         ))}
       </React.Fragment>
     )
   }
   return (
-    <FlagWrapper team={code} participant={participantName(code)} />
+    <FlagWrapper team={code} participant={participantName(code)} large={large} />
   )
 }
