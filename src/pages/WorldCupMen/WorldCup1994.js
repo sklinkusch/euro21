@@ -41,7 +41,7 @@ function WorldCup1994() {
         </aside>
         <main sx={{ width: "100%" }}>
           {matches.hasOwnProperty("groups") && matches.groups && (<GeneralTableSet matches={matches.groups} />)}
-           <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(6,1fr)"] }}>
+           <div sx={{ display: "grid", gridTemplateColumns: ["repeat(2,1fr)", "repeat(2,1fr)", "repeat(4,1fr)"] }}>
             {matches.hasOwnProperty("T3") && matches.T3 && (<TableThird third={matches.T3} maxColumns={6} />)}
             {matches.hasOwnProperty("AF") && matches.AF && (<AchtelfinaleNew matches={matches.AF} />)}
             {matches.hasOwnProperty("VF") && matches.VF && (<ViertelfinaleNew matches={matches.VF} />)}
