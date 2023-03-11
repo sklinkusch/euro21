@@ -161,6 +161,15 @@
 		"pl": "Kostaryka",
 		"pt": "Costa Rica"
 	},
+	"CS": {
+		"de": "Tschechoslowakei",
+		"en": "Czechoslovakia",
+		"es": "Checoslovaquia",
+		"fr": "Tchécoslovaquie",
+		"it": "Cecoslovacchia",
+		"pl": "Czechosłowacja",
+		"pt": "Checoslováquia"
+	},
 	"CZ": {
 		"de": "Tschechien",
 		"en": "Czechia",
@@ -178,6 +187,15 @@
 		"it": "Germania",
 		"pl": "Niemcy",
 		"pt": "Alemanha"
+	},
+	"DE-BRD": {
+		"de": "Bundesrepublik Deutschland",
+		"en": "Federal Republic of Germany",
+		"es": "República Federal de Alemania",
+		"fr": "République Fédérale d'Allemagne",
+		"it": "Repubblica Federale di Germania",
+		"pl": "Republika Federalna Niemiec",
+		"pt": "República Federal da Alemanha"
 	},
 	"DK": {
 		"de": "Dänemark",
@@ -620,6 +638,15 @@
 		"pl": "Senegal",
 		"pt": "Senegal"
 	},
+	"SU": {
+		"de": "Sowjetunion",
+		"en": "Soviet Union",
+		"es": "Unión Soviética",
+		"fr": "Union Soviétique",
+		"it": "Unione Sovietica",
+		"pl": "Związek Sowiecki",
+		"pt": "União Soviética"
+	},
 	"TG": {
 		"de": "Togo",
 		"en": "Togo",
@@ -727,6 +754,15 @@
 		"it": "Serbia e Montenegro",
 		"pl": "Serbia i Czarnogóra",
 		"pt": "Sérvia e Montenegro"
+	},
+	"YU-SFR": {
+		"de": "Jugoslawien",
+		"en": "Yugoslavia",
+		"es": "Yugoslavia",
+		"fr": "Yougoslavie",
+		"it": "Jugoslavia",
+		"pl": "Jugosławia",
+		"pt": "Jugoslávia"
 	},
 	"ZA": {
 		"de": "Südafrika",
