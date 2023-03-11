@@ -14,7 +14,7 @@ function FlagWrapper({ team, participant, large = false }) {
     case "GB-NIR":
       return <img src={GB_NIR} alt={participant} title={participant} sx={{ ...styles }} />
     case "CS":
-      return <Flag code='CS' alt={participant} title={participant} sx={{ ...styles }} />
+      return <Flag code='CZ' alt={participant} title={participant} sx={{ ...styles }} />
     case "DE-BRD":
       return <Flag code='DE' alt={participant} title={participant} sx={{ ...styles }} />
     case "SU":
