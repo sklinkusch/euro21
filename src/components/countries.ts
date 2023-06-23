@@ -2,7 +2,7 @@ const participants = require("../data/teams.json")
 const locales = require("../data/locales.json")
 const lang = navigator.language 
 
-export const participantName = (code) => {
+export const participantName = (code: string) => {
   if (code && typeof code === "string" && code != null && code !== "?") {
     if (participants.hasOwnProperty(code)) {
       if( /^de/.test(lang)) {
@@ -26,7 +26,7 @@ export const participantName = (code) => {
   }
 }
 
-export const localeName = (code) => {
+export const localeName = (code: string) => {
   if(code && typeof code === "string" && code != null && code !== "?") {
     if (/^de/.test(lang)) {
       return locales.de[code]
