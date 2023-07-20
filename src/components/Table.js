@@ -220,7 +220,7 @@ function NewTable ({ table, number, notifier }) {
   if (table.length > 0) {
     return (
     <div sx={{ fontSize: 0, backgroundColor: bgcolor, px: "4px", py: "4px", my: "4px", mx: "4px", borderRadius: "20px", position: "relative" }}>
-      <div sx={{ fontSize: "6vw", color: "#ffffff70", position: "absolute", width: "100%", height: "100%", fontWeight: "bold", zIndex: 2 }}>{notifier}</div>
+      <div sx={{ fontSize: "500%", color: "#ffffff70", position: "absolute", width: "100%", height: "100%", fontWeight: "bold", zIndex: 2 }}>{notifier}</div>
       <table sx={{ width: "100%", position: "relative", zIndex: 5 }}>
         <thead>
           <tr sx={{ margin: "0" }}>
