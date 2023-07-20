@@ -86,7 +86,7 @@ function GroupMatchList({ matches, border, number, identifier }) {
   const bgcolor = getColor(number)
   return (
     <div sx={{ width: "100%", my: "4px", mx: "4px", py: "2px", px: "2px", backgroundColor: bgcolor, borderRadius: "20px", position: "relative" }}>
-      <div sx={{ fontSize: "10vw", width: "100%", height: "100%", fontWeight: "bold", color: "#ffffff70", position: "absolute", zIndex: 2 }}>{identifier}</div>
+      <div sx={{ fontSize: "500%", width: "100%", height: "100%", fontWeight: "bold", color: "#ffffff70", position: "absolute", zIndex: 2 }}>{identifier}</div>
       <table sx={{ width: "100%", position: "relative", zIndex: 5 }}>
         <tbody>
           {matches.map((match, index) =>{
